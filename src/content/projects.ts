@@ -456,8 +456,10 @@ export const projects: Project[] = [
   {
     slug: "lov-magazine",
     title: "LOV Magazine",
-    categories: ["edition", "image"],
-    tagline: "Le magazine qui aborde les sujets tabous de manière artistique et positive.",
+    year: "2024",
+    frame: "Numéro 1 — avril 2024",
+    categories: ["edition", "da", "image"],
+    tagline: "Dérober, chaparder, chiper. Le magazine qui aborde les sujets tabous de manière artistique et positive.",
     color: "#e23b2e",
     ink: "#fff3e0",
     draft: true,
