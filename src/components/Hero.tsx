@@ -96,9 +96,30 @@ export function Hero() {
               className="object-cover object-[50%_18%] contrast-[1.05] grayscale sepia-[0.15] transition-[filter] duration-700 group-hover:grayscale-0 group-hover:sepia-0"
             />
           </div>
-          {/* trombone */}
-          <svg viewBox="0 0 24 64" className="absolute -top-[14%] right-[14%] h-[32%] w-auto text-[#b9b6ae]" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
-            <path d="M8 20V46a6 6 0 0 0 12 0V12a9 9 0 0 0-18 0v38a12 12 0 0 0 24 0" />
+          {/* trombone métallique : dégradé argenté, reflet, ombre portée sur le papier */}
+          <svg
+            viewBox="0 0 40 110"
+            className="absolute -top-[16%] right-[10%] h-[44%] w-auto rotate-[8deg] drop-shadow-[2px_3px_2px_rgba(0,0,0,0.35)]"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <defs>
+              <linearGradient id="clip-metal" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stopColor="#f4f4f2" />
+                <stop offset="0.35" stopColor="#a9aaa7" />
+                <stop offset="0.55" stopColor="#e9e9e6" />
+                <stop offset="0.8" stopColor="#8d8e8b" />
+                <stop offset="1" stopColor="#cfd0cc" />
+              </linearGradient>
+            </defs>
+            {/* ombre douce sur le polaroïd */}
+            <path d="M14 34V84a8 8 0 0 0 16 0V20a13 13 0 0 0-26 0v68a17 17 0 0 0 34 0V30" stroke="rgba(0,0,0,0.18)" strokeWidth="3.4" transform="translate(2.5 3)" />
+            {/* fil de métal */}
+            <path d="M14 34V84a8 8 0 0 0 16 0V20a13 13 0 0 0-26 0v68a17 17 0 0 0 34 0V30" stroke="#6f706d" strokeWidth="3.4" />
+            <path d="M14 34V84a8 8 0 0 0 16 0V20a13 13 0 0 0-26 0v68a17 17 0 0 0 34 0V30" stroke="url(#clip-metal)" strokeWidth="2.6" />
+            {/* reflet */}
+            <path d="M14 34V84a8 8 0 0 0 16 0V20a13 13 0 0 0-26 0v68a17 17 0 0 0 34 0V30" stroke="rgba(255,255,255,0.75)" strokeWidth="0.7" transform="translate(-0.6 -0.6)" />
           </svg>
         </motion.div>
       </motion.div>
