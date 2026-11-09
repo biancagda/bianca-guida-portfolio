@@ -274,7 +274,13 @@ export const projects: Project[] = [
     tagline: "Torta di Spaghetti — l'identité graphique d'un commerce de restauration.",
     color: "#1f5fd6",
     ink: "#f6d64a",
-    draft: true,
+    draft: true, // ⚠︎ visuels de l'identité à venir — passe à false ensuite
+    thumbnail: {
+      src: "/images/projets/torta-di-spaghetti/vignette-torta.webp",
+      alt: "Une jeune femme croque à pleines dents une part de torta di spaghetti sur fond noir, logo Torta rouge et emblème jaune en forme de nid de spaghetti",
+      width: 2000,
+      height: 1120,
+    },
     context: ["Réalisation d'une identité graphique pour un commerce de restauration."],
   },
   {
