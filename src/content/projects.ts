@@ -87,6 +87,7 @@ const op = "/images/projets/opal";
 const pa = "/images/projets/patagonia";
 const cl = "/images/projets/clean-up-day";
 const va = "/images/projets/va-museum";
+const ro = "/images/projets/la-chambre-de-roomy";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -753,12 +754,44 @@ export const projects: Project[] = [
     slug: "la-chambre-de-roomy",
     title: "La Chambre de Roomy",
     year: "2024",
-    categories: ["edition"],
-    tagline: "Création d'un livre pour enfant autour du concept « chambre noire ».",
+    role: "Écriture, illustration & mise en page",
+    categories: ["edition", "image"],
+    tagline: "Un livre pour enfant, écrit et illustré à la main, qui donne envie de ranger sa chambre.",
     color: "#1e1e1e",
     ink: "#d7d2c8",
-    draft: true,
-    context: ["Création d'un livre pour enfant autour du concept « chambre noire »."],
+    thumbnail: {
+      src: `${ro}/livres-ouverts.jpg`,
+      alt: "Plusieurs exemplaires de « La Chambre noire de Roomy » ouverts et fermés : couvertures sombres, doubles pages avec la chambre en désordre et le petit lapin violet",
+      width: 1920,
+      height: 1440,
+    },
+    cover: {
+      src: `${ro}/couverture-dos.jpg`,
+      alt: "Couverture et dos du livre « La Chambre noire de Roomy » : le lapin violet étendu dans une chambre plongée dans l'ombre ; au dos, « L'histoire qui donnera l'envie de ranger la chambre de chaque enfant ! »",
+      width: 1920,
+      height: 1440,
+    },
+    context: [
+      "Création d'un livre pour enfant autour du concept « chambre noire ».",
+      "Une histoire avec une morale, entièrement écrite et illustrée par mes soins : des dessins réalisés à la main, puis retravaillés numériquement.",
+    ],
+    concept: [
+      "Roomy, un petit lapin violet, ne range jamais sa chambre. La nuit, le désordre se transforme en cauchemar et sa chambre devient une « chambre noire ». « L'histoire qui donnera l'envie de ranger la chambre de chaque enfant ! »",
+    ],
+    identity: [
+      "Chaque double page alterne un texte court posé dans un halo de lumière sur fond noir, comme une lampe de chevet, et une illustration de la chambre aux traits volontairement naïfs. Une typographie manuscrite accompagne le ton du conte.",
+    ],
+    inline: {
+      identity: [
+        {
+          src: `${ro}/double-page-reveil.jpg`,
+          alt: "Double page : à gauche, « Roomy se réveilla en sursaut, terrifié par son cauchemar… Mais il était l'heure d'aller à l'école. » dans un halo jaune ; à droite, Roomy crie « AHHHHH » dans sa chambre en désordre",
+          width: 1920,
+          height: 1440,
+          layout: "wide",
+        },
+      ],
+    },
   },
 ];
 
