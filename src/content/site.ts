@@ -38,7 +38,7 @@ export const site = {
       "Diplômée du master Direction artistique & Design graphique de Sup de Pub Paris, formée chez TBWA\\Paris, Publicis Conseil et Deepki.",
     ],
     vision: [
-      "Un bon visuel commence par une bonne question : ce que la marque a à dire, et à qui.",
+      "Un bon visuel commence par une bonne question\u00a0:\nce que la marque a à dire, et à qui.",
     ],
     /** Tes inspirations (studios, designers, magazines, artistes, films…). Liste vide = section masquée. */
     inspirations: [] as string[],

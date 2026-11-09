@@ -110,7 +110,7 @@ export default function AboutPage() {
         <Block label="Vision">
           <div className="space-y-6">
             {about.vision.map((p, i) => (
-              <p key={i} className={i ? "text-[16px] leading-[1.55] text-paper/75 md:text-[clamp(18px,1.45vw,22px)] md:leading-[1.45]" : "serif-i text-[24px] leading-[1.15] md:text-[clamp(28px,3vw,46px)] md:leading-[1.1]"}>
+              <p key={i} className={i ? "text-[16px] leading-[1.55] text-paper/75 md:text-[clamp(18px,1.45vw,22px)] md:leading-[1.45]" : "serif-i whitespace-pre-line text-[24px] leading-[1.15] md:text-[clamp(28px,3vw,46px)] md:leading-[1.1]"}>
                 {p}
               </p>
             ))}
