@@ -42,19 +42,19 @@ export function SiteHeader() {
     <>
       <header className="px-site pointer-events-none fixed inset-x-0 top-0 z-50 text-white mix-blend-difference">
         <div className="grid-12 items-baseline pt-5 md:pt-6">
-          <Link href="/" className="display pointer-events-auto col-span-6 text-[22px] leading-none md:col-span-3 md:text-[26px]" aria-label={`${site.name} — accueil`}>
+          <Link href="/" className="display pointer-events-auto col-span-6 text-[22px] leading-none md:col-span-4 md:text-[26px] lg:col-span-3" aria-label={`${site.name} — accueil`}>
             {site.name}
           </Link>
 
-          <p className="label col-span-4 hidden md:block">
+          <p className="label col-span-4 hidden lg:block">
             Direction artistique
             <br />& design graphique
           </p>
-          <p className="label col-span-2 hidden md:block">
+          <p className="label col-span-2 hidden lg:block">
             {site.city} <ParisClock />
           </p>
 
-          <nav aria-label="Navigation principale" className="pointer-events-auto col-span-3 hidden justify-end gap-6 md:flex">
+          <nav aria-label="Navigation principale" className="pointer-events-auto col-span-8 hidden justify-end gap-6 md:flex lg:col-span-3">
             {nav.map((item) => (
               <Link key={item.href} href={item.href} className="label group relative" aria-current={isActive(item.href) ? "page" : undefined}>
                 <span className="u-link">{item.label}</span>

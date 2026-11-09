@@ -34,9 +34,9 @@ export function Hero({ projectCount }: { projectCount: number }) {
   return (
     <section className="px-site relative flex min-h-[100svh] flex-col pb-10 pt-24 md:pt-28" aria-labelledby="hero-title">
       <motion.div {...fade(0.3)} className="grid-12 label gap-y-2 border-t border-line pt-3 text-mute">
-        <span className="col-span-6 md:col-span-3">(Portfolio © {new Date().getFullYear()})</span>
+        <span className="col-span-4 md:col-span-3">(Portfolio © {new Date().getFullYear()})</span>
         {site.availability && (
-          <span className="col-span-6 flex items-center gap-2 text-paper md:col-span-5">
+          <span className="col-span-8 flex items-center justify-end gap-2 text-paper md:col-span-5 md:justify-start">
             <span className="relative flex size-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal opacity-60" />
               <span className="relative inline-flex size-2 rounded-full bg-signal" />
@@ -44,7 +44,7 @@ export function Hero({ projectCount }: { projectCount: number }) {
             {site.availability}
           </span>
         )}
-        <span className="col-span-12 md:col-span-4 md:text-right">{projectCount} projets — {site.city}, France</span>
+        <span className="col-span-4 hidden md:block md:text-right">{projectCount} projets — {site.city}, France</span>
       </motion.div>
 
       <h1 id="hero-title" className="sr-only">

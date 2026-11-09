@@ -6,6 +6,7 @@ import { ProjectMedia } from "@/components/ProjectMedia";
 import { categoryList } from "@/components/ProjectMeta";
 import { LineReveal, Reveal } from "@/components/Reveal";
 import { pad } from "@/lib/text";
+import { StepText } from "@/components/StepText";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -37,7 +38,7 @@ const steps = [
 const galleryPlace: Record<NonNullable<Media["layout"]>, string> = {
   full: "col-span-12",
   wide: "col-span-12 md:col-start-2 md:col-span-10",
-  half: "col-span-12 md:col-span-6",
+  half: "col-span-6",
   offset: "col-span-12 md:col-start-5 md:col-span-8",
 };
 
@@ -46,8 +47,10 @@ function Figure({ project, media, priority }: { project: Project; media: Media; 
   return (
     <Reveal className={place}>
       <figure>
-        <ProjectMedia project={project} media={media} priority={priority} sizes={media.layout === "half" ? "(min-width:768px) 50vw, 100vw" : "100vw"} />
-        {media.caption && <figcaption className="label mt-3 text-mute">{media.caption}</figcaption>}
+        <ProjectMedia project={project} media={media} priority={priority} sizes={media.layout === "half" ? "50vw" : "100vw"} />
+        {media.caption && (
+          <figcaption className={`label mt-3 text-mute ${media.layout === "half" ? "hidden md:block" : ""}`}>{media.caption}</figcaption>
+        )}
       </figure>
     </Reveal>
   );
@@ -82,9 +85,9 @@ export default async function ProjectPage({ params }: Params) {
           </span>
         </div>
         <LineReveal className="display text-[19vw] md:text-[12.5vw]" lines={[project.title]} />
-        <div className="grid-12 mt-8 gap-y-8 border-t border-line pt-5 md:mt-12">
-          <p className="serif-i col-span-12 text-[clamp(24px,2.6vw,40px)] leading-[1.1] md:col-span-6">{project.tagline}</p>
-          <dl className="col-span-12 grid grid-cols-2 gap-x-6 gap-y-4 md:col-span-5 md:col-start-8">
+        <div className="grid-12 mt-6 gap-y-6 border-t border-line pt-5 md:mt-12 md:gap-y-8">
+          <p className="serif-i col-span-12 text-[22px] leading-[1.15] md:col-span-6 md:text-[clamp(24px,2.6vw,40px)] md:leading-[1.1]">{project.tagline}</p>
+          <dl className="col-span-12 grid grid-cols-2 gap-x-6 gap-y-3 text-[14px] md:col-span-5 md:col-start-8 md:gap-y-4 md:text-[15px]">
             {meta.map(([k, v]) => (
               <div key={k}>
                 <dt className="label text-mute">{k}</dt>
@@ -112,7 +115,7 @@ export default async function ProjectPage({ params }: Params) {
       </div>
 
       {/* ─── Étude de cas ─── */}
-      <div className="px-site mt-24 space-y-24 md:mt-36 md:space-y-36">
+      <div className="px-site mt-16 space-y-16 md:mt-36 md:space-y-36">
         {steps.map((step) => {
           const text = project[step.key];
           const media = project.inline?.[step.key];
@@ -120,20 +123,16 @@ export default async function ProjectPage({ params }: Params) {
           stepNumber += 1;
           return (
             <section key={step.key} aria-labelledby={`etape-${step.key}`}>
-              <Reveal className="grid-12 gap-y-6 border-t border-line pt-5">
+              <Reveal className="grid-12 gap-y-4 border-t border-line pt-5 md:gap-y-6">
                 <div className="col-span-12 md:col-span-4">
                   <p className="label text-signal">{pad(stepNumber)}</p>
-                  <h2 id={`etape-${step.key}`} className="display mt-2 text-[clamp(36px,3.6vw,60px)]">
+                  <h2 id={`etape-${step.key}`} className="display mt-2 text-[32px] md:text-[clamp(36px,3.6vw,60px)]">
                     {step.title}
                   </h2>
                 </div>
-                <div className="col-span-12 space-y-5 text-[clamp(18px,1.45vw,22px)] leading-[1.45] md:col-span-7 md:col-start-6">
+                <div className="col-span-12 md:col-span-7 md:col-start-6">
                   {text ? (
-                    text.map((para, i) => (
-                      <p key={i} className={i === 0 ? "text-paper" : "text-paper/75"}>
-                        {para}
-                      </p>
-                    ))
+                    <StepText paragraphs={text} />
                   ) : (
                     <p className="label border border-dashed border-line p-5 normal-case tracking-normal text-mute">
                       [À compléter] {step.hint}
@@ -142,7 +141,7 @@ export default async function ProjectPage({ params }: Params) {
                 </div>
               </Reveal>
               {media && (
-                <div className="grid-12 mt-12 gap-y-6 md:mt-20">
+                <div className="grid-12 mt-8 gap-y-3 md:mt-20 md:gap-y-6">
                   {media.map((m) => (
                     <Figure key={m.src} project={project} media={m} />
                   ))}
@@ -191,11 +190,11 @@ export default async function ProjectPage({ params }: Params) {
       </div>
 
       {/* ─── Projet suivant ─── */}
-      <nav aria-label="Projet suivant" className="px-site mt-32 md:mt-48">
+      <nav aria-label="Projet suivant" className="px-site mt-24 md:mt-48">
         <Link href={`/projets/${next.slug}`} className="group grid-12 items-end gap-y-6 border-t border-line pt-5">
           <div className="col-span-12 md:col-span-8">
             <p className="label text-mute">(Projet suivant)</p>
-            <p className="display mt-3 text-[18vw] transition-colors duration-500 group-hover:text-signal md:text-[11vw]">
+            <p className="display mt-3 text-[13vw] transition-colors duration-500 group-hover:text-signal md:text-[11vw]">
               {next.title} <span className="inline-block transition-transform duration-500 group-hover:translate-x-4">→</span>
             </p>
           </div>

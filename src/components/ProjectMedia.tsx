@@ -11,13 +11,15 @@ type Props = {
   className?: string;
   /** Effet de zoom léger au survol du parent `.group`. */
   hoverZoom?: boolean;
+  /** Petite vignette (téléphone) : texte de l'emplacement réduit. */
+  compact?: boolean;
 };
 
 /**
  * Affiche le visuel d'un projet, ou — tant qu'il n'existe pas — un aplat
  * à la couleur du projet, clairement identifié comme emplacement à remplacer.
  */
-export function ProjectMedia({ project, media, sizes, ratio, priority, className = "", hoverZoom }: Props) {
+export function ProjectMedia({ project, media, sizes, ratio, priority, className = "", hoverZoom, compact }: Props) {
   const zoom = hoverZoom ? "transition-transform duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.04]" : "";
 
   if (media) {
@@ -44,8 +46,8 @@ export function ProjectMedia({ project, media, sizes, ratio, priority, className
       aria-label={`Emplacement du visuel « ${project.title} » (à venir)`}
     >
       <span className="label opacity-70">Visuel à venir</span>
-      <span className={`display block text-[clamp(40px,7vw,120px)] ${zoom}`}>{project.title}</span>
-      <span className="label opacity-60">/images/projets/{project.slug}/</span>
+      <span className={`display block ${compact ? "text-[clamp(24px,7vw,120px)]" : "text-[clamp(40px,7vw,120px)]"} ${zoom}`}>{project.title}</span>
+      <span className="label hidden opacity-60 md:block">/images/projets/{project.slug}/</span>
     </div>
   );
 }
