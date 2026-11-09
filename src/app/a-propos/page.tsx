@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/content/site";
 import { LineReveal, Reveal } from "@/components/Reveal";
-import { Rich, pad } from "@/lib/text";
+import { Rich } from "@/lib/text";
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -60,6 +60,11 @@ export default function AboutPage() {
               </p>
             ))}
           </Reveal>
+          <Reveal delay={0.15}>
+            <blockquote className="serif-i mt-8 border-l border-signal pl-5 text-[clamp(18px,1.5vw,22px)] leading-snug text-paper/85">
+              « {site.quote} »
+            </blockquote>
+          </Reveal>
           <Reveal delay={0.2} className="mt-10 flex flex-wrap gap-3">
             <Link href="/contact" className="pill">
               Me contacter
@@ -72,20 +77,34 @@ export default function AboutPage() {
       </div>
 
       <div className="mt-20 space-y-16 md:mt-32 md:space-y-24">
-        <Block label="Parcours">
+        <Block label="Expériences">
           <ul>
-            {[...site.education.map((e) => ({ a: e.school, b: e.title, c: e.period })), ...site.experiences.map((e) => ({ a: e.name, b: e.role, c: "" }))].map(
-              (row, i) => (
-                <li key={i} className="grid grid-cols-12 items-baseline gap-x-4 border-b border-line py-5">
-                  <span className="label col-span-2 text-signal">{pad(i + 1)}</span>
-                  <span className="display col-span-10 text-[clamp(30px,3.6vw,56px)] md:col-span-5">{row.a}</span>
-                  <span className="col-span-10 col-start-3 text-paper/70 md:col-span-5">
-                    {!row.b.startsWith("⚠︎") && row.b}
-                    {row.c && !row.c.startsWith("⚠︎") && <span className="label block text-mute">{row.c}</span>}
+            {site.experiences.map((e) => (
+              <li key={e.name} className="grid grid-cols-12 items-baseline gap-x-4 gap-y-1 border-b border-line py-5">
+                <span className="display col-span-12 text-[clamp(30px,3vw,48px)] md:col-span-4">{e.name}</span>
+                <span className="col-span-12 md:col-span-8">
+                  <span className="flex flex-wrap items-baseline justify-between gap-x-4">
+                    <span className="text-paper">{e.role}</span>
+                    <span className="label text-mute">{e.period}</span>
                   </span>
-                </li>
-              ),
-            )}
+                  <span className="mt-1 block text-[15px] text-paper/65">{e.detail}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Block>
+
+        <Block label="Formation">
+          <ul>
+            {site.education.map((e) => (
+              <li key={e.school} className="grid grid-cols-12 items-baseline gap-x-4 gap-y-1 border-b border-line py-5">
+                <span className="display col-span-12 text-[clamp(30px,3vw,48px)] md:col-span-4">{e.school}</span>
+                <span className="col-span-12 flex flex-wrap items-baseline justify-between gap-x-4 md:col-span-8">
+                  <span className="text-paper">{e.title}</span>
+                  <span className="label text-mute">{e.period}</span>
+                </span>
+              </li>
+            ))}
           </ul>
         </Block>
 
@@ -114,8 +133,8 @@ export default function AboutPage() {
           </div>
         </Block>
 
-        <Block label="Inspirations">
-          {about.inspirations.length ? (
+        {about.inspirations.length > 0 && (
+          <Block label="Inspirations">
             <ul className="flex flex-wrap gap-x-3 gap-y-1 text-[clamp(26px,3vw,46px)] leading-tight">
               {about.inspirations.map((it, i) => (
                 <li key={it} className={i % 2 ? "serif-i" : "display"}>
@@ -124,12 +143,8 @@ export default function AboutPage() {
                 </li>
               ))}
             </ul>
-          ) : (
-            <p className="border border-dashed border-line p-5 text-mute">
-              [À compléter dans <code>src/content/site.ts</code> → <code>about.inspirations</code>] Studios, designers, magazines, artistes, films… ce qui nourrit ton regard.
-            </p>
-          )}
-        </Block>
+          </Block>
+        )}
 
         {about.personality && (
           <Block label="En dehors du studio">

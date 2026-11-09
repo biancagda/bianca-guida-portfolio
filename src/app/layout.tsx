@@ -34,7 +34,7 @@ const personLd = {
   address: { "@type": "PostalAddress", addressLocality: site.city, addressCountry: "FR" },
   alumniOf: site.education.map((e) => ({ "@type": "EducationalOrganization", name: e.school })),
   url: site.url,
-  sameAs: [site.contact.linkedin.url, site.contact.instagram.url],
+  sameAs: [site.contact.linkedin.url, ...(site.contact.instagram ? [site.contact.instagram.url] : [])],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

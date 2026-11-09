@@ -109,7 +109,7 @@ export const projects: Project[] = [
     slug: "flying-blue-lime",
     title: "Flying Blue × Lime",
     client: "Flying Blue — Air France KLM",
-    // year: "2025",  ⚠︎ ajoute l'année
+    year: "2025",
     role: "Direction artistique & conception",
     frame: "Projet d'école — Sup de Pub Paris",
     categories: ["campagne", "da", "digital"],
@@ -220,6 +220,7 @@ export const projects: Project[] = [
     slug: "macareoni",
     title: "Ma'care'oni",
     client: "Kraft — Mac & Cheese",
+    year: "2025",
     frame: "Participation D&AD Awards",
     categories: ["campagne", "packaging", "digital"],
     tagline: "Une saveur pour chaque humeur, et des inconnus qui partagent le même plat.",
@@ -271,7 +272,7 @@ export const projects: Project[] = [
   {
     slug: "torta-di-spaghetti",
     title: "Torta",
-    // year: "2025",  ⚠︎ ajoute l'année
+    year: "2026",
     categories: ["branding", "packaging", "image"],
     tagline: "Torta di Spaghetti — la pizza a trouvé sa cousine. L'identité d'une street food napolitaine.",
     color: "#1f5fd6",

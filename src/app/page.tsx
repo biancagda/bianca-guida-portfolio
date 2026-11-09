@@ -83,10 +83,10 @@ export default function Home() {
           <Reveal className="col-span-12 md:col-span-4 md:col-start-9" delay={0.1}>
             <p className="label border-t border-line pt-4 text-mute">Passée par</p>
             <ul className="mt-2">
-              {[...site.experiences.map((e) => ({ a: e.name, b: e.role })), ...site.education.map((e) => ({ a: e.school, b: e.title }))].map((row) => (
+              {[...site.experiences.filter((e) => e.name !== "Freelance").map((e) => ({ a: e.name, b: `${e.role} · ${e.period}` })), { a: site.education[0].school, b: `${site.education[0].title} · ${site.education[0].period}` }].map((row) => (
                 <li key={row.a} className="border-b border-line py-4">
                   <span className="display block text-[clamp(32px,3vw,48px)]">{row.a}</span>
-                  {!row.b.startsWith("⚠︎") && <span className="label mt-1 block text-mute">{row.b}</span>}
+                  <span className="label mt-1 block text-mute">{row.b}</span>
                 </li>
               ))}
             </ul>

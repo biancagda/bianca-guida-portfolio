@@ -13,6 +13,10 @@ export const site = {
   /** ⚠︎ À COMPLÉTER — l'URL finale du site (sert au référencement). */
   url: "https://biancaguida.fr",
 
+  /** Citation de ton CV, utilisée sur la page À propos. */
+  quote:
+    "Du concept à la réalisation finale, j'explore la création sous toutes ses formes : direction artistique, graphisme, activation pub… Mon objectif est de mêler concept, esthétique et efficacité, pour façonner des univers uniques et percutants.",
+
   /** Phrase d'accroche de la page d'accueil. Le texte entre *étoiles* passe en italique serif. */
   headline: "Je fabrique des idées qui *se voient* — campagnes, identités et images pour des marques qui veulent être regardées.",
 
@@ -32,24 +36,24 @@ export const site = {
     statement: "Une idée forte, *une image juste*.",
     paragraphs: [
       "Passionnée depuis toujours par l'image, la création visuelle et la publicité, j'explore la direction artistique à travers des projets mêlant concept, esthétique et efficacité, pour façonner des univers uniques et percutants.",
-      "Diplômée du master Design graphique & Direction artistique de Sup de Pub Paris, j'ai appris à défendre une idée autant qu'à lui donner forme : campagnes 360, identités de marque, packaging, édition.",
+      "Diplômée du master Direction artistique & Design graphique de Sup de Pub Paris, je me suis formée en agence — TBWA\\Paris, Publicis Conseil — et deux ans en alternance chez Deepki, entre design graphique et UX. J'ai appris à défendre une idée autant qu'à lui donner forme : campagnes 360, identités de marque, packaging, édition, interfaces.",
     ],
     vision: [
       "Je crois qu'un bon visuel commence par une bonne question. Avant de choisir une typographie ou une couleur, je cherche ce que la marque a à dire, et à qui.",
       "Vient ensuite la forme, que je veux simple, directe et un peu inattendue : assez claire pour être comprise en une seconde, assez singulière pour qu'on s'en souvienne.",
     ],
-    /** ⚠︎ À COMPLÉTER — tes inspirations (studios, designers, magazines, artistes, films…). Liste vide = encadré « à compléter ». */
+    /** Tes inspirations (studios, designers, magazines, artistes, films…). Liste vide = section masquée. */
     inspirations: [] as string[],
-    /** ⚠︎ À COMPLÉTER — quelques mots sur toi en dehors du travail. Laisse vide pour masquer. */
-    personality: "",
+    /** Quelques mots sur toi en dehors du travail (d'après ton CV). Laisse vide pour masquer. */
+    personality: "Voyages, mode, photographie, décoration, art contemporain et visites d'expositions : ce qui nourrit mon regard en dehors du studio.",
   },
 
   contact: {
-    /** ⚠︎ À COMPLÉTER — ton adresse e-mail professionnelle. */
-    email: "Biancaguida3@gmail.com",
-    /** ⚠︎ À COMPLÉTER — liens vers tes profils. */
-    instagram: { handle: "@a.completer", url: "https://www.instagram.com/" },
-    linkedin: { handle: "Bianca Guida", url: "https://www.linkedin.com/" },
+    email: "biancaguida3@gmail.com",
+    phone: "06 27 27 52 71",
+    /** Mets `null` pour masquer Instagram. Exemple : { handle: "@moncompte", url: "https://www.instagram.com/moncompte/" } */
+    instagram: null as { handle: string; url: string } | null,
+    linkedin: { handle: "Bianca Guida", url: "https://www.linkedin.com/in/bianca-guida-8809a0269" },
     /**
      * Formulaire de contact : crée un formulaire gratuit sur https://formspree.io,
      * puis colle l'URL fournie (ex. https://formspree.io/f/abcdwxyz) dans la
@@ -58,38 +62,63 @@ export const site = {
      */
   },
 
-  /** Agences et structures (repris de ton ancien site). Précise le rôle si tu veux. */
+  /** Expériences professionnelles (d'après ton CV), de la plus récente à la plus ancienne. */
   experiences: [
-    { name: "TBWA\\Paris", role: "⚠︎ À compléter — poste & dates" },
-    { name: "Publicis Conseil", role: "⚠︎ À compléter — poste & dates" },
+    {
+      name: "Deepki",
+      role: "Alternance — Designer graphique & UX",
+      period: "2024 – 2026",
+      detail: "Design UX/UI de la plateforme SaaS, recherche & wireframing, graphisme, exécution et production print.",
+    },
+    {
+      name: "TBWA\\Paris",
+      role: "Stage — Assistante direction artistique",
+      period: "Avr. – juill. 2024",
+      detail: "Conception créative & production visuelle pour Krys, la Fondation Ronald McDonald, McDonald's et Aldi.",
+    },
+    {
+      name: "Publicis Conseil",
+      role: "Stage — Assistante direction artistique",
+      period: "Oct. 2022 – janv. 2023",
+      detail: "Création publicitaire pour Garnier (Groupe L'Oréal).",
+    },
+    {
+      name: "Satellite",
+      role: "Stage — Assistante direction artistique & photo",
+      period: "Avril 2019",
+      detail: "Direction artistique et production visuelle : organisation et stylisme de shootings photo pour la marque de bijoux.",
+    },
+    {
+      name: "Freelance",
+      role: "Graphisme pour la restauration",
+      period: "2020 – 2026",
+      detail: "Gemma Cucina, Gemma, La Madonnina. Création d'une supérette solidaire au sein de Sup de Pub.",
+    },
   ],
 
   education: [
-    {
-      title: "Master Design graphique & Direction artistique",
-      school: "Sup de Pub Paris",
-      period: "⚠︎ années à compléter",
-    },
+    { title: "Master Direction artistique & Design graphique", school: "Sup de Pub Paris", period: "2021 – 2026" },
+    { title: "DNMADE Design d'objet", school: "Institut Sainte-Geneviève", period: "2020 – 2021" },
+    { title: "Baccalauréat L — option & spécialité Arts", school: "Lycée Charles Péguy", period: "2020" },
   ],
 
-  /** Domaines de compétences — affichés sur l'accueil et la page À propos. */
+  /** Domaines de compétences (d'après ton CV) — affichés sur l'accueil et la page À propos. */
   skills: [
     {
       title: "Direction artistique",
-      items: ["Concept & territoire de marque", "Campagnes 360", "Direction photo", "Activation & événementiel"],
+      items: ["Création de concepts", "Identités de marque", "Campagnes 360", "Activation publicitaire"],
     },
     {
       title: "Graphisme",
-      items: ["Identité visuelle", "Packaging", "Édition & print", "Typographie"],
+      items: ["Illustration & dessin", "Photographie", "Édition", "Packaging"],
     },
     {
-      title: "Digital",
-      items: ["Social media", "Contenus vidéo", "UI & maquettes web"],
+      title: "UX/UI & social",
+      items: ["Wireframing", "Parcours utilisateur", "Design d'interfaces", "Stratégie & contenus social media"],
     },
     {
-      /** ⚠︎ À VÉRIFIER — adapte la liste à tes vrais outils. */
       title: "Outils",
-      items: ["Photoshop", "Illustrator", "InDesign", "After Effects", "Figma"],
+      items: ["Photoshop, Illustrator, InDesign", "Premiere Pro", "Figma", "Adobe Firefly, Midjourney"],
     },
   ],
 };

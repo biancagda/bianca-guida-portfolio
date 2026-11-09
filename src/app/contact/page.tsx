@@ -12,8 +12,9 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const links = [
     { label: "E-mail", value: site.contact.email, href: `mailto:${site.contact.email}` },
-    { label: "Instagram", value: site.contact.instagram.handle, href: site.contact.instagram.url },
+    ...(site.contact.instagram ? [{ label: "Instagram", value: site.contact.instagram.handle, href: site.contact.instagram.url }] : []),
     { label: "LinkedIn", value: site.contact.linkedin.handle, href: site.contact.linkedin.url },
+    { label: "Téléphone", value: site.contact.phone, href: `tel:${site.contact.phone.replace(/\s/g, "")}` },
   ];
   return (
     <div className="px-site pt-28 md:pt-36">

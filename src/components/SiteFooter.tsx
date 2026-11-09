@@ -40,11 +40,13 @@ export function SiteFooter() {
               LinkedIn ↗
             </a>
           </li>
-          <li>
-            <a className="u-link" href={site.contact.instagram.url} target="_blank" rel="noreferrer">
-              Instagram ↗
-            </a>
-          </li>
+          {site.contact.instagram && (
+            <li>
+              <a className="u-link" href={site.contact.instagram.url} target="_blank" rel="noreferrer">
+                Instagram ↗
+              </a>
+            </li>
+          )}
           <li>
             <a className="u-link" href={`mailto:${site.contact.email}`}>
               E-mail ↗
