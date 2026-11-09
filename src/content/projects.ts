@@ -462,7 +462,13 @@ export const projects: Project[] = [
     tagline: "Dérober, chaparder, chiper. Le magazine qui aborde les sujets tabous de manière artistique et positive.",
     color: "#e23b2e",
     ink: "#fff3e0",
-    draft: true,
+    draft: true, // ⚠︎ passe à false quand les autres visuels du magazine sont ajoutés
+    cover: {
+      src: "/images/projets/lov-magazine/couverture-lov.webp",
+      alt: "Double page du magazine LOV : une jeune femme en écharpe tartan dans une épicerie, sac Louis Vuitton à la main, titre LOV en lettres rouges gonflées, banane en gros plan",
+      width: 2000,
+      height: 1123,
+    },
     context: [
       "LOV, le magazine qui aborde des sujets tabous de manière artistique et positive. Dans ce numéro, le phénomène du vol est au cœur de l'ouvrage.",
       "Le vol à l'étalage, bien que souvent perçu comme un crime mineur, peut avoir des conséquences profondes sur la vie des personnes impliquées, allant de sanctions légales à des effets durables sur la confiance et la perception de soi.",
