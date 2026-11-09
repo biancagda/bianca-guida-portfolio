@@ -290,7 +290,11 @@ export const projects: Project[] = [
       "Née dans les cuisines de Nonna, la tarte aux pâtes est un plat du cœur, préparé avec ce qu'on a sous la main. Aujourd'hui, Torta en fait une street food conviviale : des parts généreuses, dorées, prêtes à emporter comme une part de pizza, mais avec le charme de la tradition italienne.",
       "Dans un monde où les menus s'allongent, Torta choisit la simplicité et le goût de l'essentiel. Une nouvelle tendance est née : la pizza a trouvé sa cousine.",
     ],
+    applications: [
+      "Des boîtes triangulaires à emporter, habillées d'un motif de spaghetti en boucles, des stickers, des affiches vintage et une direction photo gourmande sur fond noir.",
+    ],
     identity: [
+      "Une palette aux couleurs de l'Italie — vert, jaune, rouge et bleu — et deux typographies : la Baucher Gothic, condensée et affichiste, et la Dreaming Outloud Script, manuscrite et chaleureuse.",
       "Un logo manuscrit rouge, généreux comme un geste de la main, accompagné d'un emblème rond en nid de spaghetti. Le rouge, le vert et le jaune convoquent l'Italie ; les affiches s'inspirent de l'illustration publicitaire vintage napolitaine : « Il gusto della tradizione. Buona, semplice, italiana. »",
     ],
     slides: [
@@ -298,6 +302,12 @@ export const projects: Project[] = [
       { src: `${tt}/02.webp`, alt: "Affiche vintage « Il gusto della tradizione » avec une part de torta et la baie de Naples, carte verte au logo Torta, texte de présentation", width: 2000, height: 1114 },
       { src: `${tt}/03.webp`, alt: "Texte de concept sur fond rouge : « Née dans les cuisines de Nonna, la tarte aux pâtes est un plat du cœur »", width: 2000, height: 1135 },
       { src: `${tt}/04.webp`, alt: "Déclinaisons du logo en rouge, blanc et noir, et affiche rouge vintage : un personnage allongé sur une part géante de torta, « 6 € da asporto »", width: 2000, height: 1101 },
+      { src: `${tt}/05.webp`, alt: "Charte : palette vert #006837, jaune #f6c104, rouge #e32514, bleu #2b61a3 ; typographies Baucher Gothic URW Extd et Dreaming Outloud Script", width: 2000, height: 1123 },
+      { src: `${tt}/06.webp`, alt: "Packaging : boîtes triangulaires bleues à motif de spaghetti jaunes, sticker rond Torta et torta entière sur planche", width: 2000, height: 1123 },
+      { src: `${tt}/07.webp`, alt: "Déclinaisons de l'emblème Torta en rouge, bleu et vert, et éléments graphiques vintage : nid de spaghetti, « Buona, semplice, italiana », monogramme T", width: 2000, height: 1120 },
+      { src: `${tt}/08.webp`, alt: "Motif de spaghetti jaunes en boucles sur fond rouge avec le logo Torta en blanc", width: 2000, height: 1117 },
+      { src: `${tt}/09.webp`, alt: "Photographie : une jeune femme croque dans une part de torta sur fond noir, logo Torta et emblème jaune", width: 2000, height: 1120 },
+      // ⚠︎ Page de remerciement à ajouter ici (10.webp)
     ],
   },
   {
