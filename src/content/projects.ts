@@ -305,6 +305,7 @@ export const projects: Project[] = [
       "Big idea : « Le soin parfait d'une vie imparfaite. » Une vie dense, sociale, imparfaite, mais tenue par quelques gestes fiables. Un storytelling en trois temps : le quotidien déborde, la peau réagit, Oh My Cream aide à la rééquilibrer.",
     ],
     applications: [
+      "Film de lancement « Un chaos maîtrisé » : un film mixed media qui raconte le quotidien d'une femme citadine, avec un retravail graphique print. Sur Instagram, les visuels de campagne, les collages des actifs et les mises en scène du quotidien parisien installent l'univers.",
       "Event « Bois ta skincare » : en collaboration avec Café Nuances, dans le Marais, une boisson exclusive Oh My Juice formulée à partir d'ingrédients bons pour la peau. À l'achat, une machine à boules délivre des échantillons de la gamme anti-imperfections à retirer en boutique.",
       "Kit RP « Le jeu d'adresse » : une tour en bois gravée Oh My Cream cache le sérum et le soin ciblé. Pour les extraire, il faut retirer des blocs, et la tour s'effondre — mais les deux produits restent intacts : même quand tout s'écroule, la peau reste sous contrôle. Envoyé à des influenceuses parisiennes pour un unboxing ludique.",
     ],
@@ -322,7 +323,11 @@ export const projects: Project[] = [
       { src: `${om}/08.webp`, alt: "« Skincare first » : une pile de journaux froissés ; la direction artistique où l'ordre émerge du chaos, textures de papier et découpes", width: 2000, height: 1125 },
       { src: `${om}/09.webp`, alt: "Nature morte « Métro, boulot, belle peau » : le sérum anti-imperfections en équilibre sur une pile d'objets du quotidien, fond bleu à cercles découpés", width: 2000, height: 1122 },
       { src: `${om}/10.webp`, alt: "Nature morte « Métro, boulot, belle peau » : le soin ciblé anti-imperfections sur une pile d'objets, fond bleu criblé de pastilles découpées", width: 2000, height: 1121 },
-      // ⚠︎ Pages 11 à 15 à ajouter ici (Un chaos maîtrisé, Du digital…, grille Instagram, références Reels, … à l'expérientiel)
+      { src: `${om}/11.webp`, alt: "Moodboard du film de lancement « Un chaos maîtrisé » : un film mixed media sur le quotidien d'une femme citadine, avec un retravail graphique print", width: 2000, height: 1125 },
+      { src: `${om}/12.webp`, alt: "« Du digital… » sur fond bordeaux", width: 2000, height: 1123 },
+      { src: `${om}/13.webp`, alt: "Digital / content creation : grille Instagram Oh My Cream — mises en scène du quotidien, collages des actifs, annonce de l'event Café Nuances", width: 2000, height: 1121 },
+      { src: `${om}/14.webp`, alt: "Références de Reels à forte identité visuelle, entre dualité scientifique et lifestyle aspirationnel", width: 2000, height: 1120 },
+      { src: `${om}/15.webp`, alt: "« … à l'expérientiel. » sur fond bordeaux", width: 2000, height: 1120 },
       { src: `${om}/16.webp`, alt: "Event « Bois ta skincare » chez Café Nuances : boisson Oh My Juice et machine à boules d'échantillons Oh My Cream", width: 2000, height: 1121 },
       { src: `${om}/17.webp`, alt: "Kit RP « Le jeu d'adresse » : tour en bois gravée Oh My Cream avec le sérum caché à l'intérieur", width: 2000, height: 1122 },
       { src: `${om}/18.webp`, alt: "Kit RP « Le jeu d'adresse » : la tour s'effondre, une main tient le sérum anti-imperfections intact", width: 2000, height: 1122 },
