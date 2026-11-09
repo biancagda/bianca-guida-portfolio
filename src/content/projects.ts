@@ -86,6 +86,7 @@ const fb = "/images/projets/flying-blue";
 const op = "/images/projets/opal";
 const pa = "/images/projets/patagonia";
 const cl = "/images/projets/clean-up-day";
+const va = "/images/projets/va-museum";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -333,17 +334,74 @@ export const projects: Project[] = [
   {
     slug: "va-museum",
     title: "V&A Museum",
-    client: "Victoria and Albert Museum",
+    client: "Victoria and Albert Museum — Londres",
     year: "2026",
     categories: ["branding", "edition", "da"],
     tagline: "Moderniser l'image d'une institution sans trahir son histoire.",
     color: "#1f4a33",
     ink: "#e7d9b0",
-    draft: true,
+    draft: true, // ⚠︎ 5 slides à venir (01, 04 à 07) — passe à false une fois ajoutées
+    cover: {
+      src: `${va}/10-mise-en-situation.webp`,
+      alt: "Affiche V&A 26/27 collée sur un mur, un passant flou au premier plan : le monogramme V&A découpe des portraits de Marie-Antoinette, une sculpture et une mannequin",
+      width: 2000,
+      height: 1120,
+    },
+    // Contexte : texte de ton ancien site. ⚠︎ Les textes « recherche », « identité » et
+    // « déclinaisons » ont été rédigés à partir de tes slides : relis-les.
     context: [
       "Refonte complète de l'identité visuelle du V&A, le célèbre musée d'art et de design de Londres.",
       "L'objectif était de moderniser entièrement l'image de marque, tout en respectant l'histoire et le prestige de cette institution.",
     ],
+    research: [
+      "Le Victoria and Albert Museum, fondé en 1852, est un musée d'art situé à South Kensington. Analyse de sa communication actuelle : site web, affiches d'exposition (Cartier, Marie Antoinette Style) et réseaux sociaux.",
+    ],
+    identity: [
+      "Le monogramme V&A, déjà iconique, devient le cœur du système : une fenêtre qui découpe les œuvres des expositions de la saison. Un bandeau de couleur porte les titres et les dates, un pied de page blanc signe chaque affiche.",
+    ],
+    applications: [
+      "Chaque exposition réinvente le monogramme dans sa propre matière : moulures et ruban rose pour Marie Antoinette Style, pâte à modeler pour Inside Aardman, néon pour le David Bowie Centre.",
+    ],
+    inline: {
+      research: [
+        {
+          src: `${va}/02-presentation-musee.webp`,
+          alt: "Slide de présentation : monogramme V&A jaune, « Victoria and Albert Museum, fondé en 1852, musée d'art situé à Londres, South Kensington »",
+          width: 2000,
+          height: 1124,
+          layout: "wide",
+          caption: "Présentation du musée",
+        },
+        {
+          src: `${va}/03-communication-actuelle.webp`,
+          alt: "Slide « communication actuelle » : logo V&A, site web, affiches Cartier et Marie Antoinette Style, compte Instagram",
+          width: 2000,
+          height: 1122,
+          layout: "wide",
+          caption: "Communication actuelle",
+        },
+      ],
+      identity: [
+        {
+          src: `${va}/08-print-generique.webp`,
+          alt: "Affiche générique V&A 26/27 : bandeau rose avec la programmation, monogramme V&A découpant trois œuvres",
+          width: 2000,
+          height: 1122,
+          layout: "wide",
+          caption: "Print générique — saison 26/27",
+        },
+      ],
+      applications: [
+        {
+          src: `${va}/09-declinaisons.webp`,
+          alt: "Trois affiches d'exposition V&A : Marie Antoinette Style (monogramme orné de moulures et d'un ruban), Inside Aardman (monogramme en pâte à modeler avec Wallace et Gromit), David Bowie Centre (monogramme en néon)",
+          width: 2000,
+          height: 1121,
+          layout: "full",
+          caption: "Déclinaisons par exposition",
+        },
+      ],
+    },
   },
   {
     slug: "chez-louis",
