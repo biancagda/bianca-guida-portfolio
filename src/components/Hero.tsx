@@ -16,7 +16,7 @@ function useStartDelay() {
   return delay;
 }
 
-export function Hero({ projectCount }: { projectCount: number }) {
+export function Hero() {
   const d = useStartDelay();
   const reduce = useReducedMotion();
   const { scrollY } = useScroll();
@@ -44,7 +44,7 @@ export function Hero({ projectCount }: { projectCount: number }) {
             {site.availability}
           </span>
         )}
-        <span className="col-span-4 hidden md:block md:text-right">{projectCount} projets — {site.city}, France</span>
+        <span className="col-span-4 hidden md:block md:text-right">{site.city}, France</span>
       </motion.div>
 
       <h1 id="hero-title" className="sr-only">

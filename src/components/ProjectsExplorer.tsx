@@ -28,9 +28,8 @@ export function ProjectsExplorer({ projects }: { projects: Project[] }) {
 
   // Seules les catégories réellement utilisées apparaissent dans les filtres.
   const used = useMemo(() => {
-    const counts = new Map<CategoryKey, number>();
-    projects.forEach((p) => p.categories.forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1)));
-    return (Object.keys(categories) as CategoryKey[]).filter((c) => counts.has(c)).map((c) => ({ key: c, count: counts.get(c)! }));
+    const present = new Set(projects.flatMap((p) => p.categories));
+    return (Object.keys(categories) as CategoryKey[]).filter((c) => present.has(c)).map((c) => ({ key: c }));
   }, [projects]);
 
   const list = filter === "all" ? projects : projects.filter((p) => p.categories.includes(filter));
@@ -44,9 +43,9 @@ export function ProjectsExplorer({ projects }: { projects: Project[] }) {
           role="group"
           aria-label="Filtrer par catégorie"
         >
-          <FilterButton active={filter === "all"} onClick={() => setFilter("all")} label="Tout" count={projects.length} />
+          <FilterButton active={filter === "all"} onClick={() => setFilter("all")} label="Tout" />
           {used.map((c) => (
-            <FilterButton key={c.key} active={filter === c.key} onClick={() => setFilter(c.key)} label={categories[c.key]} count={c.count} />
+            <FilterButton key={c.key} active={filter === c.key} onClick={() => setFilter(c.key)} label={categories[c.key]} />
           ))}
         </div>
         <div className="label flex gap-4 px-[clamp(16px,3vw,40px)] md:px-0" role="group" aria-label="Affichage">
@@ -78,7 +77,7 @@ export function ProjectsExplorer({ projects }: { projects: Project[] }) {
   );
 }
 
-function FilterButton({ active, onClick, label, count }: { active: boolean; onClick: () => void; label: string; count: number }) {
+function FilterButton({ active, onClick, label }: { active: boolean; onClick: () => void; label: string }) {
   return (
     <button
       type="button"
@@ -86,7 +85,7 @@ function FilterButton({ active, onClick, label, count }: { active: boolean; onCl
       aria-pressed={active}
       className="label shrink-0 whitespace-nowrap rounded-full px-3.5 py-2 shadow-[inset_0_0_0_1px_var(--color-line)] transition-colors duration-300 hover:bg-paper hover:text-ink aria-pressed:bg-paper aria-pressed:text-ink"
     >
-      {label} <sup className="text-[9px] opacity-60">{count}</sup>
+      {label}
     </button>
   );
 }

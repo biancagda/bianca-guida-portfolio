@@ -7,12 +7,12 @@ import { Marquee } from "@/components/Marquee";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead } from "@/components/SectionHead";
-import { Rich, pad } from "@/lib/text";
+import { Rich } from "@/lib/text";
 
 export default function Home() {
   return (
     <>
-      <Hero projectCount={projects.length} />
+      <Hero />
 
       <Marquee items={Object.values(categories)} />
 
@@ -24,7 +24,7 @@ export default function Home() {
           title={["Travaux", <span key="c" className="serif-i normal-case">choisis</span>]}
           aside={
             <Link href="/projets" className="label">
-              <span className="u-link">Tous les projets ({pad(projects.length)}) →</span>
+              <span className="u-link">Tous les projets →</span>
             </Link>
           }
         />

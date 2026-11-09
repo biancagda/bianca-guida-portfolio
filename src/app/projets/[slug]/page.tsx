@@ -84,7 +84,7 @@ export default async function ProjectPage({ params }: Params) {
           <dl className="col-span-12 grid grid-cols-2 gap-x-6 gap-y-3 text-[14px] md:col-span-5 md:col-start-8 md:gap-y-4 md:text-[15px]">
             {meta.map(([k, v]) => (
               <div key={k}>
-                <dt className="label text-mute">{k}</dt>
+                <dt className="label text-signal">{k}</dt>
                 <dd className="mt-1">{v}</dd>
               </div>
             ))}
@@ -117,7 +117,7 @@ export default async function ProjectPage({ params }: Params) {
             {fiche.map(({ key, title }) =>
               project[key]?.length ? (
                 <div key={key}>
-                  <dt className="label text-mute">{title}</dt>
+                  <dt className="label text-signal">{title}</dt>
                   <dd className="mt-2 text-[17px] leading-[1.45] md:text-[clamp(17px,1.3vw,20px)]">{project[key]!.join(" ")}</dd>
                 </div>
               ) : null,
@@ -196,7 +196,7 @@ export default async function ProjectPage({ params }: Params) {
       <nav aria-label="Projet suivant" className="px-site mt-20 md:mt-32">
         <Link href={`/projets/${next.slug}`} className="group grid-12 items-end gap-y-6 border-t border-line pt-5">
           <div className="col-span-12 md:col-span-8">
-            <p className="label text-mute">(Projet suivant)</p>
+            <p className="label text-signal">Projet suivant</p>
             <p className="display mt-3 text-[13vw] md:text-[11vw]">
               {next.title} <span className="inline-block transition-transform duration-500 group-hover:translate-x-4">→</span>
             </p>

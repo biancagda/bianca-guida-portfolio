@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { projects } from "@/content/projects";
 import { ProjectsExplorer } from "@/components/ProjectsExplorer";
 import { LineReveal } from "@/components/Reveal";
-import { pad } from "@/lib/text";
 
 export const metadata: Metadata = {
   title: "Projets",
@@ -17,13 +16,14 @@ export default function ProjetsPage() {
         <LineReveal
           className="display col-span-12 text-[24vw] md:col-span-9 md:text-[17vw]"
           lines={[
-            <>
-              Projets<span className="serif-i ml-3 text-[0.3em] normal-case text-signal">({pad(projects.length)})</span>
-            </>,
+            "Projets",
+            <span key="s" className="serif-i block whitespace-nowrap pt-[0.1em] text-[0.36em] normal-case leading-none text-signal">
+              de l&apos;idée à l&apos;image
+            </span>,
           ]}
         />
         <p className="col-span-12 max-w-[34ch] pb-[1.5vw] text-paper/70 md:col-span-3">
-          Campagnes, identités, packaging, édition. Chaque projet est raconté comme une étude de cas : du problème à l&apos;image.
+          Campagnes 360, identités visuelles, direction artistique et édition.
         </p>
       </div>
       <ProjectsExplorer projects={projects} />
