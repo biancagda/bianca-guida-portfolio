@@ -118,6 +118,12 @@ export const projects: Project[] = [
     color: "#1d22c9",
     ink: "#ffffff",
     featured: true,
+    thumbnail: {
+      src: "/images/projets/flying-blue/vignette.jpg",
+      alt: "Jeune femme souriante sur un vélo Lime aux couleurs Flying Blue, « Ride with us. »",
+      width: 1206,
+      height: 670,
+    },
     cover: {
       src: `${fb}/affiche-new-york.webp`,
       alt: "Affiche Flying Blue dans un couloir de métro : une jeune femme à vélo Lime, titre « Cette balade à vélo m'amène jusqu'à New York* »",
@@ -167,6 +173,12 @@ export const projects: Project[] = [
     color: "#2b1660",
     ink: "#e9ddff",
     featured: true,
+    thumbnail: {
+      src: "/images/projets/opal/vignette.jpg",
+      alt: "Logo Opal blanc sur une forme lumineuse aux couleurs irisées, fond noir",
+      width: 1206,
+      height: 674,
+    },
     cover: {
       src: `${op}/affichage-metro.jpg`,
       alt: "Trois affiches Opal dans le métro : « 20 ans, c'est le temps qu'a pris Steve Jobs pour créer l'iPhone », « …J.R.R. Tolkien pour créer Le Seigneur des Anneaux », « …Marie Curie pour gagner 2 prix Nobel »",
@@ -200,6 +212,12 @@ export const projects: Project[] = [
     color: "#1f63e0",
     ink: "#ffd23f",
     featured: true,
+    thumbnail: {
+      src: "/images/projets/macareoni/vignette.jpg",
+      alt: "Logo Ma'care'oni, « care » en jaune fondant, sur fond bleu Kraft",
+      width: 1206,
+      height: 663,
+    },
     cover: {
       src: `${mc}/packagings-moods.jpg`,
       alt: "Trois packs Kraft Mac & Cheese édition Ma'care'oni : Feeling angry? Extra Spicy, Feeling happy? Original Taste, Feeling sad? Extra Cheesy",
@@ -270,10 +288,10 @@ export const projects: Project[] = [
     color: "#3a1420",
     ink: "#efe6dc",
     thumbnail: {
-      src: `${om}/vignette.jpg`,
-      alt: "Profils de plusieurs femmes de générations différentes, alignés, en lumière naturelle",
-      width: 1038,
-      height: 1122,
+      src: "/images/projets/oh-my-cream/vignette.jpg",
+      alt: "Collage Oh My Cream : photo d'une femme qui applique sa crème, tube dessiné, pince et trombone",
+      width: 1206,
+      height: 671,
     },
     context: ["Campagne 360 pour le lancement du duo anti-imperfections Oh My Cream."],
     concept: ["« Le soin parfait d'une vie imparfaite. »"],
@@ -311,10 +329,10 @@ export const projects: Project[] = [
     color: "#2f3a33",
     ink: "#f2efe6",
     thumbnail: {
-      src: `${pa}/affiche-pigeons.jpg`,
-      alt: "Affiche Patagonia : une vieille dame souriante en veste Patagonia, des pigeons sur l'épaule, « Quand on aime, on abandonne pas, on repare ! »",
-      width: 1200,
-      height: 1698,
+      src: "/images/projets/patagonia/vignette.jpg",
+      alt: "Logo Patagonia sur la photo d'un vieil homme en polaire Patagonia, un chat sur les genoux",
+      width: 1206,
+      height: 668,
     },
     cover: {
       src: `${pa}/affichage-trois-affiches.jpg`,
