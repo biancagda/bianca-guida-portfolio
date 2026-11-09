@@ -551,10 +551,9 @@ export const projects: Project[] = [
     title: "Chez Louis",
     year: "2026",
     categories: ["branding", "edition", "da"],
-    tagline: "Le fast-food à la française. Brandbook d'une restauration rapide qui mise sur le savoir-faire.",
+    tagline: "Savourez la ficelle à pleines dents. Le brandbook d'un fast-food à la française.",
     color: "#1c2a6b",
     ink: "#e9d9a6",
-    draft: true, // ⚠︎ suite du brandbook à venir — passe à false quand toutes les pages sont ajoutées
     thumbnail: {
       src: `${cz}/04.webp`,
       alt: "Une femme en trench sur un passage piéton brandit une pancarte « Le fast food à la française c'est Chez Louis ! »",
@@ -597,7 +596,7 @@ export const projects: Project[] = [
       { src: `${cz}/13.webp`, alt: "Sac à baguette bleu marine imprimé de la mascotte Louis, porté dans une rue parisienne", width: 2000, height: 1125 },
       { src: `${cz}/14.webp`, alt: "Porte-gobelets bleu Chez Louis et gobelets jaunes à motif Louis", width: 2000, height: 1125 },
       { src: `${cz}/15.webp`, alt: "Affichage métro : deux ficelles nouées d'une bague Louis, « Vite fait, très bien fait. »", width: 2000, height: 1125 },
-      // ⚠︎ Dernière page (nom de la marque + signature) à ajouter ici : 16.webp
+      { src: `${cz}/16.webp`, alt: "Page de fin : logo Chez Louis et signature « savourez la ficelle à pleines dents » en jaune sur fond bleu", width: 2000, height: 1125 },
     ],
   },
   {
