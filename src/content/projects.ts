@@ -752,7 +752,7 @@ export const projects: Project[] = [
   },
   {
     slug: "la-chambre-de-roomy",
-    title: "La Chambre de Roomy",
+    title: "La Chambre noire de Roomy",
     year: "2024",
     role: "Écriture, illustration & mise en page",
     categories: ["edition", "image"],
