@@ -307,7 +307,7 @@ export const projects: Project[] = [
       { src: `${tt}/07.webp`, alt: "Déclinaisons de l'emblème Torta en rouge, bleu et vert, et éléments graphiques vintage : nid de spaghetti, « Buona, semplice, italiana », monogramme T", width: 2000, height: 1120 },
       { src: `${tt}/08.webp`, alt: "Motif de spaghetti jaunes en boucles sur fond rouge avec le logo Torta en blanc", width: 2000, height: 1117 },
       { src: `${tt}/09.webp`, alt: "Photographie : une jeune femme croque dans une part de torta sur fond noir, logo Torta et emblème jaune", width: 2000, height: 1120 },
-      // ⚠︎ Page de remerciement à ajouter ici (10.webp)
+      { src: `${tt}/10.webp`, alt: "Page de fin : « Grazie mille ! » et logo Torta en blanc sur fond bleu, motif de spaghetti jaunes", width: 2000, height: 1107 },
     ],
   },
   {
