@@ -79,6 +79,12 @@ export type Project = {
   /** Visuels insérés après une étape précise de l'étude de cas. */
   inline?: Partial<Record<"context" | "problem" | "concept" | "research" | "identity" | "applications", Media[]>>;
   gallery?: Media[];
+  /**
+   * Présentation complète, page par page (ex. les slides d'une campagne 360).
+   * Affichées en pleine largeur, dans l'ordre, avec un compteur « 01 / 12 ».
+   * Nomme tes fichiers 01.webp, 02.webp… pour garder l'ordre.
+   */
+  slides?: Media[];
   credits?: string;
 };
 
@@ -90,6 +96,7 @@ const va = "/images/projets/va-museum";
 const ro = "/images/projets/la-chambre-de-roomy";
 const mp = "/images/projets/mairie-de-paris";
 const lb = "/images/projets/loreal-brandstorm";
+const om = "/images/projets/oh-my-cream";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -273,15 +280,42 @@ export const projects: Project[] = [
   {
     slug: "oh-my-cream",
     title: "Oh My Cream",
-    client: "Oh My Cream Skincare",
+    client: "Oh My Cream! Skincare",
+    role: "Projet d'équipe — avec Cybil Ajacques, Loup Arbel, Mila Capron, Olivia Cheno et Georges Gautier",
+    frame: "Campagne 360 — Sup de Pub Paris",
     categories: ["campagne", "da", "digital"],
     tagline: "Le soin parfait d'une vie imparfaite.",
     color: "#3a1420",
     ink: "#efe6dc",
-    draft: true,
+    draft: true, // ⚠︎ suite des slides à venir — passe à false quand la présentation est complète
+    thumbnail: {
+      src: `${om}/vignette.jpg`,
+      alt: "Profils de plusieurs femmes de générations différentes, alignés, en lumière naturelle",
+      width: 1038,
+      height: 1122,
+    },
+    cover: {
+      src: `${om}/02.webp`,
+      alt: "Slide « Soyons honnêtes » : une jeune femme lace ses bottes au milieu d'une chambre en désordre",
+      width: 2000,
+      height: 1125,
+    },
     context: [
       "Proposition de campagne de communication 360° conçue pour la marque de cosmétique Oh My Cream.",
       "L'objectif de cette stratégie globale est d'accompagner et de promouvoir avec impact le lancement de leur nouveau « combo anti-imperfections » sur l'ensemble des canaux de diffusion.",
+    ],
+    problem: [
+      "Soyons honnêtes : la vraie vie est loin du cliché « clean girl » des réseaux sociaux. Des vies intenses, souvent chaotiques — et une peau qui en est le miroir.",
+    ],
+    concept: [
+      "Devenir un repère : dans ce rythme effréné, la skincare devient une pause essentielle, un moment pour se recentrer. Oh My Cream accompagne chaque femme avec douceur et réassurance.",
+    ],
+    slides: [
+      { src: `${om}/01.webp`, alt: "Slide de titre : OH MY CREAM ! skincare — Campagne 360, Sup de Pub Paris", width: 2000, height: 1125 },
+      { src: `${om}/02.webp`, alt: "Insight « Soyons honnêtes » : la vraie vie est loin du cliché clean girl ; une beauté minimaliste, efficace et naturelle", width: 2000, height: 1125 },
+      { src: `${om}/03.webp`, alt: "« Des vies intenses, souvent chaotiques. » sur un fond d'objets du quotidien en vrac", width: 2000, height: 1122 },
+      { src: `${om}/04.webp`, alt: "Problème : « Vie mouvementée → peau déséquilibrée. La sensibilité cutanée est souvent le miroir des intensités d'une vie de femme. »", width: 2000, height: 1124 },
+      { src: `${om}/05.webp`, alt: "Solution « Devenir un repère » : profils de femmes de générations différentes ; la skincare comme pause essentielle", width: 2000, height: 1122 },
     ],
   },
   {

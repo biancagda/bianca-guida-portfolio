@@ -168,8 +168,32 @@ export default async function ProjectPage({ params }: Params) {
           </section>
         )}
 
+        {/* Présentation page par page */}
+        {project.slides?.length ? (
+          <section aria-label="La présentation">
+            <p className="label mb-6 flex justify-between border-t border-line pt-5 text-mute md:mb-10">
+              <span>(La présentation)</span>
+              <span>{pad(project.slides.length)} pages</span>
+            </p>
+            <ol className="space-y-3 md:space-y-6">
+              {project.slides.map((m, i) => (
+                <li key={m.src}>
+                  <Reveal>
+                    <figure>
+                      <ProjectMedia project={project} media={m} sizes="100vw" />
+                      <figcaption className="label mt-2 text-mute">
+                        {pad(i + 1)} / {pad(project.slides!.length)}
+                      </figcaption>
+                    </figure>
+                  </Reveal>
+                </li>
+              ))}
+            </ol>
+          </section>
+        ) : null}
+
         {/* Galerie — masquée si le projet est complet et n'a pas d'images supplémentaires */}
-        {(project.gallery?.length || project.draft) && (
+        {(project.gallery?.length || (project.draft && !project.slides?.length)) && (
         <section aria-label="Galerie">
           <p className="label mb-8 border-t border-line pt-5 text-mute">(Galerie)</p>
           <div className="grid-12 gap-y-6 md:gap-y-10">
