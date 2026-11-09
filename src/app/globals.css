@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+/* ─── Système graphique ───────────────────────────────────────
+   Noir profond + papier chaud, un seul accent (vermillon) utilisé
+   avec parcimonie. Trois voix typographiques :
+   — Bebas Neue  : la voix « affiche » héritée de l'ancien site
+   — Instrument Serif italique : la voix éditoriale, l'aparté
+   — Inter Tight : la voix courante, lisible
+   ─────────────────────────────────────────────────────────── */
+
+@theme {
+  --color-ink: #0e0e0d;
+  --color-ink-2: #171716;
+  --color-paper: #ece7de;
+  --color-mute: #8b867d;
+  --color-line: rgb(236 231 222 / 0.14);
+  --color-signal: #ff4a1c;
+
+  --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
+  --font-serif: var(--font-instrument), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+  html {
+    background: var(--color-ink);
+    color: var(--color-paper);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.55;
+    overflow-x: clip;
+  }
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-ink);
+  }
+  :focus-visible {
+    outline: 1px solid var(--color-signal);
+    outline-offset: 4px;
+  }
+  img {
+    user-select: none;
+  }
+}
+
+@layer components {
+  /* Grille éditoriale 12 colonnes, gouttière unique pour tout le site */
+  .grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: clamp(12px, 1.6vw, 24px);
+  }
+  .px-site {
+    padding-inline: clamp(16px, 3vw, 40px);
+  }
+
+  /* Petites capitales d'étiquetage */
+  .label {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  .display {
+    font-family: var(--font-display);
+    line-height: 0.86;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+  }
+
+  .serif-i {
+    font-family: var(--font-serif);
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: -0.01em;
+  }
+
+  /* Lien souligné qui se trace au survol */
+  .u-link {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s var(--ease-out-expo);
+  }
+  .u-link:hover,
+  .u-link:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Bouton pilule — repris de l'ancien site, modernisé */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    border-radius: 999px;
+    padding: 0.85em 1.6em 0.7em;
+    font-family: var(--font-display);
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    transition:
+      background-color 0.4s var(--ease-out-expo),
+      color 0.4s var(--ease-out-expo);
+  }
+  .pill:hover {
+    background: var(--color-signal);
+  }
+  .pill-ghost {
+    background: transparent;
+    color: var(--color-paper);
+    box-shadow: inset 0 0 0 1px var(--color-line);
+  }
+  .pill-ghost:hover,
+  .pill-ghost[aria-pressed="true"] {
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+}
+
+/* Grain photographique très léger : donne de la matière au noir */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
