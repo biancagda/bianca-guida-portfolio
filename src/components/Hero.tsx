@@ -66,11 +66,11 @@ export function Hero() {
         <div className="paper-tex paper-tex-dark relative ml-[6%] h-[clamp(18px,2.4vw,34px)] w-[30%] rounded-t-[10px] bg-[#2f2f2c]" />
 
         {/* Dossier */}
-        <div className="paper-tex paper-tex-dark relative overflow-hidden rounded-[6px] rounded-tl-none bg-[#2a2a27] px-[6%] pb-[9%] pt-[34%] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] md:pt-[9%] md:pb-[7%]">
+        <div className="paper-tex paper-tex-dark relative overflow-hidden rounded-[6px] rounded-tl-none bg-[#2a2a27] px-[6%] pb-[9%] pt-[34%] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] md:pt-[12%] md:pb-[6%]">
           {/* pli du carton */}
           <div className="pointer-events-none absolute inset-x-0 bottom-[7%] h-px bg-paper/10" />
 
-          <div className="relative z-10 text-center md:pr-[17%]">
+          <div className="relative z-10 text-center">
             <p className="serif-i relative z-10 text-[19vw] leading-[0.8] text-signal md:text-[clamp(90px,10vw,170px)]">Creative</p>
             <p className="display -mt-[0.12em] text-[22vw] leading-[0.85] text-paper md:text-[clamp(120px,15.5vw,250px)]">Portfolio</p>
             <p className="label mt-5 text-[11px] tracking-[0.3em] text-ink md:mt-7 md:text-[13px]">
