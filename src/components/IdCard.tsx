@@ -15,14 +15,14 @@ export function IdCard() {
 
   return (
     <div className="relative">
-      <div className="relative overflow-hidden rounded-[14px] border border-paper/15 bg-[#1d1d1b] p-[6%] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] md:p-[5%]">
+      <div className="paper-tex relative overflow-hidden rounded-[14px] bg-[#f3efe6] p-[6%] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] md:p-[5%]">
         <div className="flex gap-[6%]">
           {/* Colonne texte */}
           <div className="min-w-0 flex-1">
-            <p className="display text-[clamp(26px,3vw,46px)] leading-none text-paper">
-              Creative <span className="text-signal">ID</span>
+            <p className="display text-[clamp(26px,3vw,46px)] leading-none text-ink">
+              Creative <span className="bg-signal px-1.5">ID</span>
             </p>
-            <p className="mt-3 font-mono text-[clamp(9px,0.85vw,13px)] uppercase leading-[1.45] tracking-wide text-paper/65">
+            <p className="mt-3 font-mono text-[clamp(9px,0.85vw,13px)] uppercase leading-[1.45] tracking-wide text-ink/70">
               La titulaire de cette carte
               <br />
               est directrice artistique
@@ -33,36 +33,36 @@ export function IdCard() {
             <dl className="mt-[9%] space-y-[6%]">
               {fields.map((f) => (
                 <div key={f.k} className="flex items-baseline gap-2">
-                  <dt className="shrink-0 pb-1 font-mono text-[clamp(9px,0.8vw,12px)] uppercase tracking-wide text-paper/65">{f.k} :</dt>
-                  <dd className="serif-i min-w-0 flex-1 border-b border-paper/30 pb-1 text-[clamp(17px,1.8vw,28px)] leading-[1.05] text-signal">
-                    {f.v}
+                  <dt className="shrink-0 pb-1 font-mono text-[clamp(9px,0.8vw,12px)] uppercase tracking-wide text-ink/70">{f.k} :</dt>
+                  <dd className="serif-i min-w-0 flex-1 border-b border-ink/45 pb-1 text-[clamp(17px,1.8vw,28px)] leading-[1.05] text-ink">
+                    {f.k === "Croit en" ? <span className="highlight">{f.v}</span> : f.v}
                   </dd>
                 </div>
               ))}
             </dl>
 
-            <p className="display mt-[9%] text-[clamp(13px,1vw,16px)] tracking-wide text-paper">ID N° {year}-BG</p>
+            <p className="display mt-[9%] text-[clamp(13px,1vw,16px)] tracking-wide text-ink">ID N° {year}-BG</p>
           </div>
 
           {/* Colonne photo */}
           <div className="w-[38%] shrink-0">
-            <p className="font-mono text-[clamp(9px,0.85vw,13px)] font-bold uppercase tracking-wide text-paper">Valide :</p>
-            <p className="font-mono text-[clamp(9px,0.85vw,13px)] uppercase tracking-wide text-paper/80">
-              {year} – <span className="serif-i normal-case text-[1.5em] text-signal">pour toujours</span>
+            <p className="font-mono text-[clamp(9px,0.85vw,13px)] font-bold uppercase tracking-wide text-ink">Valide :</p>
+            <p className="font-mono text-[clamp(9px,0.85vw,13px)] uppercase tracking-wide text-ink/75">
+              {year} – <span className="serif-i normal-case text-[1.5em] text-ink">pour toujours</span>
             </p>
             <div className="group relative mt-3">
               {/* Coins de photomaton */}
-              <span className="absolute -left-[5%] -top-[4%] h-[10%] w-[12%] border-l-2 border-t-2 border-paper/80" />
-              <span className="absolute -right-[5%] -top-[4%] h-[10%] w-[12%] border-r-2 border-t-2 border-paper/80" />
-              <span className="absolute -bottom-[4%] -left-[5%] h-[10%] w-[12%] border-b-2 border-l-2 border-paper/80" />
-              <span className="absolute -bottom-[4%] -right-[5%] h-[10%] w-[12%] border-b-2 border-r-2 border-paper/80" />
+              <span className="absolute -left-[5%] -top-[4%] h-[10%] w-[12%] border-l-2 border-t-2 border-ink/85" />
+              <span className="absolute -right-[5%] -top-[4%] h-[10%] w-[12%] border-r-2 border-t-2 border-ink/85" />
+              <span className="absolute -bottom-[4%] -left-[5%] h-[10%] w-[12%] border-b-2 border-l-2 border-ink/85" />
+              <span className="absolute -bottom-[4%] -right-[5%] h-[10%] w-[12%] border-b-2 border-r-2 border-ink/85" />
               <div className="relative aspect-[4/5] overflow-hidden border-[3px] border-ink">
                 <Image
                   src="/images/portrait/bianca.jpg"
                   alt={`Portrait de ${site.name}`}
                   fill
                   sizes="(min-width: 768px) 22vw, 40vw"
-                  className="object-cover object-[50%_18%] grayscale contrast-[1.05] transition-[filter] duration-700 group-hover:grayscale-0"
+                  className="object-cover object-[50%_18%] grayscale sepia-[0.15] contrast-[1.08] transition-[filter] duration-700 group-hover:grayscale-0"
                 />
               </div>
             </div>
@@ -74,7 +74,7 @@ export function IdCard() {
       <svg
         viewBox="0 0 200 200"
         aria-hidden
-        className="pointer-events-none absolute -bottom-[10%] right-[2%] w-[30%] -rotate-12 text-signal opacity-90 md:-bottom-[12%] md:right-[-3%] md:w-[26%]"
+        className="pointer-events-none absolute -bottom-[10%] right-[2%] w-[30%] -rotate-12 text-ink opacity-75 mix-blend-multiply md:-bottom-[12%] md:right-[-3%] md:w-[26%]"
       >
         <defs>
           <path id="stamp-circle" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0" />

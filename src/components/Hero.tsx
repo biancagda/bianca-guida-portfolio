@@ -54,8 +54,8 @@ export function Hero() {
         className="relative mx-auto mt-14 w-full max-w-[1180px] md:mt-12"
       >
         {/* Feuille glissée dans le dossier, qui dépasse en haut */}
-        <div className="absolute inset-x-[4%] -top-[4%] h-[30%] -rotate-[0.8deg] rounded-[2px] bg-paper/95 shadow-[0_1px_0_rgba(0,0,0,0.2)]">
-          <div className="h-[38%] w-[62%] bg-[repeating-linear-gradient(0deg,rgba(242,255,100,0.55)_0_1px,transparent_1px_6px),repeating-linear-gradient(90deg,rgba(242,255,100,0.55)_0_1px,transparent_1px_6px)]" />
+        <div className="paper-tex absolute inset-x-[4%] -top-[4%] h-[30%] -rotate-[0.8deg] rounded-[2px] bg-[#f3efe6] shadow-[0_1px_0_rgba(0,0,0,0.2)]">
+          <div className="h-[38%] w-[62%] bg-signal/70 bg-[repeating-linear-gradient(0deg,rgba(14,14,13,0.18)_0_1px,transparent_1px_6px),repeating-linear-gradient(90deg,rgba(14,14,13,0.18)_0_1px,transparent_1px_6px)]" />
           <div className="absolute left-[66%] top-[10%] space-y-1 font-mono text-[clamp(6px,0.7vw,10px)] leading-none text-ink/70">
             <p>DOSSIER — DA / DESIGN GRAPHIQUE</p>
             <p>RÉF. BG-{new Date().getFullYear()}</p>
@@ -63,17 +63,19 @@ export function Hero() {
         </div>
 
         {/* Onglet du dossier */}
-        <div className="relative ml-[6%] h-[clamp(18px,2.4vw,34px)] w-[30%] rounded-t-[10px] border border-b-0 border-paper/12 bg-[#1d1d1b]" />
+        <div className="paper-tex relative ml-[6%] h-[clamp(18px,2.4vw,34px)] w-[30%] rounded-t-[10px] bg-[#e6c993]" />
 
         {/* Dossier */}
-        <div className="relative overflow-hidden rounded-[6px] rounded-tl-none border border-paper/12 bg-[#1d1d1b] px-[6%] pb-[9%] pt-[34%] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] md:pt-[9%] md:pb-[7%]">
+        <div className="paper-tex relative overflow-hidden rounded-[6px] rounded-tl-none bg-[#ecd3a3] px-[6%] pb-[9%] pt-[34%] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] md:pt-[9%] md:pb-[7%]">
           {/* pli du carton */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-[7%] h-px bg-paper/8" />
+          <div className="pointer-events-none absolute inset-x-0 bottom-[7%] h-px bg-ink/15" />
 
           <div className="relative text-center md:pr-[17%]">
-            <p className="serif-i relative z-10 text-[19vw] leading-[0.8] text-signal md:text-[clamp(90px,10vw,170px)]">Creative</p>
-            <p className="display -mt-[0.12em] text-[22vw] leading-[0.85] text-paper md:text-[clamp(120px,15.5vw,250px)]">Portfolio</p>
-            <p className="label mt-5 text-[11px] tracking-[0.3em] text-paper md:mt-7 md:text-[13px]">{site.name}</p>
+            <p className="serif-i relative z-10 text-[19vw] leading-[0.8] text-ink md:text-[clamp(90px,10vw,170px)]">Creative</p>
+            <p className="display -mt-[0.12em] text-[22vw] leading-[0.85] text-ink md:text-[clamp(120px,15.5vw,250px)]">Portfolio</p>
+            <p className="label mt-5 text-[11px] tracking-[0.3em] text-ink md:mt-7 md:text-[13px]">
+              <span className="highlight px-1">{site.name}</span>
+            </p>
           </div>
         </div>
 
@@ -82,7 +84,7 @@ export function Hero() {
           initial={reduce ? false : { opacity: 0, y: -30, rotate: 12 }}
           animate={{ opacity: 1, y: 0, rotate: 5 }}
           transition={{ delay: d + 0.45, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-          className="group absolute -top-[5%] right-[2%] w-[27%] bg-[#f4f1ea] p-[2.2%] pb-[7%] shadow-[0_18px_40px_-12px_rgba(0,0,0,0.8)] md:-top-[8%] md:right-[3%] md:w-[18%] md:p-[1.2%] md:pb-[4%]"
+          className="paper-tex group absolute -top-[5%] right-[2%] w-[27%] bg-[#f4f1ea] p-[2.2%] pb-[7%] shadow-[0_18px_40px_-12px_rgba(0,0,0,0.8)] md:-top-[8%] md:right-[3%] md:w-[18%] md:p-[1.2%] md:pb-[4%]"
         >
           <div className="relative aspect-[4/5] overflow-hidden">
             <Image
@@ -91,7 +93,7 @@ export function Hero() {
               fill
               sizes="(min-width: 768px) 20vw, 30vw"
               priority
-              className="object-cover object-[50%_18%] grayscale transition-[filter] duration-700 group-hover:grayscale-0"
+              className="object-cover object-[50%_18%] contrast-[1.05] grayscale sepia-[0.15] transition-[filter] duration-700 group-hover:grayscale-0 group-hover:sepia-0"
             />
           </div>
           {/* trombone */}
