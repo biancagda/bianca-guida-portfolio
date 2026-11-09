@@ -60,34 +60,42 @@ export const site = {
      */
   },
 
-  /** Expériences professionnelles (d'après ton CV), de la plus récente à la plus ancienne. */
+  /**
+   * Expériences professionnelles (d'après ton CV), de la plus récente à la plus ancienne.
+   * `logo` (facultatif) : PNG détouré sur fond transparent, dans public/images/logos/.
+   */
   experiences: [
     {
       name: "Deepki",
+      logo: { src: "/images/logos/deepki.png", width: 1026, height: 352 },
       role: "Alternance — Designer graphique & UX",
       period: "2024 – 2026",
       detail: "Design UX/UI de la plateforme SaaS, recherche & wireframing, graphisme, exécution et production print.",
     },
     {
       name: "TBWA\\Paris",
+      logo: { src: "/images/logos/tbwa.png", width: 948, height: 242 },
       role: "Stage — Assistante direction artistique",
       period: "Avr. – juill. 2024",
       detail: "Conception créative & production visuelle pour Krys, la Fondation Ronald McDonald, McDonald's et Aldi.",
     },
     {
       name: "Publicis Conseil",
+      logo: { src: "/images/logos/publicis-conseil.png", width: 1122, height: 292 },
       role: "Stage — Assistante direction artistique",
       period: "Oct. 2022 – janv. 2023",
       detail: "Création publicitaire pour Garnier (Groupe L'Oréal).",
     },
     {
       name: "Satellite",
+      logo: { src: "/images/logos/satellite.png", width: 1152, height: 348 },
       role: "Stage — Assistante direction artistique & photo",
       period: "Avril 2019",
       detail: "Direction artistique et production visuelle : organisation et stylisme de shootings photo pour la marque de bijoux.",
     },
     {
       name: "Freelance",
+      logo: undefined as { src: string; width: number; height: number } | undefined,
       role: "Graphisme en restauration",
       period: "2020 – 2026",
       detail: "Gemma Cucina, Gemma, La Madonnina. Création d'une supérette solidaire au sein de Sup de Pub.",

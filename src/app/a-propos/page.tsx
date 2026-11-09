@@ -4,6 +4,7 @@ import Link from "next/link";
 import { site } from "@/content/site";
 import { LineReveal, Reveal } from "@/components/Reveal";
 import { Rich } from "@/lib/text";
+import { BrandLogo } from "@/components/BrandLogo";
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -80,8 +81,10 @@ export default function AboutPage() {
         <Block label="Expériences">
           <ul>
             {site.experiences.map((e) => (
-              <li key={e.name} className="grid grid-cols-12 items-baseline gap-x-4 gap-y-1 border-b border-line py-5">
-                <span className="display col-span-12 text-[clamp(30px,3vw,48px)] md:col-span-4">{e.name}</span>
+              <li key={e.name} className="grid grid-cols-12 items-center gap-x-4 gap-y-2 border-b border-line py-5">
+                <span className="col-span-12 flex min-h-[56px] items-center md:col-span-4">
+                  {e.logo ? <BrandLogo logo={e.logo} name={e.name} /> : <span className="display text-[clamp(30px,3vw,48px)]">{e.name}</span>}
+                </span>
                 <span className="col-span-12 md:col-span-8">
                   <span className="flex flex-wrap items-baseline justify-between gap-x-4">
                     <span className="text-paper">{e.role}</span>

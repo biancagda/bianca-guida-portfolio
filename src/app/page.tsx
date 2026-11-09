@@ -7,6 +7,7 @@ import { ProjectGrid } from "@/components/ProjectGrid";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead } from "@/components/SectionHead";
 import { IdCard } from "@/components/IdCard";
+import { BrandLogo } from "@/components/BrandLogo";
 import { Rich } from "@/lib/text";
 import { Icon } from "@/components/Icon";
 
@@ -74,12 +75,20 @@ export default function Home() {
           <Reveal className="col-span-12 md:col-span-4 md:col-start-9" delay={0.1}>
             <p className="label border-t border-line pt-4 text-mute">Passée par</p>
             <ul className="mt-2">
-              {[...site.experiences.filter((e) => e.name !== "Freelance").map((e) => ({ a: e.name, b: `${e.role} · ${e.period}` })), { a: site.education[0].school, b: `${site.education[0].title} · ${site.education[0].period}` }].map((row) => (
-                <li key={row.a} className="border-b border-line py-4">
-                  <span className="display block text-[clamp(32px,3vw,48px)]">{row.a}</span>
-                  <span className="label mt-1 block text-mute">{row.b}</span>
-                </li>
-              ))}
+              {site.experiences
+                .filter((e) => e.logo)
+                .map((e) => (
+                  <li key={e.name} className="flex min-h-[86px] items-center justify-between gap-6 border-b border-line py-5">
+                    <BrandLogo logo={e.logo!} name={e.name} size="clamp(26px,2.4vw,38px)" />
+                    <span className="label shrink-0 text-right text-mute">{e.period}</span>
+                  </li>
+                ))}
+              <li className="border-b border-line py-4">
+                <span className="display block text-[clamp(32px,3vw,48px)]">{site.education[0].school}</span>
+                <span className="label mt-1 block text-mute">
+                  {site.education[0].title} · {site.education[0].period}
+                </span>
+              </li>
             </ul>
           </Reveal>
         </div>
