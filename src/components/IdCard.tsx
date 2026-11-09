@@ -74,7 +74,7 @@ export function IdCard() {
       <svg
         viewBox="0 0 200 200"
         aria-hidden
-        className="pointer-events-none absolute -bottom-[10%] right-[2%] w-[30%] -rotate-12 text-ink opacity-75 mix-blend-multiply md:-bottom-[12%] md:right-[-3%] md:w-[26%]"
+        className="pointer-events-none absolute -bottom-[10%] right-[2%] w-[30%] -rotate-12 text-signal opacity-95 drop-shadow-[0_1px_1px_rgba(0,0,0,0.35)] md:-bottom-[12%] md:right-[-3%] md:w-[26%]"
       >
         <defs>
           <path id="stamp-circle" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0" />
