@@ -340,7 +340,7 @@ export const projects: Project[] = [
     tagline: "Moderniser l'image d'une institution sans trahir son histoire.",
     color: "#1f4a33",
     ink: "#e7d9b0",
-    draft: true, // ⚠︎ 5 slides à venir (01, 04 à 07) — passe à false une fois ajoutées
+    draft: true, // ⚠︎ dernière slide à venir + textes « problématique » et « concept » — passe à false ensuite
     cover: {
       src: `${va}/10-mise-en-situation.webp`,
       alt: "Affiche V&A 26/27 collée sur un mur, un passant flou au premier plan : le monogramme V&A découpe des portraits de Marie-Antoinette, une sculpture et une mannequin",
@@ -361,6 +361,7 @@ export const projects: Project[] = [
     ],
     applications: [
       "Chaque exposition réinvente le monogramme dans sa propre matière : moulures et ruban rose pour Marie Antoinette Style, pâte à modeler pour Inside Aardman, néon pour le David Bowie Centre.",
+      "Le système se déploie partout : affichage, site web et réseaux sociaux, scénographie de la façade et de la cour du musée, billets d'entrée et brochure de saison.",
     ],
     inline: {
       research: [
@@ -399,6 +400,46 @@ export const projects: Project[] = [
           height: 1121,
           layout: "full",
           caption: "Déclinaisons par exposition",
+        },
+        {
+          src: `${va}/11-mise-en-situation-expositions.webp`,
+          alt: "Les trois affiches d'exposition V&A rétroéclairées dans un couloir sombre",
+          width: 2000,
+          height: 1125,
+          layout: "full",
+          caption: "Mise en situation",
+        },
+        {
+          src: `${va}/12-website-social-media.webp`,
+          alt: "Site web V&A sur un ordinateur portable avec le monogramme Aardman, et deux posts Instagram aux couleurs des expositions",
+          width: 2000,
+          height: 1121,
+          layout: "wide",
+          caption: "Website & social media",
+        },
+        {
+          src: `${va}/13-scenographie.webp`,
+          alt: "Façade du V&A habillée : monogramme Marie-Antoinette entre les arcades, diadème géant sur le toit, Wallace et un escarpin géant dans la cour",
+          width: 2000,
+          height: 1120,
+          layout: "full",
+          caption: "Scénographie",
+        },
+        {
+          src: `${va}/14-tickets.webp`,
+          alt: "Billets d'entrée V&A : Marie Antoinette Style en rose, Inside Aardman en vert et orange",
+          width: 2000,
+          height: 1120,
+          layout: "half",
+          caption: "Tickets",
+        },
+        {
+          src: `${va}/15-brochure.webp`,
+          alt: "Brochure V&A ouverte : pages Marie Antoinette Style et David Bowie, et couverture de saison 26/27",
+          width: 2000,
+          height: 1121,
+          layout: "half",
+          caption: "Brochure",
         },
       ],
     },
