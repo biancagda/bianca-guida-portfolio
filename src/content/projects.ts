@@ -79,6 +79,7 @@ export type Project = {
 const fb = "/images/projets/flying-blue";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
+const vi = "/images/projets/vico";
 
 export const projects: Project[] = [
   {
@@ -280,17 +281,58 @@ export const projects: Project[] = [
   {
     slug: "vico",
     title: "Vico",
-    client: "Vico",
+    client: "Vico — gamme Street Food",
     year: "2025",
     frame: "Compétition Campagne 360 — Sup de Pub",
-    categories: ["campagne", "digital"],
-    tagline: "#Street&Chips — les classiques de la street food s'invitent chez toi.",
+    categories: ["campagne", "da", "digital"],
+    tagline: "#StreetandChips — les classiques de la street food s'invitent chez toi.",
     color: "#c92f8c",
     ink: "#2a0a1d",
-    draft: true,
+    cover: {
+      src: `${vi}/affichage-metro.jpg`,
+      alt: "Trois affiches Vico Street Food dans le métro : « C'est pas la capitale, c'est Bangkok bébé ! », « Tex Mex, Tex Mex Vie », « Sauce Curry, Beau Gosse »",
+      width: 1920,
+      height: 1076,
+    },
+    // Textes repris de ton book et de tes boards (coquilles corrigées).
     context: [
       "Création d'une campagne de notoriété pour travailler l'attractivité et la désirabilité des nouvelles saveurs Vico auprès de la cible 18-24 ans, dans le cadre de notre compétition Campagne 360 de Sup de Pub.",
+      "Dans une époque où les rappeurs sont devenus les icônes incontournables de la jeunesse, les 18-24 ans recherchent constamment de nouvelles expériences. Curieux de découvertes, ils apprécient revisiter les saveurs emblématiques de la street food sous des formats innovants. Avec cette nouvelle gamme, ils retrouvent en quelques minutes, dans un simple paquet de chips, l'authenticité des snacks qu'ils adorent.",
     ],
+    problem: [
+      "Big idea : faire de la chips un symbole urbain pour la Gen Z.",
+      "Insight : pour la génération Z, le rap n'est pas qu'un genre musical, c'est une culture qui façonne leur quotidien : leur façon de parler, de s'habiller, et même de manger. Inspirée des saveurs urbaines du monde entier, la street food fait partie intégrante de leur lifestyle, tout comme le rap est la bande-son de leur génération.",
+    ],
+    concept: [
+      "Reprendre des phrases, des titres cultes de rappeurs en faisant le lien avec les nouvelles saveurs Street Food proposées par Vico : « C'est pas la capitale, c'est Bangkok bébé ! », « Sauce Curry, Beau Gosse », « Elle a le regard qui tue Tzatziki ».",
+      "Signature : les classiques de la street food s'invitent chez toi.",
+    ],
+    applications: [
+      "Packaging — un QR code sur chaque paquet permet d'accéder facilement à la playlist et de savourer l'instant en musique.",
+      "Playlists — créer une playlist unique inspirée de chaque saveur Vico, afin d'offrir une expérience immersive aux jeunes auditeurs Spotify. À l'heure de l'apéro, ils peuvent déguster leurs chips tout en écoutant une sélection musicale aussi variée et originale que les nouvelles saveurs. « Les playlists qui vont vous faire craquer ! »",
+    ],
+    inline: {
+      concept: [
+        {
+          src: `${vi}/board-street-and-chips.jpg`,
+          alt: "Board #StreetandChips : insight, big idea, concept, déclinaisons d'affiches colorées par saveur, packaging avec QR code et playlists Spotify",
+          width: 1920,
+          height: 1080,
+          layout: "full",
+          caption: "Board de campagne — #StreetandChips",
+        },
+      ],
+      applications: [
+        {
+          src: `${vi}/board-playlists-spotify.jpg`,
+          alt: "Board playlists Spotify : quatre playlists Street and Chips, une par saveur (Bœuf Thaï, Cheese Naan, Tzatziki, Spicy Curry Sauce)",
+          width: 1920,
+          height: 1080,
+          layout: "full",
+          caption: "Playlists Spotify — une par saveur",
+        },
+      ],
+    },
   },
   {
     slug: "horee",
