@@ -156,17 +156,16 @@ export default async function ProjectPage({ params }: Params) {
             <p className="label mb-6 flex justify-between border-t border-line pt-5 text-mute md:mb-10">
               <span>(La présentation)</span>
             </p>
-            <ol className="space-y-3 md:space-y-6">
-              {project.slides.map((m, i) => (
-                <li key={m.src}>
-                  <Reveal>
-                    <figure>
-                      <ProjectMedia project={project} media={m} sizes="100vw" />
-                    </figure>
-                  </Reveal>
-                </li>
-              ))}
-            </ol>
+            {/* Les pages s'enchaînent sans espace : une présentation continue */}
+            <Reveal>
+              <ol className="flex flex-col">
+                {project.slides.map((m) => (
+                  <li key={m.src} className="-mt-px first:mt-0">
+                    <ProjectMedia project={project} media={m} sizes="100vw" />
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
           </section>
         ) : null}
 
