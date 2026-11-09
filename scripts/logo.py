@@ -1,5 +1,5 @@
 """Détoure un logo posé sur un fond uni : fond -> transparent, recadrage serré, export PNG.
-Usage : python3 scripts/logo.py source.png sortie.png [--white]   (--white : force le logo en blanc)"""
+Usage : python3 scripts/logo.py source.png sortie.png [--white] [--keep-edges]   (--white : logo en blanc ; --keep-edges : logo qui touche le bord de l'image)"""
 import sys
 import numpy as np
 from PIL import Image
@@ -20,8 +20,9 @@ if white:
 rgba = np.dstack([fg, alpha * 255]).astype(np.uint8)
 out = Image.fromarray(rgba, "RGBA")
 # Ignore les fines lignes parasites sur les bords de l'image source
-edge = 8
-alpha[:, :edge] = 0; alpha[:, -edge:] = 0; alpha[:edge] = 0; alpha[-edge:] = 0  # bords de capture d'écran
+edge = 0 if '--keep-edges' in sys.argv else 8
+if edge:
+    alpha[:, :edge] = 0; alpha[:, -edge:] = 0; alpha[:edge] = 0; alpha[-edge:] = 0  # bords de capture d'écran
 mask = alpha > 0.3
 cols = np.where(mask.sum(axis=0) > max(3, h * 0.02))[0]
 rows = np.where(mask.sum(axis=1) > max(3, w * 0.01))[0]

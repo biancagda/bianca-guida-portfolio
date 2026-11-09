@@ -83,11 +83,9 @@ export default function Home() {
                     <span className="label shrink-0 text-right text-mute">{e.period}</span>
                   </li>
                 ))}
-              <li className="border-b border-line py-4">
-                <span className="display block text-[clamp(32px,3vw,48px)]">{site.education[0].school}</span>
-                <span className="label mt-1 block text-mute">
-                  {site.education[0].title} · {site.education[0].period}
-                </span>
+              <li className="flex min-h-[86px] items-center justify-between gap-6 border-b border-line py-5">
+                <BrandLogo logo={site.education[0].logo!} name={site.education[0].school} size="clamp(26px,2.4vw,38px)" />
+                <span className="label shrink-0 text-right text-mute">{site.education[0].period}</span>
               </li>
             </ul>
           </Reveal>

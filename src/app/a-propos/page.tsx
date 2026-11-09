@@ -99,8 +99,10 @@ export default function AboutPage() {
         <Block label="Formation">
           <ul>
             {site.education.map((e) => (
-              <li key={e.school} className="grid grid-cols-12 items-baseline gap-x-4 gap-y-1 border-b border-line py-5">
-                <span className="display col-span-12 text-[clamp(30px,3vw,48px)] md:col-span-4">{e.school}</span>
+              <li key={e.school} className="grid grid-cols-12 items-center gap-x-4 gap-y-2 border-b border-line py-5">
+                <span className="col-span-12 flex min-h-[56px] items-center md:col-span-4">
+                  {e.logo ? <BrandLogo logo={e.logo} name={e.school} /> : <span className="display text-[clamp(30px,3vw,48px)]">{e.school}</span>}
+                </span>
                 <span className="col-span-12 flex flex-wrap items-baseline justify-between gap-x-4 md:col-span-8">
                   <span className="text-paper">{e.title}</span>
                   <span className="label text-mute">{e.period}</span>

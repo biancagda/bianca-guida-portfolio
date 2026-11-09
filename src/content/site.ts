@@ -103,8 +103,8 @@ export const site = {
   ],
 
   education: [
-    { title: "Master Direction artistique & Design graphique", school: "Sup de Pub Paris", period: "2021 – 2026" },
-    { title: "DNMADE Design d'objet", school: "Institut Sainte-Geneviève", period: "2020 – 2021" },
+    { title: "Master Direction artistique & Design graphique", school: "Sup de Pub Paris", period: "2021 – 2026", logo: { src: "/images/logos/sup-de-pub.png", width: 1600, height: 330 } },
+    { title: "DNMADE Design d'objet", school: "Institut Sainte-Geneviève", period: "2020 – 2021", logo: undefined as { src: string; width: number; height: number } | undefined },
   ],
 
   /** Domaines de compétences (d'après ton CV) — affichés sur l'accueil et la page À propos. */
