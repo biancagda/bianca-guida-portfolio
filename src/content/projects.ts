@@ -86,6 +86,7 @@ const fb = "/images/projets/flying-blue";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
+const lo = "/images/projets/lov-magazine";
 
 export const projects: Project[] = [
   {
@@ -468,17 +469,64 @@ export const projects: Project[] = [
     tagline: "Dérober, chaparder, chiper. Le magazine qui aborde les sujets tabous de manière artistique et positive.",
     color: "#e23b2e",
     ink: "#fff3e0",
-    draft: true, // ⚠︎ passe à false quand les autres visuels du magazine sont ajoutés
     thumbnail: {
-      src: "/images/projets/lov-magazine/vignette-lov.webp",
+      src: `${lo}/vignette-lov.webp`,
       alt: "Double page du magazine LOV : une jeune femme en écharpe tartan dans une épicerie, sac Louis Vuitton à la main, titre LOV en lettres rouges gonflées, banane en gros plan",
       width: 2000,
       height: 1123,
     },
+    cover: {
+      src: `${lo}/couverture-dos-ticket.jpg`,
+      alt: "Couverture du magazine LOV n°1 : une fraise marquée d'un code-barres, « Dérober, Chaparder, Chiper. » ; au dos, un ticket de caisse",
+      width: 1200,
+      height: 766,
+    },
+    // Contexte : texte de ton ancien site. ⚠︎ Le concept et l'identité ont été rédigés
+    // à partir des pages du magazine : relis-les et réécris-les avec tes mots.
     context: [
       "LOV, le magazine qui aborde des sujets tabous de manière artistique et positive. Dans ce numéro, le phénomène du vol est au cœur de l'ouvrage.",
       "Le vol à l'étalage, bien que souvent perçu comme un crime mineur, peut avoir des conséquences profondes sur la vie des personnes impliquées, allant de sanctions légales à des effets durables sur la confiance et la perception de soi.",
     ],
+    concept: [
+      "Basé sur des échanges entre jeunes, ce numéro explore le phénomène du vol de courses. Le dos de couverture prend la forme d'un ticket de caisse : banane, saumon, oignon, bonbon fil, mozzarella, brioche chocolat. Autant d'articles qui rythment ensuite les pages.",
+    ],
+    identity: [
+      "Deux registres se répondent : des séries photo prises sur le vif dans une épicerie, sacs de luxe à la main, et des natures mortes d'aliments détourés, numérotés comme des pièces à conviction. Le logo LOV, en lettres rouges gonflées, apporte une note pop et ironique.",
+    ],
+    inline: {
+      concept: [
+        {
+          src: `${lo}/oignons-sac.jpg`,
+          alt: "Page du magazine LOV : un sac Louis Vuitton rempli de canettes, et trois oignons rouges numérotés 1, 2, 3",
+          width: 1200,
+          height: 732,
+          layout: "wide",
+        },
+      ],
+      identity: [
+        {
+          src: `${lo}/fond-du-sac.jpg`,
+          alt: "Double page « Fond du sac » : deux jeunes femmes dans une épicerie avec des sacs Louis Vuitton, et une tranche de saumon",
+          width: 1200,
+          height: 782,
+          layout: "half",
+        },
+        {
+          src: `${lo}/epicerie-lunettes.jpg`,
+          alt: "Double page du magazine LOV : jeune femme en lunettes noires et foulard à carreaux devant des rayons de biscuits",
+          width: 1200,
+          height: 733,
+          layout: "half",
+        },
+        {
+          src: `${lo}/brioche-22-47.jpg`,
+          alt: "Double page du magazine LOV : silhouette avec un sac Louis Vuitton « +22.47 », et deux tranches de brioche au chocolat numérotées",
+          width: 1200,
+          height: 690,
+          layout: "offset",
+        },
+      ],
+    },
   },
   {
     slug: "clean-up-day",
