@@ -7,11 +7,10 @@ export function categoryList(p: Project, max?: number) {
     .join(" · ");
 }
 
-/** Ligne d'infos sous une vignette : numéro, disciplines (2 max), année. */
-export function ProjectMetaLine({ project, index, compact }: { project: Project; index?: number; compact?: boolean }) {
+/** Ligne d'infos sous une vignette : disciplines (2 max), année. */
+export function ProjectMetaLine({ project, compact }: { project: Project; compact?: boolean }) {
   return (
     <div className="label flex items-baseline gap-3 text-mute">
-      {index !== undefined && <span className="text-paper">{String(index + 1).padStart(2, "0")}</span>}
       <span className={`truncate ${compact ? "hidden md:inline" : ""}`}>{categoryList(project, 2)}</span>
       {project.year && <span className="ml-auto shrink-0">{project.year}</span>}
     </div>

@@ -5,7 +5,6 @@ import { getNextProject, getProject, projects, thumbnailOf, type Media, type Pro
 import { ProjectMedia } from "@/components/ProjectMedia";
 import { categoryList } from "@/components/ProjectMeta";
 import { LineReveal, Reveal } from "@/components/Reveal";
-import { pad } from "@/lib/text";
 import { StepText } from "@/components/StepText";
 
 type Params = { params: Promise<{ slug: string }> };
@@ -62,7 +61,6 @@ export default async function ProjectPage({ params }: Params) {
   const project = getProject((await params).slug);
   if (!project) notFound();
   const next = getNextProject(project.slug);
-  const index = projects.findIndex((p) => p.slug === project.slug);
 
   const meta = [
     ["Client", project.client],
@@ -72,8 +70,6 @@ export default async function ProjectPage({ params }: Params) {
     ["Discipline", categoryList(project)],
   ].filter(([, v]) => v) as [string, string][];
 
-  let stepNumber = 0;
-
   return (
     <article>
       {/* ─── En-tête ─── */}
@@ -82,9 +78,6 @@ export default async function ProjectPage({ params }: Params) {
           <Link href="/projets" className="u-link">
             ← Projets
           </Link>
-          <span>
-            {pad(index + 1)} / {pad(projects.length)}
-          </span>
         </div>
         <LineReveal className="display text-[19vw] md:text-[12.5vw]" lines={[project.title]} />
         <div className="grid-12 mt-6 gap-y-6 border-t border-line pt-5 md:mt-12 md:gap-y-8">
@@ -124,13 +117,11 @@ export default async function ProjectPage({ params }: Params) {
           const text = project[step.key];
           const media = project.inline?.[step.key];
           if (!text && !media && !(project.draft && !project.slides?.length)) return null;
-          stepNumber += 1;
           return (
             <section key={step.key} aria-labelledby={`etape-${step.key}`}>
               <Reveal className="grid-12 gap-y-4 border-t border-line pt-5 md:gap-y-6">
                 <div className="col-span-12 md:col-span-3">
-                  <p className="label text-signal">{pad(stepNumber)}</p>
-                  <h2 id={`etape-${step.key}`} className="display mt-2 text-[32px] md:text-[clamp(36px,3.6vw,60px)]">
+                  <h2 id={`etape-${step.key}`} className="display text-[32px] md:text-[clamp(36px,3.6vw,60px)]">
                     {step.title}
                   </h2>
                 </div>
@@ -175,7 +166,6 @@ export default async function ProjectPage({ params }: Params) {
           <section aria-label="La présentation">
             <p className="label mb-6 flex justify-between border-t border-line pt-5 text-mute md:mb-10">
               <span>(La présentation)</span>
-              <span>{pad(project.slides.length)} pages</span>
             </p>
             <ol className="space-y-3 md:space-y-6">
               {project.slides.map((m, i) => (
@@ -183,9 +173,6 @@ export default async function ProjectPage({ params }: Params) {
                   <Reveal>
                     <figure>
                       <ProjectMedia project={project} media={m} sizes="100vw" />
-                      <figcaption className="label mt-2 text-mute">
-                        {pad(i + 1)} / {pad(project.slides!.length)}
-                      </figcaption>
                     </figure>
                   </Reveal>
                 </li>
@@ -222,7 +209,7 @@ export default async function ProjectPage({ params }: Params) {
         <Link href={`/projets/${next.slug}`} className="group grid-12 items-end gap-y-6 border-t border-line pt-5">
           <div className="col-span-12 md:col-span-8">
             <p className="label text-mute">(Projet suivant)</p>
-            <p className="display mt-3 text-[13vw] transition-colors duration-500 group-hover:text-signal md:text-[11vw]">
+            <p className="display mt-3 text-[13vw] md:text-[11vw]">
               {next.title} <span className="inline-block transition-transform duration-500 group-hover:translate-x-4">→</span>
             </p>
           </div>

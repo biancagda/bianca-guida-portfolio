@@ -29,13 +29,12 @@ export function ProjectIndex({ projects }: { projects: Project[] }) {
       onPointerLeave={() => setActive(null)}
     >
       <div className="grid-12 label border-b border-line pb-3 text-mute">
-        <span className="col-span-1">N°</span>
-        <span className="col-span-7 md:col-span-5">Projet</span>
+        <span className="col-span-8 md:col-span-6">Projet</span>
         <span className="col-span-4 hidden md:block">Discipline</span>
         <span className="col-span-4 text-right md:col-span-2">Année</span>
       </div>
       <ul>
-        {projects.map((p, i) => (
+        {projects.map((p) => (
           <li key={p.slug} className="border-b border-line">
             <Link
               href={`/projets/${p.slug}`}
@@ -43,9 +42,8 @@ export function ProjectIndex({ projects }: { projects: Project[] }) {
               onPointerEnter={(e) => e.pointerType === "mouse" && setActive(p)}
               onFocus={() => setActive(null)}
             >
-              <span className="label col-span-1 text-mute">{String(i + 1).padStart(2, "0")}</span>
-              <span className="col-span-11 md:col-span-5">
-                <span className="display block text-[clamp(34px,4.6vw,72px)] transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-x-3 group-hover:text-signal">
+              <span className="col-span-12 md:col-span-6">
+                <span className="display block text-[clamp(34px,4.6vw,72px)] transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] group-hover:translate-x-3 ">
                   {p.title}
                 </span>
                 <span className="label mt-1 block text-mute md:hidden">{categoryList(p)}</span>

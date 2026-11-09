@@ -20,7 +20,7 @@ export default function Home() {
       <section className="px-site pt-20 md:pt-32" aria-labelledby="selection">
         <SectionHead
           id="selection"
-          label={`Sélection — ${pad(featuredProjects.length)}`}
+          label="Sélection"
           title={["Travaux", <span key="c" className="serif-i normal-case">choisis</span>]}
           aside={
             <Link href="/projets" className="label">
@@ -70,8 +70,7 @@ export default function Home() {
           <div className="col-span-12 grid grid-cols-2 gap-x-6 gap-y-10 md:col-span-7">
             {site.skills.map((s, i) => (
               <Reveal key={s.title} delay={i * 0.06} className="border-t border-line pt-4">
-                <p className="label text-signal">{pad(i + 1)}</p>
-                <h3 className="display mt-2 text-[26px] leading-[0.95] md:text-[clamp(28px,2.4vw,40px)]">{s.title}</h3>
+                <h3 className="display text-[26px] leading-[0.95] md:text-[clamp(28px,2.4vw,40px)]">{s.title}</h3>
                 <ul className="mt-3 space-y-0.5 text-[14px] text-paper/70 md:space-y-1 md:text-[15px]">
                   {s.items.map((it) => (
                     <li key={it}>{it}</li>

@@ -1,85 +1,94 @@
+import Image from "next/image";
 import Link from "next/link";
 import { thumbnailOf, type Project } from "@/content/projects";
-import { ProjectMedia } from "./ProjectMedia";
 import { ProjectMetaLine } from "./ProjectMeta";
 import { Reveal } from "./Reveal";
 
 /**
- * Ordinateur : une mise en page de magazine pleine largeur, sans trou.
- * Les projets sont posés par rangées qui alternent « grand + petit »,
- * « petit + grand », puis une image pleine largeur. Dans une rangée,
- * les images ont toutes la même hauteur : les bords s'alignent.
- * Téléphone : une grille simple et régulière.
+ * Galerie « justifiée » : chaque vignette est affichée EN ENTIER, sans recadrage.
+ * Dans une rangée, toutes les images ont la même hauteur et leur largeur
+ * s'adapte à leur format (une affiche verticale est étroite, un paysage est large).
+ * Résultat : des rangées pleines, alignées, sans trou.
  */
-type Cell = { project: Project; index: number; span: 5 | 7 | 12 };
-
-function toRows(projects: Project[]): Cell[][] {
-  const pattern: (5 | 7 | 12)[][] = [[7, 5], [5, 7], [12]];
-  const rows: Cell[][] = [];
+function toRows(projects: Project[], pattern: number[]): Project[][] {
+  const rows: Project[][] = [];
   let i = 0;
   let k = 0;
   while (i < projects.length) {
-    let spans = pattern[k % pattern.length];
-    if (projects.length - i < spans.length) spans = [12]; // dernier projet seul : pleine largeur
-    rows.push(spans.map((span, j) => ({ project: projects[i + j], index: i + j, span })));
-    i += spans.length;
+    let n = pattern[k % pattern.length];
+    const left = projects.length - i;
+    if (left - n === 1 && n > 1) n = Math.min(left, n + 1); // pas de projet seul en fin de liste
+    rows.push(projects.slice(i, i + n));
+    i += n;
     k += 1;
   }
   return rows;
 }
 
-const spanClass = { 5: "md:col-span-5", 7: "md:col-span-7", 12: "md:col-span-12" } as const;
+const ratioOf = (p: Project) => {
+  const m = thumbnailOf(p);
+  return m ? m.width / m.height : 4 / 3;
+};
 
 type Props = {
   projects: Project[];
-  /**
-   * « featured » (accueil) : sur téléphone, une colonne avec de grandes images.
-   * « compact » (page Projets) : sur téléphone, deux colonnes, titre + année seulement.
-   */
+  /** « featured » (accueil) : rangées de 2. « compact » (page Projets) : rangées de 2 et 3 en alternance. */
   variant?: "featured" | "compact";
 };
 
 export function ProjectGrid({ projects, variant = "featured" }: Props) {
   const compact = variant === "compact";
   return (
-    <div className="space-y-12 md:space-y-20">
-      {toRows(projects).map((row, r) => (
-        <div key={r} className={`grid-12 ${compact ? "gap-y-10" : "gap-y-12"}`}>
-          {row.map(({ project: p, index, span }) => {
-            const full = span === 12;
-            const height = full ? "md:h-[clamp(340px,42vw,680px)]" : "md:h-[clamp(300px,32vw,540px)]";
-            // Téléphone : 2 colonnes en mode compact, sauf les images « pleine largeur » qui gardent toute la largeur
-            const mobile = compact && !full ? "col-span-6 aspect-[4/5]" : "col-span-12 aspect-[4/3]";
-            const [mSpan, mRatio] = mobile.split(" ");
+    <>
+      {/* Ordinateur */}
+      <div className="hidden md:block">
+        <Rows rows={toRows(projects, compact ? [2, 3] : [2])} compact={compact} />
+      </div>
+      {/* Téléphone : accueil = une image par ligne ; page Projets = rangées de 2 */}
+      <div className="md:hidden">
+        <Rows rows={toRows(projects, compact ? [2] : [1])} compact={compact} small={compact} />
+      </div>
+    </>
+  );
+}
+
+function Rows({ rows, compact, small }: { rows: Project[][]; compact: boolean; small?: boolean }) {
+  return (
+    <div className="space-y-10 md:space-y-16">
+      {rows.map((row, r) => (
+        <div key={r} className="flex gap-x-[clamp(12px,1.6vw,24px)]">
+          {row.map((p) => {
+            const media = thumbnailOf(p);
+            const ratio = ratioOf(p);
+            const share = (ratio / row.reduce((t, q) => t + ratioOf(q), 0)) * 100;
             return (
-              <Reveal key={p.slug} className={`${mSpan} ${spanClass[span]}`} delay={compact ? (index % 2) * 0.06 : 0}>
+              <Reveal
+                key={p.slug}
+                className="min-w-0 basis-0"
+                style={{ flexGrow: ratio, flexShrink: 1 }}
+              >
                 <Link href={`/projets/${p.slug}`} className="group block">
-                  <ProjectMedia
-                    project={p}
-                    media={thumbnailOf(p)}
-                    ratio={`${mRatio} md:aspect-auto ${height}`}
-                    sizes={`(min-width: 768px) ${full ? "100vw" : span === 7 ? "58vw" : "42vw"}, ${compact ? "50vw" : "100vw"}`}
-                    hoverZoom
-                    compact={compact && !full}
-                  />
-                  <div className={`mt-3 md:mt-4 ${full ? "md:grid md:grid-cols-12 md:items-baseline md:gap-x-6" : ""}`}>
-                    <div className={full ? "md:col-span-7" : ""}>
-                      <ProjectMetaLine project={p} index={index} compact={compact && !full} />
-                      <h3
-                        className={`display mt-1.5 transition-colors duration-500 group-hover:text-signal md:mt-2 md:text-[clamp(36px,3.8vw,64px)] ${
-                          compact && !full ? "text-[26px]" : "text-[40px]"
-                        }`}
-                      >
+                  <div className="relative overflow-hidden bg-ink-2" style={{ aspectRatio: String(ratio) }}>
+                    {media ? (
+                      <Image
+                        src={media.src}
+                        alt={media.alt}
+                        fill
+                        sizes={`${Math.max(30, Math.round(share))}vw`}
+                        className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(.16,1,.3,1)] group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <div className="display flex h-full items-end p-5 text-[48px]" style={{ backgroundColor: p.color, color: p.ink }}>
                         {p.title}
-                      </h3>
-                    </div>
-                    <p
-                      className={`serif-i mt-1 hidden max-w-[46ch] text-[clamp(17px,1.35vw,21px)] leading-snug text-paper/75 md:block ${
-                        full ? "md:col-span-5 md:justify-self-end md:text-right" : ""
-                      }`}
-                    >
-                      {p.tagline}
-                    </p>
+                      </div>
+                    )}
+                  </div>
+                  <div className="mt-3 md:mt-4">
+                    <ProjectMetaLine project={p} compact={small} />
+                    <h3 className={`display mt-1.5 text-paper md:mt-2 md:text-[clamp(30px,3vw,52px)] ${small ? "text-[22px]" : "text-[34px]"}`}>{p.title}</h3>
+                    {!compact && (
+                      <p className="serif-i mt-1 max-w-[46ch] text-[clamp(17px,1.35vw,21px)] leading-snug text-paper/75">{p.tagline}</p>
+                    )}
                   </div>
                 </Link>
               </Reveal>

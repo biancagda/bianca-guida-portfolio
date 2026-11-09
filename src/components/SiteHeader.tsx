@@ -101,7 +101,6 @@ export function SiteHeader() {
                 >
                   <Link href={item.href} className="display flex items-baseline justify-between py-2 text-[18vw]">
                     {item.label}
-                    <span className="label">{String(i).padStart(2, "0")}</span>
                   </Link>
                 </motion.div>
               ))}
