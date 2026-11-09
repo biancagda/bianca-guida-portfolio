@@ -35,17 +35,15 @@ export const site = {
   about: {
     statement: "Une idée forte, *une image juste*.",
     paragraphs: [
-      "Passionnée depuis toujours par l'image, la création visuelle et la publicité, j'explore la direction artistique à travers des projets mêlant concept, esthétique et efficacité, pour façonner des univers uniques et percutants.",
-      "Diplômée du master Direction artistique & Design graphique de Sup de Pub Paris, je me suis formée en agence — TBWA\\Paris, Publicis Conseil — et deux ans en alternance chez Deepki, entre design graphique et UX. J'ai appris à défendre une idée autant qu'à lui donner forme : campagnes 360, identités de marque, packaging, édition, interfaces.",
+      "Diplômée du master Direction artistique & Design graphique de Sup de Pub Paris, formée chez TBWA\\Paris, Publicis Conseil et Deepki.",
     ],
     vision: [
-      "Je crois qu'un bon visuel commence par une bonne question. Avant de choisir une typographie ou une couleur, je cherche ce que la marque a à dire, et à qui.",
-      "Vient ensuite la forme, que je veux simple, directe et un peu inattendue : assez claire pour être comprise en une seconde, assez singulière pour qu'on s'en souvienne.",
+      "Un bon visuel commence par une bonne question : ce que la marque a à dire, et à qui.",
     ],
     /** Tes inspirations (studios, designers, magazines, artistes, films…). Liste vide = section masquée. */
     inspirations: [] as string[],
     /** Quelques mots sur toi en dehors du travail (d'après ton CV). Laisse vide pour masquer. */
-    personality: "Voyages, mode, photographie, décoration, art contemporain et visites d'expositions : ce qui nourrit mon regard en dehors du studio.",
+    personality: "Voyages, mode, photographie, décoration, art contemporain, expositions.",
   },
 
   contact: {

@@ -5,7 +5,6 @@ import { getNextProject, getProject, projects, thumbnailOf, type Media, type Pro
 import { ProjectMedia } from "@/components/ProjectMedia";
 import { categoryList } from "@/components/ProjectMeta";
 import { LineReveal, Reveal } from "@/components/Reveal";
-import { StepText } from "@/components/StepText";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -24,15 +23,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   };
 }
 
-/** Les étapes de l'étude de cas, dans l'ordre. `hint` guide la rédaction quand le texte manque. */
-const steps = [
-  { key: "context", title: "Contexte", hint: "Pour qui, dans quel cadre (école, concours, agence), avec quelle équipe ?" },
-  { key: "problem", title: "Problématique & intention", hint: "Quel était le problème à résoudre ? Que vouliez-vous provoquer chez la cible ?" },
-  { key: "concept", title: "Concept", hint: "L'idée en une phrase, puis comment elle se déploie." },
-  { key: "research", title: "Recherche graphique", hint: "Moodboards, pistes écartées, croquis, essais typographiques… montre le chemin." },
-  { key: "identity", title: "Identité visuelle", hint: "Typographie, couleurs, système graphique, direction photo : les choix et leurs raisons." },
-  { key: "applications", title: "Déclinaisons", hint: "Affichage, social, packaging, print, événement… où vit la création ?" },
+/** La fiche du projet : 3 lignes maximum, pour comprendre en un coup d'œil. */
+const fiche = [
+  { key: "context", title: "Contexte" },
+  { key: "concept", title: "Idée" },
+  { key: "applications", title: "Dispositif" },
 ] as const;
+
+/** Ordre d'apparition des visuels insérés dans le texte (champ `inline`). */
+const inlineOrder = ["context", "problem", "concept", "research", "identity", "applications"] as const;
 
 const galleryPlace: Record<NonNullable<Media["layout"]>, string> = {
   full: "col-span-12",
@@ -112,39 +111,28 @@ export default async function ProjectPage({ params }: Params) {
       )}
 
       {/* ─── Étude de cas ─── */}
-      <div className="px-site mt-16 space-y-14 md:mt-24 md:space-y-24">
-        {steps.map((step) => {
-          const text = project[step.key];
-          const media = project.inline?.[step.key];
-          if (!text && !media && !(project.draft && !project.slides?.length)) return null;
-          return (
-            <section key={step.key} aria-labelledby={`etape-${step.key}`}>
-              <Reveal className="grid-12 gap-y-4 border-t border-line pt-5 md:gap-y-6">
-                <div className="col-span-12 md:col-span-3">
-                  <h2 id={`etape-${step.key}`} className="display text-[32px] md:text-[clamp(36px,3.6vw,60px)]">
-                    {step.title}
-                  </h2>
+      <div className="px-site mt-10 space-y-12 md:mt-16 md:space-y-20">
+        <Reveal>
+          <dl className="grid gap-x-10 gap-y-6 border-t border-line pt-6 md:grid-cols-3">
+            {fiche.map(({ key, title }) =>
+              project[key]?.length ? (
+                <div key={key}>
+                  <dt className="label text-mute">{title}</dt>
+                  <dd className="mt-2 text-[17px] leading-[1.45] md:text-[clamp(17px,1.3vw,20px)]">{project[key]!.join(" ")}</dd>
                 </div>
-                <div className="col-span-12 md:col-span-8 md:col-start-5">
-                  {text ? (
-                    <StepText paragraphs={text} />
-                  ) : (
-                    <p className="label border border-dashed border-line p-5 normal-case tracking-normal text-mute">
-                      [À compléter] {step.hint}
-                    </p>
-                  )}
-                </div>
-              </Reveal>
-              {media && (
-                <div className="grid-12 mt-8 gap-y-3 md:mt-12 md:gap-y-6">
-                  {media.map((m) => (
-                    <Figure key={m.src} project={project} media={m} />
-                  ))}
-                </div>
-              )}
-            </section>
-          );
-        })}
+              ) : null,
+            )}
+          </dl>
+        </Reveal>
+
+        {/* Visuels */}
+        {inlineOrder.some((k) => project.inline?.[k]?.length) && (
+          <div className="grid-12 gap-y-3 md:gap-y-6">
+            {inlineOrder.flatMap((k) => project.inline?.[k] ?? []).map((m) => (
+              <Figure key={m.src} project={project} media={m} />
+            ))}
+          </div>
+        )}
 
         {/* Chiffres clés */}
         {project.figures && (

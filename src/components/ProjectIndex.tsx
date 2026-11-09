@@ -57,9 +57,11 @@ export function ProjectIndex({ projects }: { projects: Project[] }) {
           </li>
         ))}
       </ul>
-      <p className="label mt-4 text-mute">
-        <span className="text-signal">●</span> Étude de cas en cours de rédaction
-      </p>
+      {projects.some((p) => p.draft) && (
+        <p className="label mt-4 text-mute">
+          <span className="text-signal">●</span> Étude de cas en cours de rédaction
+        </p>
+      )}
 
       {/* Aperçu flottant — souris uniquement */}
       <motion.div

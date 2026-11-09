@@ -87,7 +87,6 @@ export default function AboutPage() {
                     <span className="text-paper">{e.role}</span>
                     <span className="label text-mute">{e.period}</span>
                   </span>
-                  <span className="mt-1 block text-[15px] text-paper/65">{e.detail}</span>
                 </span>
               </li>
             ))}

@@ -64,7 +64,10 @@ export type Project = {
   featured?: boolean;
   draft?: boolean;
 
-  /** Les étapes de l'étude de cas. Chaque texte peut contenir plusieurs paragraphes. */
+  /**
+   * La fiche du projet, affichée en 3 colonnes : Contexte / Idée / Dispositif.
+   * Une phrase courte chacune — c'est l'image qui doit parler.
+   */
   context?: string[];
   problem?: string[];
   concept?: string[];
@@ -111,7 +114,7 @@ export const projects: Project[] = [
     role: "Direction artistique & conception",
     frame: "Projet d'école — Sup de Pub Paris",
     categories: ["campagne", "da"],
-    tagline: "Pédaler, s'envoler. Chaque kilomètre à vélo devient un mile.",
+    tagline: "Pédaler, s'envoler.",
     color: "#1d22c9",
     ink: "#ffffff",
     featured: true,
@@ -121,24 +124,9 @@ export const projects: Project[] = [
       width: 1920,
       height: 1426,
     },
-    // Textes repris de ta planche de présentation. ⚠︎ Le 2e paragraphe du concept et
-    // le texte « identity » ont été rédigés à partir des visuels : relis-les et réécris-les.
-    context: [
-      "Dans une ère où l'écologie guide les choix de la jeunesse, ces voyageurs cherchent des moyens astucieux pour combiner leur envie d'aventure avec une empreinte écologique réduite.",
-    ],
-    problem: [
-      "Créer une campagne de notoriété pour travailler l'attractivité et la désirabilité de la marque Flying Blue auprès des 18-24 ans.",
-    ],
-    concept: [
-      "Flying Blue × Lime dévoile une collaboration transformant chaque kilomètre à vélo en miles. Une incitation à adopter une mobilité décarbonée, pour explorer les villes de France.",
-      "La campagne d'affichage prolonge l'idée : chaque plaisir du quotidien rapproche d'un voyage. « Cette balade à vélo m'amène jusqu'à New York* », « Ce pad thaï paye mon billet pour Bangkok* ».",
-    ],
-    identity: [
-      "Le bleu Flying Blue en aplat franc, des titres surlignés en bandeau et une photographie lifestyle prise sur le vif : un territoire chaleureux et direct, pensé pour une cible jeune.",
-    ],
-    applications: [
-      "Affichage métro, vélos Lime habillés aux couleurs de Flying Blue, contenus Instagram « Ride with us. » et un voyage presse itinérant à New York avec des créateurs de contenu.",
-    ],
+    context: ["Rendre Flying Blue désirable auprès des 18-24 ans, une génération qui voyage en pensant écologie."],
+    concept: ["Flying Blue × Lime : chaque kilomètre à vélo devient un mile."],
+    applications: ["Affichage métro, vélos Lime habillés, réseaux sociaux et voyage presse à New York."],
     inline: {
       concept: [
         {
@@ -175,7 +163,7 @@ export const projects: Project[] = [
     role: "Projet d'équipe",
     frame: "Compétition Campagne 360 — Sup de Pub · Équipe lauréate",
     categories: ["campagne", "da"],
-    tagline: "20 ans d'écran plus tard… Et si ce temps vous revenait ?",
+    tagline: "20 ans d'écran plus tard…",
     color: "#2b1660",
     ink: "#e9ddff",
     featured: true,
@@ -185,22 +173,9 @@ export const projects: Project[] = [
       width: 1920,
       height: 1387,
     },
-    // Textes de ton ancien site et de ton board (coquilles corrigées).
-    context: [
-      "Opal est une application qui vous aide à mieux gérer votre temps et votre attention. Aujourd'hui, elle souhaite sensibiliser, engager et montrer concrètement l'impact qu'elle peut avoir dans la vie d'un futur utilisateur.",
-      "Réalisation d'un case study avec mon équipe dans le cadre de notre compétition Campagne 360 de Sup de Pub — vainqueurs.",
-    ],
-    problem: [
-      "Insight : 20 ans. C'est le temps que vous passez, au cours d'une vie, absorbé par votre téléphone.",
-    ],
-    concept: [
-      "Opal met en lumière trois figures inspirantes qui ont accompli de grandes choses en 20 ans. Leur parcours montre tout ce qu'il est possible de bâtir lorsque l'on reprend le contrôle de son temps. Et si vous aussi, vous aviez le temps de vous réaliser ?",
-      "« 20 ans, c'est le temps qu'a pris Steve Jobs pour créer l'iPhone. » « … J.R.R. Tolkien pour créer Le Seigneur des Anneaux. » « … Marie Curie pour gagner 2 prix Nobel. » Chaque affiche déroule la frise de ces 20 années.",
-    ],
-    applications: [
-      "Activation — Opal × Ghostbusters. Nous sommes en 2045. Opal hacke le monde du numérique : la société est projetée 20 ans en avant, un bond dans le futur pour faire prendre conscience du temps que l'on perd, chaque jour, sur nos écrans.",
-      "Les médias et les réseaux s'emballent : « OPAL vient de pirater le présent », « L'info en 2045 ? OPAL l'a déjà piratée. » En moyenne, on passe 20 ans de sa vie sur son téléphone. Avec Opal, ce temps vous revient.",
-    ],
+    context: ["Campagne 360 pour l'application Opal. Équipe lauréate de la compétition Sup de Pub."],
+    concept: ["20 ans d'écran dans une vie : ce que d'autres ont accompli dans le même temps."],
+    applications: ["Affichage métro et activation « Opal × Ghostbusters »."],
     inline: {
       applications: [
         {
@@ -220,8 +195,8 @@ export const projects: Project[] = [
     client: "Kraft — Mac & Cheese",
     year: "2025",
     frame: "Participation D&AD Awards",
-    categories: ["campagne"],
-    tagline: "Une saveur pour chaque humeur, et des inconnus qui partagent le même plat.",
+    categories: ["campagne", "da"],
+    tagline: "Une saveur pour chaque humeur.",
     color: "#1f63e0",
     ink: "#ffd23f",
     featured: true,
@@ -231,23 +206,9 @@ export const projects: Project[] = [
       width: 1600,
       height: 879,
     },
-    // Textes de ton book + traduction de tes boards (en anglais). ⚠︎ Relis la traduction.
-    context: [
-      "Campagne d'activation Kraft pour son produit iconique : les mac and cheese.",
-      "Manger des plats réconfortants est un moyen de vaincre les défis et les difficultés de la vie d'adulte.",
-    ],
-    problem: [
-      "Comment amener la GenZ à se rencontrer et à créer du lien autour des mac & cheese, quand la solitude fait partie de son quotidien ?",
-      "Insight : enfants, les GenZ mangeaient des mac & cheese en famille. Devenus adultes, ils vivent l'isolement social et cherchent à retrouver ce sentiment de proximité. Le comfort food devient une façon de surmonter les épreuves.",
-    ],
-    concept: [
-      "Une saveur pour chaque humeur. Feeling angry? Extra Spicy. Feeling happy? Original Taste. Feeling sad? Extra Cheesy.",
-      "Le pack mène à un appel vidéo en ligne qui permet de se rencontrer et de partager son repas. L'objectif : recréer le sentiment de familiarité autour des mac & cheese. « Let's share and care for one another while eating mac&cheese! »",
-    ],
-    applications: [
-      "Scan ! Le QR code imprimé sur le côté du pack donne accès à un appel vidéo.",
-      "Meet ! On y retrouve des personnes qui ont scanné le même pack et partagent la même humeur. Chercher du soutien, donner un conseil, partager son repas et ses pensées.",
-    ],
+    context: ["Activation pour les mac & cheese Kraft. Participation aux D&AD Awards."],
+    concept: ["Une saveur par humeur, et un QR code pour partager son repas en appel vidéo."],
+    applications: ["Packs en édition limitée et mécanique « Scan ! Meet ! »."],
     inline: {
       applications: [
         {
@@ -272,7 +233,7 @@ export const projects: Project[] = [
     title: "Torta",
     year: "2026",
     categories: ["branding", "image"],
-    tagline: "Torta di Spaghetti — la pizza a trouvé sa cousine. L'identité d'une street food napolitaine.",
+    tagline: "La pizza a trouvé sa cousine.",
     color: "#1f5fd6",
     ink: "#f6d64a",
     thumbnail: {
@@ -281,22 +242,9 @@ export const projects: Project[] = [
       width: 2000,
       height: 1120,
     },
-    // Textes repris de tes slides.
-    context: [
-      "Réalisation d'une identité graphique pour un commerce de restauration.",
-      "C'est rond, doré, croustillant à l'extérieur, fondant à l'intérieur. Bienvenue chez Torta, le nouveau concept italien à emporter où la star n'est plus la pizza, mais la tarte aux spaghetti. Inspirée de la frittata di pasta napolitaine, cette spécialité populaire revient sur le devant de la scène, revisitée pour les amis, la famille, les soirées de partage.",
-    ],
-    concept: [
-      "Née dans les cuisines de Nonna, la tarte aux pâtes est un plat du cœur, préparé avec ce qu'on a sous la main. Aujourd'hui, Torta en fait une street food conviviale : des parts généreuses, dorées, prêtes à emporter comme une part de pizza, mais avec le charme de la tradition italienne.",
-      "Dans un monde où les menus s'allongent, Torta choisit la simplicité et le goût de l'essentiel. Une nouvelle tendance est née : la pizza a trouvé sa cousine.",
-    ],
-    applications: [
-      "Des boîtes triangulaires à emporter, habillées d'un motif de spaghetti en boucles, des stickers, des affiches vintage et une direction photo gourmande sur fond noir.",
-    ],
-    identity: [
-      "Une palette aux couleurs de l'Italie — vert, jaune, rouge et bleu — et deux typographies : la Baucher Gothic, condensée et affichiste, et la Dreaming Outloud Script, manuscrite et chaleureuse.",
-      "Un logo manuscrit rouge, généreux comme un geste de la main, accompagné d'un emblème rond en nid de spaghetti. Le rouge, le vert et le jaune convoquent l'Italie ; les affiches s'inspirent de l'illustration publicitaire vintage napolitaine : « Il gusto della tradizione. Buona, semplice, italiana. »",
-    ],
+    context: ["Identité d'une street food napolitaine à emporter."],
+    concept: ["La pizza a trouvé sa cousine : la tarte aux spaghetti."],
+    applications: ["Logo, affiches, boîtes à emporter et photographie."],
     slides: [
       { src: `${tt}/01.webp`, alt: "Logo Torta di Spaghetti en rouge et jaune, avec l'emblème en nid de spaghetti, sur fond vert", width: 2000, height: 1116 },
       { src: `${tt}/02.webp`, alt: "Affiche vintage « Il gusto della tradizione » avec une part de torta et la baie de Naples, carte verte au logo Torta, texte de présentation", width: 2000, height: 1114 },
@@ -327,24 +275,9 @@ export const projects: Project[] = [
       width: 1038,
       height: 1122,
     },
-    context: [
-      "Proposition de campagne de communication 360° conçue pour la marque de cosmétique Oh My Cream.",
-      "L'objectif de cette stratégie globale est d'accompagner et de promouvoir avec impact le lancement de leur nouveau « combo anti-imperfections » sur l'ensemble des canaux de diffusion.",
-    ],
-    problem: [
-      "Soyons honnêtes : la vraie vie est loin du cliché « clean girl » des réseaux sociaux. Des vies intenses, souvent chaotiques — et une peau qui en est le miroir.",
-    ],
-    concept: [
-      "Big idea : « Le soin parfait d'une vie imparfaite. » Une vie dense, sociale, imparfaite, mais tenue par quelques gestes fiables. Un storytelling en trois temps : le quotidien déborde, la peau réagit, Oh My Cream aide à la rééquilibrer.",
-    ],
-    applications: [
-      "Film de lancement « Un chaos maîtrisé » : un film mixed media qui raconte le quotidien d'une femme citadine, avec un retravail graphique print. Sur Instagram, les visuels de campagne, les collages des actifs et les mises en scène du quotidien parisien installent l'univers.",
-      "Event « Bois ta skincare » : en collaboration avec Café Nuances, dans le Marais, une boisson exclusive Oh My Juice formulée à partir d'ingrédients bons pour la peau. À l'achat, une machine à boules délivre des échantillons de la gamme anti-imperfections à retirer en boutique.",
-      "Kit RP « Le jeu d'adresse » : une tour en bois gravée Oh My Cream cache le sérum et le soin ciblé. Pour les extraire, il faut retirer des blocs, et la tour s'effondre — mais les deux produits restent intacts : même quand tout s'écroule, la peau reste sous contrôle. Envoyé à des influenceuses parisiennes pour un unboxing ludique.",
-    ],
-    identity: [
-      "Skincare first : un univers minimaliste où l'ordre émerge du chaos. Qui dit imperfections dit aspérités — celles de la peau, mais aussi celles du papier. Textures, découpes et natures mortes d'objets du quotidien évoquent l'action des produits (cibler, corriger, transformer) ; en contraste, les produits restent nets et lisibles.",
-    ],
+    context: ["Campagne 360 pour le lancement du duo anti-imperfections Oh My Cream."],
+    concept: ["« Le soin parfait d'une vie imparfaite. »"],
+    applications: ["Film, natures mortes, Instagram, événement et kit RP."],
     slides: [
       { src: `${om}/01.webp`, alt: "Slide de titre : OH MY CREAM ! skincare — Campagne 360, Sup de Pub Paris", width: 2000, height: 1125 },
       { src: `${om}/02.webp`, alt: "Insight « Soyons honnêtes » : la vraie vie est loin du cliché clean girl ; une beauté minimaliste, efficace et naturelle", width: 2000, height: 1125 },
@@ -389,12 +322,8 @@ export const projects: Project[] = [
       width: 1920,
       height: 889,
     },
-    // Contexte : texte de ton ancien site. ⚠︎ Le concept a été rédigé à partir des affiches : relis-le.
-    context: ["Proposition d'une campagne print pour promouvoir le service de réparation Patagonia."],
-    concept: [
-      "Un vêtement Patagonia s'use, se raccommode et traverse les années, comme une relation de longue date. La campagne met en scène des personnes âgées avec leur animal de compagnie et la veste qu'ils portent depuis des décennies.",
-      "« Quand on aime, on abandonne pas, on repare ! » Chaque affiche date la pièce : M's Synchilla® Jacket réparée depuis 1998, W's Tres 3-in-1 Parka® réparée depuis 1987, M's Stormstride Jacket® réparée depuis 1981.",
-    ],
+    context: ["Campagne print pour le service de réparation Patagonia."],
+    concept: ["« Quand on aime, on n'abandonne pas. On répare ! »"],
     inline: {
       concept: [
         {
@@ -436,22 +365,9 @@ export const projects: Project[] = [
       width: 2000,
       height: 1120,
     },
-    // Contexte : texte de ton ancien site. ⚠︎ Les textes « recherche », « identité » et
-    // « déclinaisons » ont été rédigés à partir de tes slides : relis-les.
-    context: [
-      "Refonte complète de l'identité visuelle du V&A, le célèbre musée d'art et de design de Londres.",
-      "L'objectif était de moderniser entièrement l'image de marque, tout en respectant l'histoire et le prestige de cette institution.",
-    ],
-    research: [
-      "Le Victoria and Albert Museum, fondé en 1852, est un musée d'art situé à South Kensington. Analyse de sa communication actuelle : site web, affiches d'exposition (Cartier, Marie Antoinette Style) et réseaux sociaux.",
-    ],
-    identity: [
-      "Le monogramme V&A, déjà iconique, devient le cœur du système : une fenêtre qui découpe les œuvres des expositions de la saison. Un bandeau de couleur porte les titres et les dates, un pied de page blanc signe chaque affiche.",
-    ],
-    applications: [
-      "Chaque exposition réinvente le monogramme dans sa propre matière : moulures et ruban rose pour Marie Antoinette Style, pâte à modeler pour Inside Aardman, néon pour le David Bowie Centre.",
-      "Le système se déploie partout : affichage, site web et réseaux sociaux, scénographie de la façade et de la cour du musée, billets d'entrée, brochure de saison et livret d'exposition.",
-    ],
+    context: ["Refonte de l'identité du V&A, musée d'art et de design à Londres."],
+    concept: ["Le monogramme V&A devient une fenêtre qui se réinvente à chaque exposition."],
+    applications: ["Affiches, site, scénographie, billets, brochure et livret."],
     inline: {
       research: [
         {
@@ -546,7 +462,7 @@ export const projects: Project[] = [
     title: "Chez Louis",
     year: "2026",
     categories: ["branding", "da"],
-    tagline: "Savourez la ficelle à pleines dents. Le brandbook d'un fast-food à la française.",
+    tagline: "Savourez la ficelle à pleines dents.",
     color: "#1c2a6b",
     ink: "#e9d9a6",
     thumbnail: {
@@ -555,26 +471,9 @@ export const projects: Project[] = [
       width: 2000,
       height: 1125,
     },
-    // Textes repris de ton brandbook. Les pages sont normalisées en 2000×1125 et sans numéro
-    // (script : scripts/clean_slide.py).
-    context: [
-      "Création du brandbook de Chez Louis, une enseigne de restauration rapide.",
-      "Avec une carte volontairement réduite, Chez Louis réinvente la restauration rapide en proposant un modèle alternatif aux fast-foods traditionnels : savoir-faire français, qualité irréprochable, expérience soignée.",
-    ],
-    research: [
-      "Moodboard : une baguette, un héritage, un fil, une surpiqûre, un sac baguette, une écriture douce et des couleurs chaudes — sable, terre brûlée, vert opaque et bleu profond.",
-    ],
-    identity: [
-      "Un logo à la typographie haute et condensée, presque Art déco. Une palette resserrée : Twilight Indigo, Dust Grey et Jasmine. La Roboto décline toute la hiérarchie, du Black des titres au Thin des paragraphes.",
-      "Louis, la mascotte : un Parisien moustachu, sac à baguette sur l'épaule, dessiné au trait et déclinable en pied, en buste ou en simple portrait.",
-    ],
-    concept: [
-      "Chez Louis, le sandwich devient collection. Louis travaille la Ficelle comme une étoffe précieuse : une ligne de pain fine et croustillante, garnie avec la précision d'un atelier de haute maroquinerie. La carte en reprend le vocabulaire — la Ficelle piquée, brodée, surpiquée, doublée.",
-    ],
-    applications: [
-      "Devanture : un store bleu marine festonné où Louis veille sur la rue, le logo jaune posé sur la vitrine.",
-      "Menu, carte de « Ficélité » à tampons, sac à baguette, porte-gobelets et campagne d'affichage métro : « Vite fait, très bien fait. »",
-    ],
+    context: ["Brandbook d'un fast-food à la française."],
+    concept: ["La ficelle travaillée comme une pièce de maroquinerie."],
+    applications: ["Logo, mascotte, devanture, menu, packaging et affichage."],
     slides: [
       { src: `${cz}/01.webp`, alt: "Couverture : « Brandbook Chez Louis » en grandes capitales blanches sur fond bleu marine", width: 2000, height: 1125 },
       { src: `${cz}/02.webp`, alt: "Introduction : « Avec une carte volontairement réduite, Chez Louis réinvente la restauration rapide en proposant un modèle alternatif aux fast-foods traditionnels. »", width: 2000, height: 1125 },
@@ -601,7 +500,7 @@ export const projects: Project[] = [
     year: "2025",
     frame: "Compétition Campagne 360 — Sup de Pub",
     categories: ["campagne", "da"],
-    tagline: "#StreetandChips — les classiques de la street food s'invitent chez toi.",
+    tagline: "Les classiques de la street food s'invitent chez toi.",
     color: "#c92f8c",
     ink: "#2a0a1d",
     cover: {
@@ -610,23 +509,9 @@ export const projects: Project[] = [
       width: 1920,
       height: 1076,
     },
-    // Textes repris de ton book et de tes boards (coquilles corrigées).
-    context: [
-      "Création d'une campagne de notoriété pour travailler l'attractivité et la désirabilité des nouvelles saveurs Vico auprès de la cible 18-24 ans, dans le cadre de notre compétition Campagne 360 de Sup de Pub.",
-      "Dans une époque où les rappeurs sont devenus les icônes incontournables de la jeunesse, les 18-24 ans recherchent constamment de nouvelles expériences. Curieux de découvertes, ils apprécient revisiter les saveurs emblématiques de la street food sous des formats innovants. Avec cette nouvelle gamme, ils retrouvent en quelques minutes, dans un simple paquet de chips, l'authenticité des snacks qu'ils adorent.",
-    ],
-    problem: [
-      "Big idea : faire de la chips un symbole urbain pour la Gen Z.",
-      "Insight : pour la génération Z, le rap n'est pas qu'un genre musical, c'est une culture qui façonne leur quotidien : leur façon de parler, de s'habiller, et même de manger. Inspirée des saveurs urbaines du monde entier, la street food fait partie intégrante de leur lifestyle, tout comme le rap est la bande-son de leur génération.",
-    ],
-    concept: [
-      "Reprendre des phrases, des titres cultes de rappeurs en faisant le lien avec les nouvelles saveurs Street Food proposées par Vico : « C'est pas la capitale, c'est Bangkok bébé ! », « Sauce Curry, Beau Gosse », « Elle a le regard qui tue Tzatziki ».",
-      "Signature : les classiques de la street food s'invitent chez toi.",
-    ],
-    applications: [
-      "Packaging — un QR code sur chaque paquet permet d'accéder facilement à la playlist et de savourer l'instant en musique.",
-      "Playlists — créer une playlist unique inspirée de chaque saveur Vico, afin d'offrir une expérience immersive aux jeunes auditeurs Spotify. À l'heure de l'apéro, ils peuvent déguster leurs chips tout en écoutant une sélection musicale aussi variée et originale que les nouvelles saveurs. « Les playlists qui vont vous faire craquer ! »",
-    ],
+    context: ["Campagne 360 pour les nouvelles saveurs Vico, cible 18-24 ans."],
+    concept: ["Les punchlines du rap rencontrent la street food : #StreetandChips."],
+    applications: ["Affichage, packs avec QR code et une playlist Spotify par saveur."],
     inline: {
       concept: [
         {
@@ -657,7 +542,7 @@ export const projects: Project[] = [
     year: "2024",
     frame: "Créa team",
     categories: ["campagne", "da"],
-    tagline: "Santé, à votre peau ! Une campagne d'image et de notoriété pour une marque de beauté qui se boit des yeux.",
+    tagline: "Santé, à votre peau !",
     color: "#ece6dc",
     ink: "#5c0f1c",
     featured: true,
@@ -667,24 +552,9 @@ export const projects: Project[] = [
       width: 1920,
       height: 1288,
     },
-    // Textes repris de tes concept boards (coquilles corrigées). ⚠︎ Le 2e paragraphe
-    // du concept a été rédigé à partir des affiches : relis-le.
-    context: [
-      "Les jeunes femmes âgées de 20 à 25 ans commencent à avoir une vraie routine beauté. Elles savent que les besoins en hydratation varient selon leur âge, leur environnement et leurs activités, et qu'une bonne hydratation permet de ralentir le vieillissement cutané.",
-      "Elles sont aussi adeptes de la culture « Starbucks », de la boisson à emporter.",
-    ],
-    problem: [
-      "Création d'une campagne d'image et de notoriété pour la marque de beauté Horée.",
-      "Insight : la peau est l'organe qui a le plus besoin d'hydratation.",
-    ],
-    concept: [
-      "Horée, votre peau désaltérée. Les soins se présentent comme des boissons : une lotion avec sa paille, des sérums qu'on lève pour trinquer.",
-      "La signature « Santé, à votre peau ! » détourne le toast pour parler d'hydratation, et la mention « ne pas boire » assume le clin d'œil jusqu'au bout.",
-    ],
-    applications: [
-      "Activation — La santé au frais chez Monoprix. Installation d'un frigo américain avec un écran digital intégré qui invite à passer une « commande rafraîchissante ». Après le diagnostic, il délivre un échantillon de lotion adaptée à son type de peau. Présent dans les Monoprix, il donne de la visibilité aux produits Horée et offre une expérience immersive. Cette activation invite aussi à un événement au Perchoir du Marais.",
-      "Événement — Peau de bienvenue, avec Perchoir Group. Le Perchoir est un bar à cocktails situé sur le rooftop du BHV Marais. Lors du week-end du 21 juin 2024, Horée s'associe au Perchoir : en complément des boissons habituelles, une nouvelle gamme de jus de fruits personnalisés. Via un QR code, les consommateurs accèdent à un questionnaire qui leur permet de passer directement commande ; le jus est accompagné d'un échantillon de lotion personnalisé.",
-    ],
+    context: ["Campagne de notoriété pour une marque de soin BIO, auprès des 20-25 ans."],
+    concept: ["Des soins qui se boivent des yeux : « Santé, à votre peau ! »"],
+    applications: ["Affichage, frigo-diagnostic chez Monoprix et événement au Perchoir du Marais."],
     inline: {
       concept: [
         {
@@ -748,7 +618,7 @@ export const projects: Project[] = [
     role: "Projet d'équipe — avec Mila Capron et Alexandre Couy",
     frame: "Concours L'Oréal Brandstorm 2026",
     categories: ["da"],
-    tagline: "Les In-Fusions de Prada : l'art du layering, des parfums qui se superposent et se réinventent sans fin.",
+    tagline: "Les In-Fusions de Prada : l'art du layering.",
     color: "#b9dcc4",
     ink: "#21402c",
     cover: {
@@ -757,26 +627,13 @@ export const projects: Project[] = [
       width: 1358,
       height: 752,
     },
-    // Contexte : texte de ton ancien site. Le reste est traduit de tes slides (en anglais). ⚠︎ Relis la traduction.
-    context: [
-      "Ce projet a été conçu dans le cadre de l'édition 2026 de L'Oréal Brandstorm, le grand concours d'innovation étudiant organisé par le groupe.",
-      "Le défi de cette année invitait les participants à imaginer de nouvelles stratégies pour répondre au besoin croissant de nouveauté de la génération Z, tout en réussissant à renforcer leur fidélité envers les marques.",
-    ],
-    problem: [
-      "Comment des produits à superposer (layering) peuvent-ils satisfaire le besoin de nouveauté de la génération Z, tout en renforçant sa fidélité à la marque ?",
-      "Insight : la Gen Z consomme de façon circulaire, change souvent et accumule, sans attachement durable.",
-    ],
+    context: ["L'Oréal Brandstorm 2026 : fidéliser une Gen Z qui change sans cesse."],
+    concept: ["Les In-Fusions de Prada : trois parfums qui s'emboîtent et se superposent."],
+    applications: ["Coffret de layering vendu sur Sephora."],
     figures: [
       { value: "32 %", label: "des Gen Z possèdent 4 parfums ou plus" },
       { value: "71 %", label: "de recherches Google pour la mode « layered » fin 2024" },
       { value: "79 %", label: "des Gen Z voient le changement d'emploi comme la clé d'un meilleur salaire" },
-    ],
-    concept: [
-      "Introducing IN-FUSION : l'art du layering, des parfums qui se superposent et se réinventent sans fin.",
-      "Des flacons Prada Infusion qui s'emboîtent les uns sur les autres : un seul bouchon pour trois fragrances, des formats mini et « smart size », et la liberté de mixer les parfums selon ses envies.",
-    ],
-    applications: [
-      "Réinventer un produit existant en lui apportant une valeur ajoutée. Le coffret de layering « Les In-Fusions » est vendu sur Sephora : chacun choisit sa composition parmi les fragrances de la gamme.",
     ],
     inline: {
       problem: [
@@ -806,7 +663,7 @@ export const projects: Project[] = [
     year: "2024",
     role: "Créa team — avec Clémentine Dupeyrat",
     categories: ["campagne", "image"],
-    tagline: "JOuir avec un grand Oui. Les préservatifs de la Ville de Paris aux couleurs des Jeux Olympiques.",
+    tagline: "JOuir avec un grand Oui.",
     color: "#f0a43a",
     ink: "#3a1606",
     // ⚠︎ Images extraites d'un board en basse définition : remplace-les par tes fichiers HD.
@@ -816,22 +673,9 @@ export const projects: Project[] = [
       width: 1290,
       height: 540,
     },
-    context: [
-      "« Concevez le nouveau visuel des préservatifs de la Ville de Paris ! »",
-      "Pour rappeler l'événement sportif que la France connaîtra pendant l'été 2024, il est primordial de sensibiliser au consentement dans le sport. Les événements sportifs rassemblent souvent des foules importantes, augmentant le risque d'abus et de comportements inappropriés.",
-    ],
-    problem: [
-      "Sensibiliser sans faire culpabiliser. Alors quoi de mieux que de mettre un point d'honneur sur l'humour, afin de faire passer un message pertinent, simple et rempli de sous-entendus.",
-      "Dans une performance sportive comme sexuelle, une communication ouverte, le respect et la confiance en soi et envers ses partenaires sont des éléments qui favorisent des performances satisfaisantes dans les deux cas.",
-    ],
-    concept: [
-      "Baseline : « JOuir avec un grand Oui. » La phrase détourne l'acronyme des Jeux Olympiques pour lui inventer une tout autre définition. Elle sous-entend qu'il est primordial d'avoir accès à cette jouissance, mais surtout qu'elle ne peut être atteinte qu'avec le consentement des deux personnes.",
-      "Les accroches prennent une forme interrogative — « Tête de gland ? », « S'envoyer en l'air ? », « Okay ? », « Le bon coup ? » — pour rappeler qu'il est primordial de poser la question, et que sans réponse, le passage à l'acte n'est pas possible. La signature n'est que la réponse à ces questions.",
-    ],
-    identity: [
-      "Des illustrations simples, chacune liée à une discipline des JO : la boxe (les gants dessinent un cœur), la natation (le bonnet de bain fait allusion au préservatif), le trampoline (la position évoque certaines positions sexuelles) et le hockey (le manche de crosse remplacé par un pénis, le palet par l'attribut féminin).",
-      "La palette reprend les couleurs des anneaux olympiques — rouge, bleu, vert et jaune — avec une typographie manuscrite au ton léger. Des messages fins et humoristiques dans lesquels chacun peut se reconnaître.",
-    ],
+    context: ["Les préservatifs de la Ville de Paris pour les JO 2024."],
+    concept: ["« JOuir avec un grand Oui » : parler de consentement avec humour."],
+    applications: ["Quatre packs illustrés, un sport chacun."],
     inline: {
       identity: [
         {
@@ -851,7 +695,7 @@ export const projects: Project[] = [
     year: "2024",
     frame: "Numéro 1 — avril 2024",
     categories: ["edition", "da", "image"],
-    tagline: "Dérober, chaparder, chiper. Le magazine qui aborde les sujets tabous de manière artistique et positive.",
+    tagline: "Dérober, chaparder, chiper.",
     color: "#e23b2e",
     ink: "#fff3e0",
     thumbnail: {
@@ -866,18 +710,9 @@ export const projects: Project[] = [
       width: 1200,
       height: 766,
     },
-    // Contexte : texte de ton ancien site. ⚠︎ Le concept et l'identité ont été rédigés
-    // à partir des pages du magazine : relis-les et réécris-les avec tes mots.
-    context: [
-      "LOV, le magazine qui aborde des sujets tabous de manière artistique et positive. Dans ce numéro, le phénomène du vol est au cœur de l'ouvrage.",
-      "Le vol à l'étalage, bien que souvent perçu comme un crime mineur, peut avoir des conséquences profondes sur la vie des personnes impliquées, allant de sanctions légales à des effets durables sur la confiance et la perception de soi.",
-    ],
-    concept: [
-      "Basé sur des échanges entre jeunes, ce numéro explore le phénomène du vol de courses. Le dos de couverture prend la forme d'un ticket de caisse : banane, saumon, oignon, bonbon fil, mozzarella, brioche chocolat. Autant d'articles qui rythment ensuite les pages.",
-    ],
-    identity: [
-      "Deux registres se répondent : des séries photo prises sur le vif dans une épicerie, sacs de luxe à la main, et des natures mortes d'aliments détourés, numérotés comme des pièces à conviction. Le logo LOV, en lettres rouges gonflées, apporte une note pop et ironique.",
-    ],
+    context: ["Un magazine qui aborde les sujets tabous avec art. Numéro 1 : le vol."],
+    concept: ["Un dos en ticket de caisse, des aliments numérotés comme des pièces à conviction."],
+    applications: ["Couverture, séries photo en épicerie et natures mortes."],
     inline: {
       concept: [
         {
@@ -919,7 +754,7 @@ export const projects: Project[] = [
     client: "World Clean Up Day — journée mondiale du nettoyage",
     year: "2024",
     categories: ["campagne", "branding", "image"],
-    tagline: "Votre baignade en mer en 2038 ? Une campagne d'affichage pour agir dès maintenant.",
+    tagline: "Votre baignade en mer en 2038 ?",
     color: "#1e4fa0",
     ink: "#f4ea3c",
     cover: {
@@ -928,18 +763,9 @@ export const projects: Project[] = [
       width: 1920,
       height: 1440,
     },
-    // Contexte : texte de ton ancien site. ⚠︎ Le concept et l'identité ont été rédigés
-    // à partir des visuels : relis-les et réécris-les avec tes mots.
-    context: [
-      "Création d'une campagne d'affichage pour le « Clean Up Day ».",
-      "Journée dédiée à la promotion de la propreté et de la durabilité environnementale à travers des actions concrètes de nettoyage et de sensibilisation.",
-    ],
-    concept: [
-      "Projeter le public dans un futur proche : si l'on ne ramasse pas nos déchets, la mer de demain ressemblera à une poubelle. L'affiche met en scène une nageuse prête à plonger… dans un bac à ordures. « Votre baignade en mer en 2038 » — rendez-vous le samedi 16 septembre pour la Journée mondiale du nettoyage de notre planète.",
-    ],
-    identity: [
-      "Un bleu profond et un jaune vif, une trame de points façon pop art qui dessine la mer, une vague blanche en guise de rupture et une typographie condensée très affirmée. Le système se décline sur le mobilier de la journée, jusqu'aux bacs de collecte.",
-    ],
+    context: ["Affiche pour la journée mondiale du nettoyage."],
+    concept: ["« Votre baignade en mer en 2038 » : une nageuse plonge dans une poubelle."],
+    applications: ["Affichage et bacs de collecte."],
     inline: {
       identity: [
         {
@@ -959,7 +785,7 @@ export const projects: Project[] = [
     year: "2024",
     role: "Écriture, illustration & mise en page",
     categories: ["edition", "image"],
-    tagline: "Un livre pour enfant, écrit et illustré à la main, qui donne envie de ranger sa chambre.",
+    tagline: "Le livre qui donne envie de ranger sa chambre.",
     color: "#1e1e1e",
     ink: "#d7d2c8",
     thumbnail: {
@@ -974,16 +800,8 @@ export const projects: Project[] = [
       width: 1920,
       height: 1440,
     },
-    context: [
-      "Création d'un livre pour enfant autour du concept « chambre noire ».",
-      "Une histoire avec une morale, entièrement écrite et illustrée par mes soins : des dessins réalisés à la main, puis retravaillés numériquement.",
-    ],
-    concept: [
-      "Roomy, un petit lapin violet, ne range jamais sa chambre. La nuit, le désordre se transforme en cauchemar et sa chambre devient une « chambre noire ». « L'histoire qui donnera l'envie de ranger la chambre de chaque enfant ! »",
-    ],
-    identity: [
-      "Chaque double page alterne un texte court posé dans un halo de lumière sur fond noir, comme une lampe de chevet, et une illustration de la chambre aux traits volontairement naïfs. Une typographie manuscrite accompagne le ton du conte.",
-    ],
+    context: ["Livre pour enfant écrit et illustré à la main."],
+    concept: ["Une chambre en désordre devient un cauchemar : de quoi donner envie de ranger."],
     inline: {
       identity: [
         {

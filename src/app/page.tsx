@@ -50,7 +50,6 @@ export default function Home() {
             <p className="text-[24px] leading-[1.15] tracking-[-0.015em] md:text-[clamp(28px,3vw,48px)] md:leading-[1.1]">
               <Rich text={site.aboutIntro} />
             </p>
-            <p className="mt-6 max-w-[56ch] text-paper/70 md:mt-8 md:text-[17px]">{site.bioShort}</p>
             <div className="mt-8 flex flex-wrap gap-3 md:mt-10">
               <Link href="/a-propos" className="pill">
                 Mon parcours →
