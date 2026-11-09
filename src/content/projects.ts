@@ -302,7 +302,10 @@ export const projects: Project[] = [
       "Soyons honnêtes : la vraie vie est loin du cliché « clean girl » des réseaux sociaux. Des vies intenses, souvent chaotiques — et une peau qui en est le miroir.",
     ],
     concept: [
-      "Devenir un repère : dans ce rythme effréné, la skincare devient une pause essentielle, un moment pour se recentrer. Oh My Cream accompagne chaque femme avec douceur et réassurance.",
+      "Big idea : « Le soin parfait d'une vie imparfaite. » Une vie dense, sociale, imparfaite, mais tenue par quelques gestes fiables. Un storytelling en trois temps : le quotidien déborde, la peau réagit, Oh My Cream aide à la rééquilibrer.",
+    ],
+    identity: [
+      "Skincare first : un univers minimaliste où l'ordre émerge du chaos. Qui dit imperfections dit aspérités — celles de la peau, mais aussi celles du papier. Textures, découpes et natures mortes d'objets du quotidien évoquent l'action des produits (cibler, corriger, transformer) ; en contraste, les produits restent nets et lisibles.",
     ],
     slides: [
       { src: `${om}/01.webp`, alt: "Slide de titre : OH MY CREAM ! skincare — Campagne 360, Sup de Pub Paris", width: 2000, height: 1125 },
@@ -310,6 +313,11 @@ export const projects: Project[] = [
       { src: `${om}/03.webp`, alt: "« Des vies intenses, souvent chaotiques. » sur un fond d'objets du quotidien en vrac", width: 2000, height: 1122 },
       { src: `${om}/04.webp`, alt: "Problème : « Vie mouvementée → peau déséquilibrée. La sensibilité cutanée est souvent le miroir des intensités d'une vie de femme. »", width: 2000, height: 1124 },
       { src: `${om}/05.webp`, alt: "Solution « Devenir un repère » : profils de femmes de générations différentes ; la skincare comme pause essentielle", width: 2000, height: 1122 },
+      { src: `${om}/06.webp`, alt: "Mécanique « Un storytelling en trois temps » : le quotidien déborde, la peau réagit, OMC aide à la rééquilibrer", width: 2000, height: 1123 },
+      { src: `${om}/07.webp`, alt: "Big idea sur fond bordeaux : « Le soin parfait d'une vie imparfaite. Une vie dense, sociale, imparfaite, mais tenue par quelques gestes fiables. »", width: 2000, height: 1117 },
+      { src: `${om}/08.webp`, alt: "« Skincare first » : une pile de journaux froissés ; la direction artistique où l'ordre émerge du chaos, textures de papier et découpes", width: 2000, height: 1125 },
+      { src: `${om}/09.webp`, alt: "Nature morte « Métro, boulot, belle peau » : le sérum anti-imperfections en équilibre sur une pile d'objets du quotidien, fond bleu à cercles découpés", width: 2000, height: 1122 },
+      { src: `${om}/10.webp`, alt: "Nature morte « Métro, boulot, belle peau » : le soin ciblé anti-imperfections sur une pile d'objets, fond bleu criblé de pastilles découpées", width: 2000, height: 1121 },
     ],
   },
   {
