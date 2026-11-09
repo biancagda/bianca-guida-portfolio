@@ -14,7 +14,7 @@
   --color-paper: #ece7de;
   --color-mute: #8b867d;
   --color-line: rgb(236 231 222 / 0.14);
-  --color-signal: #f2ff1f; /* jaune citron */
+  --color-signal: #f2ff64; /* jaune citron */
 
   --font-display: var(--font-bebas), "Arial Narrow", sans-serif;
   --font-serif: var(--font-instrument), Georgia, serif;
