@@ -76,6 +76,7 @@ export type Project = {
 };
 
 const fb = "/images/projets/flying-blue";
+const ho = "/images/projets/horee";
 
 export const projects: Project[] = [
   {
@@ -143,6 +144,98 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "horee",
+    title: "Horée",
+    client: "Horée — marque de soin BIO",
+    year: "2024",
+    frame: "Créa team",
+    categories: ["campagne", "da", "packaging"],
+    tagline: "Santé, à votre peau ! Une campagne d'image et de notoriété pour une marque de beauté qui se boit des yeux.",
+    color: "#ece6dc",
+    ink: "#5c0f1c",
+    featured: true,
+    cover: {
+      src: `${ho}/abribus-serums.jpg`,
+      alt: "Affiche Horée sur un mobilier urbain : deux mains trinquent avec les sérums Détoxifiant et Désaltérant BIO, titre « Santé, à votre peau ! »",
+      width: 1920,
+      height: 1288,
+    },
+    // Textes repris de tes concept boards (coquilles corrigées). ⚠︎ Le 2e paragraphe
+    // du concept a été rédigé à partir des affiches : relis-le.
+    context: [
+      "Les jeunes femmes âgées de 20 à 25 ans commencent à avoir une vraie routine beauté. Elles savent que les besoins en hydratation varient selon leur âge, leur environnement et leurs activités, et qu'une bonne hydratation permet de ralentir le vieillissement cutané.",
+      "Elles sont aussi adeptes de la culture « Starbucks », de la boisson à emporter.",
+    ],
+    problem: [
+      "Création d'une campagne d'image et de notoriété pour la marque de beauté Horée.",
+      "Insight : la peau est l'organe qui a le plus besoin d'hydratation.",
+    ],
+    concept: [
+      "Horée, votre peau désaltérée. Les soins se présentent comme des boissons : une lotion avec sa paille, des sérums qu'on lève pour trinquer.",
+      "La signature « Santé, à votre peau ! » détourne le toast pour parler d'hydratation, et la mention « ne pas boire » assume le clin d'œil jusqu'au bout.",
+    ],
+    applications: [
+      "Activation — La santé au frais chez Monoprix. Installation d'un frigo américain avec un écran digital intégré qui invite à passer une « commande rafraîchissante ». Après le diagnostic, il délivre un échantillon de lotion adaptée à son type de peau. Présent dans les Monoprix, il donne de la visibilité aux produits Horée et offre une expérience immersive. Cette activation invite aussi à un événement au Perchoir du Marais.",
+      "Événement — Peau de bienvenue, avec Perchoir Group. Le Perchoir est un bar à cocktails situé sur le rooftop du BHV Marais. Lors du week-end du 21 juin 2024, Horée s'associe au Perchoir : en complément des boissons habituelles, une nouvelle gamme de jus de fruits personnalisés. Via un QR code, les consommateurs accèdent à un questionnaire qui leur permet de passer directement commande ; le jus est accompagné d'un échantillon de lotion personnalisé.",
+    ],
+    inline: {
+      concept: [
+        {
+          src: `${ho}/affiche-lotion.webp`,
+          alt: "Affiche Horée : flacon orange de lotion L'Essentiel BIO avec une paille en métal, « Santé, à votre peau ! »",
+          width: 1414,
+          height: 2000,
+          layout: "half",
+          caption: "Campagne d'affichage — Lotion visage L'Essentiel BIO",
+        },
+        {
+          src: `${ho}/affiche-serums.webp`,
+          alt: "Affiche Horée : deux mains trinquent avec un sérum rouge Détoxifiant et un sérum vert Désaltérant",
+          width: 1414,
+          height: 2000,
+          layout: "half",
+          caption: "Campagne d'affichage — Sérums Détoxifiant & Désaltérant BIO",
+        },
+      ],
+      applications: [
+        {
+          src: `${ho}/concept-board-activation-monoprix.jpg`,
+          alt: "Concept board de l'activation « La santé au frais » : frigo américain rose avec écran de diagnostic, chez Monoprix",
+          width: 1920,
+          height: 1357,
+          layout: "full",
+          caption: "Concept board de l'activation — Monoprix",
+        },
+        // ⚠︎ Dépose le concept board Perchoir dans public/images/projets/horee/
+        // sous ce nom, puis retire les « // » des lignes ci-dessous.
+        // {
+        //   src: `${ho}/concept-board-evenement-perchoir.jpg`,
+        //   alt: "Concept board de l'événement « Peau de bienvenue » avec Perchoir Group : rooftop, plateau jus d'orange et questionnaire mobile",
+        //   width: 1920,
+        //   height: 1081,
+        //   layout: "full",
+        //   caption: "Concept board de l'événement — Le Perchoir",
+        // },
+      ],
+    },
+    // ⚠︎ Chiffres repris du board : précise les libellés si besoin.
+    figures: [
+      { value: "100+", label: "mille" },
+      { value: "30 %", label: "réseaux" },
+      { value: "0 €", label: "média" },
+    ],
+    gallery: [
+      {
+        src: `${ho}/abribus-lotion.jpg`,
+        alt: "Affiche Horée lotion L'Essentiel BIO sur un mobilier urbain, en ville",
+        width: 1920,
+        height: 1288,
+        layout: "full",
+        caption: "Affichage urbain",
+      },
+    ],
+  },
+  {
     slug: "opal",
     title: "Opal",
     client: "Opal",
@@ -178,14 +271,19 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "horee",
-    title: "Horée",
-    tagline: "Peau désaltérée. Une marque de soin et son activation événementielle.",
-    categories: ["branding", "packaging", "campagne"],
-    color: "#e7a3b4",
-    ink: "#4a0f1f",
-    featured: true,
+    slug: "vico",
+    title: "Vico",
+    client: "Vico",
+    year: "2025",
+    frame: "Compétition Campagne 360 — Sup de Pub",
+    categories: ["campagne", "digital"],
+    tagline: "#Street&Chips — les classiques de la street food s'invitent chez toi.",
+    color: "#c92f8c",
+    ink: "#2a0a1d",
     draft: true,
+    context: [
+      "Création d'une campagne de notoriété pour travailler l'attractivité et la désirabilité des nouvelles saveurs Vico auprès de la cible 18-24 ans, dans le cadre de notre compétition Campagne 360 de Sup de Pub.",
+    ],
   },
   {
     slug: "patagonia",
@@ -202,17 +300,22 @@ export const projects: Project[] = [
     title: "V&A Museum",
     client: "Victoria and Albert Museum",
     year: "2026",
-    categories: ["edition", "da"],
-    tagline: "⚠︎ Accroche à compléter",
+    categories: ["branding", "edition", "da"],
+    tagline: "Moderniser l'image d'une institution sans trahir son histoire.",
     color: "#1f4a33",
     ink: "#e7d9b0",
     draft: true,
+    context: [
+      "Refonte complète de l'identité visuelle du V&A, le célèbre musée d'art et de design de Londres.",
+      "L'objectif était de moderniser entièrement l'image de marque, tout en respectant l'histoire et le prestige de cette institution.",
+    ],
   },
   {
     slug: "chez-louis",
     title: "Chez Louis",
+    year: "2026",
     categories: ["branding", "packaging"],
-    tagline: "⚠︎ Accroche à compléter — identité visuelle",
+    tagline: "⚠︎ Accroche à compléter — brandbook & identité de marque",
     color: "#1c2a6b",
     ink: "#e9d9a6",
     draft: true,
