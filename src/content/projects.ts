@@ -341,6 +341,12 @@ export const projects: Project[] = [
     color: "#1f4a33",
     ink: "#e7d9b0",
     // ⚠︎ Tu peux ajouter tes textes `problem` et `concept` : ils apparaîtront automatiquement.
+    thumbnail: {
+      src: `${va}/16-livret.webp`,
+      alt: "Livre d'exposition V&A « Wallace & Gromit and Friends », couverture verte et monogramme en pâte à modeler, sur un fauteuil en velours vert",
+      width: 2000,
+      height: 1122,
+    },
     cover: {
       src: `${va}/10-mise-en-situation.webp`,
       alt: "Affiche V&A 26/27 collée sur un mur, un passant flou au premier plan : le monogramme V&A découpe des portraits de Marie-Antoinette, une sculpture et une mannequin",
