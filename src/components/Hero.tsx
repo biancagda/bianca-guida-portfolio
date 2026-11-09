@@ -38,7 +38,7 @@ export function Hero() {
             {site.availability}
           </span>
         )}
-        <span className="col-span-4 hidden md:block md:text-right">{site.city}, France</span>
+        
       </motion.div>
 
       <h1 id="hero-title" className="sr-only">
@@ -78,6 +78,9 @@ export function Hero() {
             </p>
           </div>
         </div>
+
+        {/* « Paris, France » calé juste à gauche du trombone */}
+        <p className="label absolute right-[23%] top-[-62px] hidden whitespace-nowrap text-mute md:block">{site.city}, France</p>
 
         {/* Polaroïd trombonné */}
         <motion.div
