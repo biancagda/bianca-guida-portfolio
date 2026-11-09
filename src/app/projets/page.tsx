@@ -14,10 +14,10 @@ export default function ProjetsPage() {
     <section className="px-site pt-28 md:pt-36">
       <div className="grid-12 mb-10 items-end gap-y-4 md:mb-14">
         <LineReveal
-          className="display col-span-12 text-[24vw] md:col-span-9 md:text-[17vw]"
+          className="display col-span-12 w-fit text-[24vw] md:col-span-9 md:text-[17vw]"
           lines={[
             "Projets",
-            <span key="s" className="serif-i -mt-[0.06em] block whitespace-nowrap text-[0.28em] normal-case leading-none text-signal">
+            <span key="s" className="serif-i block whitespace-nowrap pt-[0.08em] text-right text-[0.2em] normal-case leading-none text-signal">
               de l&apos;idée à l&apos;image
             </span>,
           ]}
