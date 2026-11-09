@@ -287,7 +287,6 @@ export const projects: Project[] = [
     tagline: "Le soin parfait d'une vie imparfaite.",
     color: "#3a1420",
     ink: "#efe6dc",
-    draft: true, // ⚠︎ suite des slides à venir — passe à false quand la présentation est complète
     thumbnail: {
       src: `${om}/vignette.jpg`,
       alt: "Profils de plusieurs femmes de générations différentes, alignés, en lumière naturelle",
@@ -304,6 +303,10 @@ export const projects: Project[] = [
     concept: [
       "Big idea : « Le soin parfait d'une vie imparfaite. » Une vie dense, sociale, imparfaite, mais tenue par quelques gestes fiables. Un storytelling en trois temps : le quotidien déborde, la peau réagit, Oh My Cream aide à la rééquilibrer.",
     ],
+    applications: [
+      "Event « Bois ta skincare » : en collaboration avec Café Nuances, dans le Marais, une boisson exclusive Oh My Juice formulée à partir d'ingrédients bons pour la peau. À l'achat, une machine à boules délivre des échantillons de la gamme anti-imperfections à retirer en boutique.",
+      "Kit RP « Le jeu d'adresse » : une tour en bois gravée Oh My Cream cache le sérum et le soin ciblé. Pour les extraire, il faut retirer des blocs, et la tour s'effondre — mais les deux produits restent intacts : même quand tout s'écroule, la peau reste sous contrôle. Envoyé à des influenceuses parisiennes pour un unboxing ludique.",
+    ],
     identity: [
       "Skincare first : un univers minimaliste où l'ordre émerge du chaos. Qui dit imperfections dit aspérités — celles de la peau, mais aussi celles du papier. Textures, découpes et natures mortes d'objets du quotidien évoquent l'action des produits (cibler, corriger, transformer) ; en contraste, les produits restent nets et lisibles.",
     ],
@@ -318,6 +321,12 @@ export const projects: Project[] = [
       { src: `${om}/08.webp`, alt: "« Skincare first » : une pile de journaux froissés ; la direction artistique où l'ordre émerge du chaos, textures de papier et découpes", width: 2000, height: 1125 },
       { src: `${om}/09.webp`, alt: "Nature morte « Métro, boulot, belle peau » : le sérum anti-imperfections en équilibre sur une pile d'objets du quotidien, fond bleu à cercles découpés", width: 2000, height: 1122 },
       { src: `${om}/10.webp`, alt: "Nature morte « Métro, boulot, belle peau » : le soin ciblé anti-imperfections sur une pile d'objets, fond bleu criblé de pastilles découpées", width: 2000, height: 1121 },
+      // ⚠︎ Pages 11 à 15 à ajouter ici (Un chaos maîtrisé, Du digital…, grille Instagram, références Reels, … à l'expérientiel)
+      { src: `${om}/16.webp`, alt: "Event « Bois ta skincare » chez Café Nuances : boisson Oh My Juice et machine à boules d'échantillons Oh My Cream", width: 2000, height: 1121 },
+      { src: `${om}/17.webp`, alt: "Kit RP « Le jeu d'adresse » : tour en bois gravée Oh My Cream avec le sérum caché à l'intérieur", width: 2000, height: 1122 },
+      { src: `${om}/18.webp`, alt: "Kit RP « Le jeu d'adresse » : la tour s'effondre, une main tient le sérum anti-imperfections intact", width: 2000, height: 1122 },
+      { src: `${om}/19.webp`, alt: "Kit RP : unboxing par des influenceuses parisiennes (@isabeaudelatour, @jeannedamas, @mademoisellesoph) et vidéo TikTok", width: 2000, height: 1121 },
+      { src: `${om}/20.webp`, alt: "Slide de fin : « À ceux qui vont vite et visent haut : merci. » sur une photo floue d'une femme qui traverse la rue", width: 2000, height: 1122 },
     ],
   },
   {
