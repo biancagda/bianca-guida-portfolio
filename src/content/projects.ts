@@ -97,6 +97,7 @@ const ro = "/images/projets/la-chambre-de-roomy";
 const mp = "/images/projets/mairie-de-paris";
 const lb = "/images/projets/loreal-brandstorm";
 const om = "/images/projets/oh-my-cream";
+const tt = "/images/projets/torta-di-spaghetti";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -271,17 +272,33 @@ export const projects: Project[] = [
     title: "Torta",
     // year: "2025",  ⚠︎ ajoute l'année
     categories: ["branding", "packaging", "image"],
-    tagline: "Torta di Spaghetti — l'identité graphique d'un commerce de restauration.",
+    tagline: "Torta di Spaghetti — la pizza a trouvé sa cousine. L'identité d'une street food napolitaine.",
     color: "#1f5fd6",
     ink: "#f6d64a",
-    draft: true, // ⚠︎ visuels de l'identité à venir — passe à false ensuite
     thumbnail: {
-      src: "/images/projets/torta-di-spaghetti/vignette-torta.webp",
+      src: `${tt}/vignette-torta.webp`,
       alt: "Une jeune femme croque à pleines dents une part de torta di spaghetti sur fond noir, logo Torta rouge et emblème jaune en forme de nid de spaghetti",
       width: 2000,
       height: 1120,
     },
-    context: ["Réalisation d'une identité graphique pour un commerce de restauration."],
+    // Textes repris de tes slides.
+    context: [
+      "Réalisation d'une identité graphique pour un commerce de restauration.",
+      "C'est rond, doré, croustillant à l'extérieur, fondant à l'intérieur. Bienvenue chez Torta, le nouveau concept italien à emporter où la star n'est plus la pizza, mais la tarte aux spaghetti. Inspirée de la frittata di pasta napolitaine, cette spécialité populaire revient sur le devant de la scène, revisitée pour les amis, la famille, les soirées de partage.",
+    ],
+    concept: [
+      "Née dans les cuisines de Nonna, la tarte aux pâtes est un plat du cœur, préparé avec ce qu'on a sous la main. Aujourd'hui, Torta en fait une street food conviviale : des parts généreuses, dorées, prêtes à emporter comme une part de pizza, mais avec le charme de la tradition italienne.",
+      "Dans un monde où les menus s'allongent, Torta choisit la simplicité et le goût de l'essentiel. Une nouvelle tendance est née : la pizza a trouvé sa cousine.",
+    ],
+    identity: [
+      "Un logo manuscrit rouge, généreux comme un geste de la main, accompagné d'un emblème rond en nid de spaghetti. Le rouge, le vert et le jaune convoquent l'Italie ; les affiches s'inspirent de l'illustration publicitaire vintage napolitaine : « Il gusto della tradizione. Buona, semplice, italiana. »",
+    ],
+    slides: [
+      { src: `${tt}/01.webp`, alt: "Logo Torta di Spaghetti en rouge et jaune, avec l'emblème en nid de spaghetti, sur fond vert", width: 2000, height: 1116 },
+      { src: `${tt}/02.webp`, alt: "Affiche vintage « Il gusto della tradizione » avec une part de torta et la baie de Naples, carte verte au logo Torta, texte de présentation", width: 2000, height: 1114 },
+      { src: `${tt}/03.webp`, alt: "Texte de concept sur fond rouge : « Née dans les cuisines de Nonna, la tarte aux pâtes est un plat du cœur »", width: 2000, height: 1135 },
+      { src: `${tt}/04.webp`, alt: "Déclinaisons du logo en rouge, blanc et noir, et affiche rouge vintage : un personnage allongé sur une part géante de torta, « 6 € da asporto »", width: 2000, height: 1101 },
+    ],
   },
   {
     slug: "oh-my-cream",
