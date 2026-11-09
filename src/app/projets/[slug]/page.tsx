@@ -108,20 +108,22 @@ export default async function ProjectPage({ params }: Params) {
         </div>
       )}
 
-      {/* ─── Visuel principal ─── */}
+      {/* ─── Visuel principal (masqué pour une présentation sans `cover` : elle commence par sa propre page de titre) ─── */}
+      {(project.cover || !project.slides?.length) && (
       <div className="px-site mt-10 md:mt-16">
         <Reveal>
           {/* Visuel principal : `cover`, sinon la vignette, sinon un emplacement « à venir » */}
           <ProjectMedia project={project} media={project.cover ?? project.thumbnail} ratio={project.cover ?? project.thumbnail ? undefined : "aspect-[16/9]"} sizes="100vw" priority />
         </Reveal>
       </div>
+      )}
 
       {/* ─── Étude de cas ─── */}
       <div className="px-site mt-16 space-y-16 md:mt-36 md:space-y-36">
         {steps.map((step) => {
           const text = project[step.key];
           const media = project.inline?.[step.key];
-          if (!text && !media && !project.draft) return null;
+          if (!text && !media && !(project.draft && !project.slides?.length)) return null;
           stepNumber += 1;
           return (
             <section key={step.key} aria-labelledby={`etape-${step.key}`}>

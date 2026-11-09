@@ -294,12 +294,6 @@ export const projects: Project[] = [
       width: 1038,
       height: 1122,
     },
-    cover: {
-      src: `${om}/02.webp`,
-      alt: "Slide « Soyons honnêtes » : une jeune femme lace ses bottes au milieu d'une chambre en désordre",
-      width: 2000,
-      height: 1125,
-    },
     context: [
       "Proposition de campagne de communication 360° conçue pour la marque de cosmétique Oh My Cream.",
       "L'objectif de cette stratégie globale est d'accompagner et de promouvoir avec impact le lancement de leur nouveau « combo anti-imperfections » sur l'ensemble des canaux de diffusion.",
