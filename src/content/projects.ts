@@ -574,8 +574,12 @@ export const projects: Project[] = [
       "Un logo à la typographie haute et condensée, presque Art déco. Une palette resserrée : Twilight Indigo, Dust Grey et Jasmine. La Roboto décline toute la hiérarchie, du Black des titres au Thin des paragraphes.",
       "Louis, la mascotte : un Parisien moustachu, sac à baguette sur l'épaule, dessiné au trait et déclinable en pied, en buste ou en simple portrait.",
     ],
+    concept: [
+      "Chez Louis, le sandwich devient collection. Louis travaille la Ficelle comme une étoffe précieuse : une ligne de pain fine et croustillante, garnie avec la précision d'un atelier de haute maroquinerie. La carte en reprend le vocabulaire — la Ficelle piquée, brodée, surpiquée, doublée.",
+    ],
     applications: [
       "Devanture : un store bleu marine festonné où Louis veille sur la rue, le logo jaune posé sur la vitrine.",
+      "Menu, carte de « Ficélité » à tampons, sac à baguette, porte-gobelets et campagne d'affichage métro : « Vite fait, très bien fait. »",
     ],
     slides: [
       { src: `${cz}/01.webp`, alt: "Couverture : « Brandbook Chez Louis » en grandes capitales blanches sur fond bleu marine", width: 2000, height: 1125 },
@@ -588,6 +592,12 @@ export const projects: Project[] = [
       { src: `${cz}/08.webp`, alt: "Nuanciers identitaires : Twilight Indigo #1D3461, Dust Grey #D6D5C9, Jasmine #F4D58D", width: 2000, height: 1125 },
       { src: `${cz}/09.webp`, alt: "Principes graphiques : la mascotte Louis, homme moustachu portant un sac à baguette, en pied, en buste et en portrait", width: 2000, height: 1125 },
       { src: `${cz}/10.webp`, alt: "Devanture Chez Louis : store bleu marine festonné avec la mascotte Louis, logo jaune sur la vitrine", width: 2000, height: 1125 },
+      { src: `${cz}/11.webp`, alt: "Menu sur chevalet bleu : la Ficelle piquée, brodée, surpiquée et doublée", width: 2000, height: 1125 },
+      { src: `${cz}/12.webp`, alt: "Cartes de « Ficélité » : cartes bleues au logo Chez Louis et versos jaunes à tampons", width: 2000, height: 1125 },
+      { src: `${cz}/13.webp`, alt: "Sac à baguette bleu marine imprimé de la mascotte Louis, porté dans une rue parisienne", width: 2000, height: 1125 },
+      { src: `${cz}/14.webp`, alt: "Porte-gobelets bleu Chez Louis et gobelets jaunes à motif Louis", width: 2000, height: 1125 },
+      { src: `${cz}/15.webp`, alt: "Affichage métro : deux ficelles nouées d'une bague Louis, « Vite fait, très bien fait. »", width: 2000, height: 1125 },
+      // ⚠︎ Dernière page (nom de la marque + signature) à ajouter ici : 16.webp
     ],
   },
   {
