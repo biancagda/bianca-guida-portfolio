@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { site } from "@/content/site";
 import { ContactForm } from "@/components/ContactForm";
 import { LineReveal, Reveal } from "@/components/Reveal";
+import { Icon } from "@/components/Icon";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -38,7 +39,7 @@ export default function ContactPage() {
                 >
                   <span className="label text-mute">{l.label}</span>
                   <span className="serif-i truncate text-[clamp(20px,1.7vw,26px)] transition-colors group-hover:text-signal">
-                    {l.value} <span aria-hidden>↗</span>
+                    {l.value} <Icon name="arrow-up-right" />
                   </span>
                 </a>
               </li>

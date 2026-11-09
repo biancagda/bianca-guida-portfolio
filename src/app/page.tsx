@@ -8,6 +8,7 @@ import { ProjectGrid } from "@/components/ProjectGrid";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead } from "@/components/SectionHead";
 import { Rich } from "@/lib/text";
+import { Icon } from "@/components/Icon";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
           title={["Travaux", <span key="c" className="serif-i normal-case">choisis</span>]}
           aside={
             <Link href="/projets" className="label">
-              <span className="u-link">Tous les projets →</span>
+              <span className="u-link">Tous les projets <Icon name="arrow-right" /></span>
             </Link>
           }
         />
@@ -52,7 +53,7 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3 md:mt-10">
               <Link href="/a-propos" className="pill">
-                Mon parcours →
+                Mon parcours <Icon name="arrow-right" />
               </Link>
               <Link href="/contact" className="pill pill-ghost">
                 Me contacter

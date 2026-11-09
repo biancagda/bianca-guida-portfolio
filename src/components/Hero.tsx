@@ -7,6 +7,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "motion/react"
 import { site } from "@/content/site";
 import { Rich } from "@/lib/text";
 import { LineReveal } from "./Reveal";
+import { Icon } from "./Icon";
 
 /** Délai d'apparition : on attend la fin de l'intro si elle est jouée. */
 function useStartDelay() {
@@ -94,7 +95,7 @@ export function Hero() {
         </motion.p>
         <motion.div {...fade(0.8)} className="col-span-12 flex gap-3 md:col-span-5 md:justify-end">
           <Link href="/projets" className="pill">
-            Travail <span aria-hidden>↘</span>
+            Travail <Icon name="arrow-down-right" />
           </Link>
           <Link href="/a-propos" className="pill pill-ghost">
             À propos

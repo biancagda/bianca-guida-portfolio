@@ -1,3 +1,4 @@
+import { Icon } from "./Icon";
 /** Bandeau défilant des disciplines — lent, purement typographique. */
 export function Marquee({ items }: { items: string[] }) {
   const row = (
@@ -5,7 +6,7 @@ export function Marquee({ items }: { items: string[] }) {
       {items.map((it, i) => (
         <span key={i} className="flex items-center">
           <span className="display px-6 text-[clamp(40px,6vw,96px)]">{it}</span>
-          <span className="serif-i text-[clamp(28px,4vw,64px)] text-signal">✳︎</span>
+          <Icon name="star" className="h-[clamp(22px,3vw,44px)] w-[clamp(22px,3vw,44px)] text-signal" />
         </span>
       ))}
     </div>

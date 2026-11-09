@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
 import { Reveal } from "./Reveal";
+import { Icon } from "./Icon";
 
 export function SiteFooter() {
   const pathname = usePathname();
@@ -26,7 +27,7 @@ export function SiteFooter() {
                 {site.contact.email}
               </a>
               <Link href="/contact" className="pill pill-ghost ml-auto">
-                Écrire un message →
+                Écrire un message <Icon name="arrow-right" />
               </Link>
             </div>
           </div>
@@ -37,19 +38,19 @@ export function SiteFooter() {
         <ul className="label col-span-6 space-y-1 md:col-span-3">
           <li>
             <a className="u-link" href={site.contact.linkedin.url} target="_blank" rel="noreferrer">
-              LinkedIn ↗
+              LinkedIn <Icon name="arrow-up-right" />
             </a>
           </li>
           {site.contact.instagram && (
             <li>
               <a className="u-link" href={site.contact.instagram.url} target="_blank" rel="noreferrer">
-                Instagram ↗
+                Instagram <Icon name="arrow-up-right" />
               </a>
             </li>
           )}
           <li>
             <a className="u-link" href={`mailto:${site.contact.email}`}>
-              E-mail ↗
+              E-mail <Icon name="arrow-up-right" />
             </a>
           </li>
         </ul>
@@ -68,7 +69,7 @@ export function SiteFooter() {
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="label col-span-12 justify-self-start md:col-span-2 md:justify-self-end"
         >
-          <span className="u-link">Haut de page ↑</span>
+          <span className="u-link">Haut de page <Icon name="arrow-up" /></span>
         </button>
       </div>
 

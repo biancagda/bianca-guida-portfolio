@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { categories, type CategoryKey, type Project } from "@/content/projects";
 import { ProjectGrid } from "./ProjectGrid";
 import { ProjectIndex } from "./ProjectIndex";
+import { Icon } from "./Icon";
 
 type View = "index" | "grille";
 const VIEW_KEY = "bg-projets-vue";
@@ -51,7 +52,7 @@ export function ProjectsExplorer({ projects }: { projects: Project[] }) {
         <div className="label flex gap-4 px-[clamp(16px,3vw,40px)] md:px-0" role="group" aria-label="Affichage">
           {(["grille", "index"] as View[]).map((v) => (
             <button key={v} type="button" onClick={() => changeView(v)} aria-pressed={view === v} className={view === v ? "text-paper" : "text-mute hover:text-paper"}>
-              {view === v ? "● " : "○ "}
+              <Icon name={view === v ? "dot" : "ring"} className="mr-1.5 h-[0.7em] w-[0.7em]" />
               {v === "grille" ? "Grille" : "Index"}
             </button>
           ))}

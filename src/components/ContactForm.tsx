@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { site } from "@/content/site";
+import { Icon } from "./Icon";
 
 const ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT;
 const subjects = ["Proposition de poste", "Projet freelance", "Collaboration", "Autre"];
@@ -92,7 +93,7 @@ export function ContactForm() {
 
       <div className="flex flex-wrap items-center gap-6 pt-4">
         <button type="submit" className="pill" disabled={status === "sending"}>
-          {status === "sending" ? "Envoi…" : "Envoyer"} <span aria-hidden>→</span>
+          {status === "sending" ? "Envoi…" : "Envoyer"} <Icon name="arrow-right" />
         </button>
         {status === "error" && (
           <p role="alert" className="text-signal">

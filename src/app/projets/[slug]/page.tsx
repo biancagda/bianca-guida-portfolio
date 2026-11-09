@@ -5,6 +5,7 @@ import { getNextProject, getProject, projects, thumbnailOf, type Media, type Pro
 import { ProjectMedia } from "@/components/ProjectMedia";
 import { categoryList } from "@/components/ProjectMeta";
 import { LineReveal, Reveal } from "@/components/Reveal";
+import { Icon } from "@/components/Icon";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -75,7 +76,7 @@ export default async function ProjectPage({ params }: Params) {
       <header className="px-site pt-28 md:pt-36">
         <div className="label mb-6 flex justify-between text-mute">
           <Link href="/projets" className="u-link">
-            ← Projets
+            <Icon name="arrow-left" /> Projets
           </Link>
         </div>
         <LineReveal className="display text-[19vw] md:text-[12.5vw]" lines={[project.title]} />
@@ -95,7 +96,7 @@ export default async function ProjectPage({ params }: Params) {
       {project.draft && (
         <div className="px-site mt-10">
           <p className="label flex items-center gap-3 border border-signal/50 px-4 py-3 text-signal">
-            <span aria-hidden>●</span> Étude de cas en cours de rédaction — contenu provisoire, visuels à venir.
+            <Icon name="dot" className="h-[0.7em] w-[0.7em]" /> Étude de cas en cours de rédaction — contenu provisoire, visuels à venir.
           </p>
         </div>
       )}
@@ -198,7 +199,7 @@ export default async function ProjectPage({ params }: Params) {
           <div className="col-span-12 md:col-span-8">
             <p className="label text-signal">Projet suivant</p>
             <p className="display mt-3 text-[13vw] md:text-[11vw]">
-              {next.title} <span className="inline-block transition-transform duration-500 group-hover:translate-x-4">→</span>
+              {next.title} <span className="inline-block align-middle transition-transform duration-500 group-hover:translate-x-4"><Icon name="arrow-right" className="h-[0.6em] w-[0.6em]" /></span>
             </p>
           </div>
           <div className="col-span-12 md:col-span-4">

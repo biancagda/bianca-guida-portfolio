@@ -299,7 +299,7 @@ export const projects: Project[] = [
       { src: `${om}/01.webp`, alt: "Slide de titre : OH MY CREAM ! skincare — Campagne 360, Sup de Pub Paris", width: 2000, height: 1125 },
       { src: `${om}/02.webp`, alt: "Insight « Soyons honnêtes » : la vraie vie est loin du cliché clean girl ; une beauté minimaliste, efficace et naturelle", width: 2000, height: 1125 },
       { src: `${om}/03.webp`, alt: "« Des vies intenses, souvent chaotiques. » sur un fond d'objets du quotidien en vrac", width: 2000, height: 1122 },
-      { src: `${om}/04.webp`, alt: "Problème : « Vie mouvementée → peau déséquilibrée. La sensibilité cutanée est souvent le miroir des intensités d'une vie de femme. »", width: 2000, height: 1124 },
+      { src: `${om}/04.webp`, alt: "Problème : « Vie mouvementée, peau déséquilibrée. La sensibilité cutanée est souvent le miroir des intensités d'une vie de femme. »", width: 2000, height: 1124 },
       { src: `${om}/05.webp`, alt: "Solution « Devenir un repère » : profils de femmes de générations différentes ; la skincare comme pause essentielle", width: 2000, height: 1122 },
       { src: `${om}/06.webp`, alt: "Mécanique « Un storytelling en trois temps » : le quotidien déborde, la peau réagit, OMC aide à la rééquilibrer", width: 2000, height: 1123 },
       { src: `${om}/07.webp`, alt: "Big idea sur fond bordeaux : « Le soin parfait d'une vie imparfaite. Une vie dense, sociale, imparfaite, mais tenue par quelques gestes fiables. »", width: 2000, height: 1117 },

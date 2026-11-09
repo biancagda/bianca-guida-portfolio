@@ -6,6 +6,7 @@ import { useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 import { thumbnailOf, type Project } from "@/content/projects";
 import { categoryList } from "./ProjectMeta";
+import { Icon } from "./Icon";
 
 /**
  * Index éditorial des projets : une ligne par projet, comme une table des
@@ -51,7 +52,7 @@ export function ProjectIndex({ projects }: { projects: Project[] }) {
               <span className="label col-span-4 hidden text-mute md:block">{categoryList(p)}</span>
               <span className="label col-span-2 hidden text-right text-mute md:block">
                 {p.year ?? "—"}
-                {p.draft && <span className="ml-2 text-signal">●</span>}
+                {p.draft && <Icon name="dot" className="ml-2 h-[0.7em] w-[0.7em] text-signal" />}
               </span>
             </Link>
           </li>
@@ -59,7 +60,7 @@ export function ProjectIndex({ projects }: { projects: Project[] }) {
       </ul>
       {projects.some((p) => p.draft) && (
         <p className="label mt-4 text-mute">
-          <span className="text-signal">●</span> Étude de cas en cours de rédaction
+          <Icon name="dot" className="h-[0.7em] w-[0.7em] text-signal" /> Étude de cas en cours de rédaction
         </p>
       )}
 
