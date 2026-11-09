@@ -95,7 +95,6 @@ const pa = "/images/projets/patagonia";
 const cl = "/images/projets/clean-up-day";
 const va = "/images/projets/va-museum";
 const ro = "/images/projets/la-chambre-de-roomy";
-const mp = "/images/projets/mairie-de-paris";
 const lb = "/images/projets/loreal-brandstorm";
 const om = "/images/projets/oh-my-cream";
 const tt = "/images/projets/torta-di-spaghetti";
@@ -484,10 +483,10 @@ export const projects: Project[] = [
     color: "#1c2a6b",
     ink: "#e9d9a6",
     thumbnail: {
-      src: `${cz}/04.webp`,
-      alt: "Une femme en trench sur un passage piéton brandit une pancarte « Le fast food à la française c'est Chez Louis ! »",
-      width: 2000,
-      height: 1125,
+      src: "/images/projets/chez-louis/vignette.jpg",
+      alt: "Devanture Chez Louis : store bleu marine avec la mascotte Louis, logo jaune sur la vitrine",
+      width: 1206,
+      height: 667,
     },
     context: ["Brandbook d'un fast-food à la française."],
     concept: ["La ficelle travaillée comme une pièce de maroquinerie."],
@@ -521,6 +520,12 @@ export const projects: Project[] = [
     tagline: "Les classiques de la street food s'invitent chez toi.",
     color: "#c92f8c",
     ink: "#2a0a1d",
+    thumbnail: {
+      src: "/images/projets/vico/vignette.jpg",
+      alt: "Affiche Vico sur fond rose : « C'est pas la capitale, c'est Bangkok bébé ! » et le paquet Street Food saveur Bœuf Thaï",
+      width: 1206,
+      height: 670,
+    },
     cover: {
       src: `${vi}/affichage-metro.jpg`,
       alt: "Trois affiches Vico Street Food dans le métro : « C'est pas la capitale, c'est Bangkok bébé ! », « Tex Mex, Tex Mex Vie », « Sauce Curry, Beau Gosse »",
@@ -564,6 +569,12 @@ export const projects: Project[] = [
     color: "#ece6dc",
     ink: "#5c0f1c",
     featured: true,
+    thumbnail: {
+      src: "/images/projets/horee/vignette.jpg",
+      alt: "Une main tient le sérum Détoxifiant BIO Horée, des gouttes rouges s'en échappent",
+      width: 1206,
+      height: 669,
+    },
     cover: {
       src: `${ho}/abribus-serums.jpg`,
       alt: "Affiche Horée sur un mobilier urbain : deux mains trinquent avec les sérums Détoxifiant et Désaltérant BIO, titre « Santé, à votre peau ! »",
@@ -675,39 +686,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "mairie-de-paris",
-    title: "Mairie de Paris",
-    client: "Ville de Paris",
-    year: "2024",
-    role: "Créa team — avec Clémentine Dupeyrat",
-    categories: ["campagne", "image"],
-    tagline: "JOuir avec un grand Oui.",
-    color: "#f0a43a",
-    ink: "#3a1606",
-    // ⚠︎ Images extraites d'un board en basse définition : remplace-les par tes fichiers HD.
-    cover: {
-      src: `${mp}/packshots.jpg`,
-      alt: "Quatre préservatifs illustrés de la Ville de Paris : « Okay? » (hockey), « Le bon coup? » (boxe), « S'envoyer en l'air? » (trampoline), « Tête de gland? » (natation)",
-      width: 1290,
-      height: 540,
-    },
-    context: ["Les préservatifs de la Ville de Paris pour les JO 2024."],
-    concept: ["« JOuir avec un grand Oui » : parler de consentement avec humour."],
-    applications: ["Quatre packs illustrés, un sport chacun."],
-    inline: {
-      identity: [
-        {
-          src: `${mp}/board-complet.webp`,
-          alt: "Board complet du projet : brief, baseline « JOuir avec un grand Oui », accroches, couleurs, typographies, les quatre illustrations sportives et les packshots",
-          width: 430,
-          height: 2000,
-          layout: "narrow",
-          caption: "Board de présentation",
-        },
-      ],
-    },
-  },
-  {
     slug: "lov-magazine",
     title: "LOV Magazine",
     year: "2024",
@@ -717,10 +695,10 @@ export const projects: Project[] = [
     color: "#e23b2e",
     ink: "#fff3e0",
     thumbnail: {
-      src: `${lo}/vignette-lov.webp`,
-      alt: "Double page du magazine LOV : une jeune femme en écharpe tartan dans une épicerie, sac Louis Vuitton à la main, titre LOV en lettres rouges gonflées, banane en gros plan",
-      width: 2000,
-      height: 1123,
+      src: "/images/projets/lov-magazine/vignette.jpg",
+      alt: "Double page LOV : jeune femme en écharpe tartan dans une épicerie, logo LOV rouge, banane en gros plan",
+      width: 1206,
+      height: 664,
     },
     cover: {
       src: `${lo}/couverture-dos-ticket.jpg`,
@@ -775,6 +753,12 @@ export const projects: Project[] = [
     tagline: "Votre baignade en mer en 2038 ?",
     color: "#1e4fa0",
     ink: "#f4ea3c",
+    thumbnail: {
+      src: "/images/projets/clean-up-day/vignette.jpg",
+      alt: "Couvercle de poubelle bleue marqué « Clean Up Day » en jaune",
+      width: 1206,
+      height: 662,
+    },
     cover: {
       src: `${cl}/affiche-baignade-2038.jpg`,
       alt: "Affiche Clean Up Day : une nageuse en maillot vert, prête à plonger depuis une poubelle verte, « Votre baignade en mer en 2038 — samedi 16 septembre »",
