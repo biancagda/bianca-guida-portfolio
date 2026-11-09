@@ -281,6 +281,7 @@ export const projects: Project[] = [
     slug: "oh-my-cream",
     title: "Oh My Cream",
     client: "Oh My Cream! Skincare",
+    year: "2026",
     role: "Projet d'équipe — avec Cybil Ajacques, Loup Arbel, Mila Capron, Olivia Cheno et Georges Gautier",
     frame: "Campagne 360 — Sup de Pub Paris",
     categories: ["campagne", "da", "digital"],
