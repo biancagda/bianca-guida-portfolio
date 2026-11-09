@@ -3,10 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { site } from "@/content/site";
 import { Rich } from "@/lib/text";
-import { LineReveal } from "./Reveal";
 import { Icon } from "./Icon";
 
 /** Délai d'apparition : on attend la fin de l'intro si elle est jouée. */
@@ -20,19 +19,14 @@ function useStartDelay() {
 export function Hero() {
   const d = useStartDelay();
   const reduce = useReducedMotion();
-  const { scrollY } = useScroll();
-  // Le nom glisse doucement vers la gauche au scroll : la composition « respire ».
-  const left = useTransform(scrollY, [0, 800], [0, reduce ? 0 : -120]);
   const fade = (delay: number) => ({
     initial: reduce ? false : { opacity: 0, y: 12 },
     animate: { opacity: 1, y: 0 },
     transition: { delay: d + delay, duration: 0.9, ease: [0.16, 1, 0.3, 1] as const },
   });
-  const [first, ...rest] = site.name.toUpperCase().split(" ");
-  const last = rest.join(" ");
 
   return (
-    <section className="px-site relative flex min-h-[100svh] flex-col pb-10 pt-24 md:pt-28" aria-labelledby="hero-title">
+    <section className="px-site relative flex flex-col pb-10 pt-24 md:pt-28" aria-labelledby="hero-title">
       <motion.div {...fade(0.3)} className="grid-12 label gap-y-2 border-t border-line pt-3 text-mute">
         <span className="col-span-4 md:col-span-3">(Portfolio © {new Date().getFullYear()})</span>
         {site.availability && (
@@ -48,45 +42,67 @@ export function Hero() {
       </motion.div>
 
       <h1 id="hero-title" className="sr-only">
-        {site.name} — {site.role}
+        {site.name} — Creative portfolio — {site.role}
       </h1>
 
-      <div className="mt-auto pt-10" aria-hidden>
-        {/* Ligne 1 : prénom + portrait */}
-        <div className="flex items-end justify-between gap-6">
-          <motion.div style={{ x: left }}>
-            <LineReveal as="p" delay={d} className="display text-[30vw] md:text-[21vw]" lines={[first]} />
-          </motion.div>
-          <motion.div
-            initial={reduce ? false : { scale: 0, rotate: -40 }}
-            animate={{ scale: 1, rotate: 0 }}
-            transition={{ delay: d + 0.35, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative mb-[2.2vw] hidden aspect-square w-[14vw] shrink-0 overflow-hidden rounded-full md:block"
-          >
+      {/* ─── Page de garde : un dossier posé sur fond noir ─── */}
+      <motion.div
+        aria-hidden
+        initial={reduce ? false : { opacity: 0, y: 40, rotate: -1.5 }}
+        animate={{ opacity: 1, y: 0, rotate: 0 }}
+        transition={{ delay: d, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+        className="relative mx-auto mt-14 w-full max-w-[1180px] md:mt-12"
+      >
+        {/* Feuille glissée dans le dossier, qui dépasse en haut */}
+        <div className="absolute inset-x-[4%] -top-[4%] h-[30%] -rotate-[0.8deg] rounded-[2px] bg-paper/95 shadow-[0_1px_0_rgba(0,0,0,0.2)]">
+          <div className="h-[38%] w-[62%] bg-[repeating-linear-gradient(0deg,rgba(242,255,100,0.55)_0_1px,transparent_1px_6px),repeating-linear-gradient(90deg,rgba(242,255,100,0.55)_0_1px,transparent_1px_6px)]" />
+          <div className="absolute left-[66%] top-[10%] space-y-1 font-mono text-[clamp(6px,0.7vw,10px)] leading-none text-ink/70">
+            <p>DOSSIER — DA / DESIGN GRAPHIQUE</p>
+            <p>RÉF. BG-{new Date().getFullYear()}</p>
+          </div>
+        </div>
+
+        {/* Onglet du dossier */}
+        <div className="relative ml-[6%] h-[clamp(18px,2.4vw,34px)] w-[30%] rounded-t-[10px] border border-b-0 border-paper/12 bg-[#1d1d1b]" />
+
+        {/* Dossier */}
+        <div className="relative overflow-hidden rounded-[6px] rounded-tl-none border border-paper/12 bg-[#1d1d1b] px-[6%] pb-[9%] pt-[34%] shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)] md:pt-[9%] md:pb-[7%]">
+          {/* pli du carton */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-[7%] h-px bg-paper/8" />
+
+          <div className="relative text-center md:pr-[17%]">
+            <p className="serif-i relative z-10 text-[19vw] leading-[0.8] text-signal md:text-[clamp(90px,10vw,170px)]">Creative</p>
+            <p className="display -mt-[0.12em] text-[22vw] leading-[0.85] text-paper md:text-[clamp(120px,15.5vw,250px)]">Portfolio</p>
+            <p className="label mt-5 text-[11px] tracking-[0.3em] text-paper md:mt-7 md:text-[13px]">{site.name}</p>
+          </div>
+        </div>
+
+        {/* Polaroïd trombonné */}
+        <motion.div
+          initial={reduce ? false : { opacity: 0, y: -30, rotate: 12 }}
+          animate={{ opacity: 1, y: 0, rotate: 5 }}
+          transition={{ delay: d + 0.45, duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
+          className="group absolute -top-[5%] right-[2%] w-[27%] bg-[#f4f1ea] p-[2.2%] pb-[7%] shadow-[0_18px_40px_-12px_rgba(0,0,0,0.8)] md:-top-[8%] md:right-[3%] md:w-[18%] md:p-[1.2%] md:pb-[4%]"
+        >
+          <div className="relative aspect-[4/5] overflow-hidden">
             <Image
               src="/images/portrait/bianca.jpg"
               alt=""
               fill
-              sizes="15vw"
+              sizes="(min-width: 768px) 20vw, 30vw"
               priority
-              className="object-cover object-[50%_20%] grayscale transition-[filter] duration-700 group-hover:grayscale-0"
+              className="object-cover object-[50%_18%] grayscale transition-[filter] duration-700 group-hover:grayscale-0"
             />
-          </motion.div>
-        </div>
+          </div>
+          {/* trombone */}
+          <svg viewBox="0 0 24 64" className="absolute -top-[14%] right-[14%] h-[32%] w-auto text-[#b9b6ae]" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
+            <path d="M8 20V46a6 6 0 0 0 12 0V12a9 9 0 0 0-18 0v38a12 12 0 0 0 24 0" />
+          </svg>
+        </motion.div>
+      </motion.div>
 
-        {/* Ligne 2 : nom sous le prénom, rôle à droite */}
-        <div className="-mt-[1vw] flex items-end justify-between gap-6">
-          <motion.div style={{ x: left }}>
-            <LineReveal as="p" delay={d + 0.08} className="display text-[30vw] md:text-[21vw]" lines={[last]} />
-          </motion.div>
-          <motion.p {...fade(0.5)} className="label mb-[2.6vw] hidden max-w-[30ch] text-right leading-relaxed md:block">
-            {site.role}
-          </motion.p>
-        </div>
-      </div>
-
-      <div className="grid-12 mt-8 items-end gap-y-8 md:mt-4">
-        <motion.p {...fade(0.6)} className="label col-span-12 md:hidden">
+      <div className="grid-12 mt-12 items-end gap-y-8 md:mt-14">
+        <motion.p {...fade(0.6)} className="label col-span-12">
           {site.role}
         </motion.p>
         <motion.p {...fade(0.65)} className="col-span-12 text-[clamp(24px,2.6vw,40px)] leading-[1.12] tracking-[-0.01em] md:col-span-7 md:col-start-1">
