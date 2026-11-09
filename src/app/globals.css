@@ -185,3 +185,9 @@
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
+
+/* Variante pour carton foncé : grain clair en surimpression */
+.paper-tex-dark::after {
+  mix-blend-mode: screen;
+  opacity: 0.18;
+}
