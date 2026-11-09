@@ -77,6 +77,7 @@ export type Project = {
 
 const fb = "/images/projets/flying-blue";
 const ho = "/images/projets/horee";
+const mc = "/images/projets/macareoni";
 
 export const projects: Project[] = [
   {
@@ -236,6 +237,58 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "macareoni",
+    title: "Ma'care'oni",
+    client: "Kraft — Mac & Cheese",
+    frame: "Participation D&AD Awards",
+    categories: ["campagne", "packaging", "digital"],
+    tagline: "Une saveur pour chaque humeur, et des inconnus qui partagent le même plat.",
+    color: "#1f63e0",
+    ink: "#ffd23f",
+    featured: true,
+    cover: {
+      src: `${mc}/packagings-moods.jpg`,
+      alt: "Trois packs Kraft Mac & Cheese édition Ma'care'oni : Feeling angry? Extra Spicy, Feeling happy? Original Taste, Feeling sad? Extra Cheesy",
+      width: 1600,
+      height: 879,
+    },
+    // Textes de ton book + traduction de tes boards (en anglais). ⚠︎ Relis la traduction.
+    context: [
+      "Campagne d'activation Kraft pour son produit iconique : les mac and cheese.",
+      "Manger des plats réconfortants est un moyen de vaincre les défis et les difficultés de la vie d'adulte.",
+    ],
+    problem: [
+      "Comment amener la GenZ à se rencontrer et à créer du lien autour des mac & cheese, quand la solitude fait partie de son quotidien ?",
+      "Insight : enfants, les GenZ mangeaient des mac & cheese en famille. Devenus adultes, ils vivent l'isolement social et cherchent à retrouver ce sentiment de proximité. Le comfort food devient une façon de surmonter les épreuves.",
+    ],
+    concept: [
+      "Une saveur pour chaque humeur. Feeling angry? Extra Spicy. Feeling happy? Original Taste. Feeling sad? Extra Cheesy.",
+      "Le pack mène à un appel vidéo en ligne qui permet de se rencontrer et de partager son repas. L'objectif : recréer le sentiment de familiarité autour des mac & cheese. « Let's share and care for one another while eating mac&cheese! »",
+    ],
+    applications: [
+      "Scan ! Le QR code imprimé sur le côté du pack donne accès à un appel vidéo.",
+      "Meet ! On y retrouve des personnes qui ont scanné le même pack et partagent la même humeur. Chercher du soutien, donner un conseil, partager son repas et ses pensées.",
+    ],
+    inline: {
+      applications: [
+        {
+          src: `${mc}/mecanique-scan-meet.jpg`,
+          alt: "Mécanique Scan! Meet! : le flanc du pack avec son QR code mène à des appels vidéo où des inconnus mangent des mac & cheese ensemble",
+          width: 1600,
+          height: 879,
+          layout: "full",
+          caption: "Mécanique — Scan ! Meet !",
+        },
+      ],
+    },
+    figures: [
+      { value: "3 mois", label: "en rayon, en édition limitée" },
+      { value: "1 756", label: "heures d'appels en ligne" },
+      { value: "5 000", label: "personnes connectées" },
+      { value: "80 %", label: "d'avis positifs" },
+    ],
+  },
+  {
     slug: "opal",
     title: "Opal",
     client: "Opal",
@@ -263,7 +316,6 @@ export const projects: Project[] = [
     tagline: "La génération Z consomme de façon circulaire. Comment la rendre fidèle ?",
     color: "#e8e3da",
     ink: "#1a1a1a",
-    featured: true,
     draft: true,
     context: [
       "Ce projet a été conçu dans le cadre de l'édition 2026 de L'Oréal Brandstorm, le grand concours d'innovation étudiant organisé par le groupe.",
@@ -366,15 +418,6 @@ export const projects: Project[] = [
     tagline: "Création d'un livre pour enfant autour du concept « chambre noire ».",
     color: "#1e1e1e",
     ink: "#d7d2c8",
-    draft: true,
-  },
-  {
-    slug: "macareoni",
-    title: "Ma'care'oni",
-    categories: ["branding", "packaging"],
-    tagline: "⚠︎ Accroche à compléter",
-    color: "#2c63dc",
-    ink: "#ffd23f",
     draft: true,
   },
 ];

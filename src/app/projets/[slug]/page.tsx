@@ -166,7 +166,8 @@ export default async function ProjectPage({ params }: Params) {
           </section>
         )}
 
-        {/* Galerie */}
+        {/* Galerie — masquée si le projet est complet et n'a pas d'images supplémentaires */}
+        {(project.gallery?.length || project.draft) && (
         <section aria-label="Galerie">
           <p className="label mb-8 border-t border-line pt-5 text-mute">(Galerie)</p>
           <div className="grid-12 gap-y-6 md:gap-y-10">
@@ -185,6 +186,7 @@ export default async function ProjectPage({ params }: Params) {
           </div>
           {project.credits && <p className="label mt-8 text-mute">{project.credits}</p>}
         </section>
+        )}
       </div>
 
       {/* ─── Projet suivant ─── */}
