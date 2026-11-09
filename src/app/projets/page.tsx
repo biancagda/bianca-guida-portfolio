@@ -17,7 +17,7 @@ export default function ProjetsPage() {
           className="display col-span-12 text-[24vw] md:col-span-9 md:text-[17vw]"
           lines={[
             "Projets",
-            <span key="s" className="serif-i block whitespace-nowrap pt-[0.1em] text-[0.36em] normal-case leading-none text-signal">
+            <span key="s" className="serif-i -mt-[0.06em] block whitespace-nowrap text-[0.28em] normal-case leading-none text-signal">
               de l&apos;idée à l&apos;image
             </span>,
           ]}

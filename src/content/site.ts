@@ -25,7 +25,7 @@ export const site = {
 
   /** ⚠︎ À RELIRE — présentation courte (accueil). *Étoiles* = italique serif. */
   aboutIntro:
-    "Fraîchement diplômée d'un master en direction artistique et design graphique à Sup de Pub Paris, je passe de l'*idée* à l'*image* : je cherche le concept juste, puis la forme qui le rend évident.",
+    "Fraîchement diplômée d'un master en direction artistique et design graphique à Sup de Pub Paris, je\u00a0passe\u00a0de\u00a0l'*idée*\u00a0à\u00a0l'*image*\u00a0: je cherche le concept juste, puis la forme qui le rend évident.",
 
   /** Texte de ton ancien site, conservé tel quel. */
   bioShort:
