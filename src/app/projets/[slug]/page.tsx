@@ -40,6 +40,8 @@ const galleryPlace: Record<NonNullable<Media["layout"]>, string> = {
   wide: "col-span-12 md:col-start-2 md:col-span-10",
   half: "col-span-6",
   offset: "col-span-12 md:col-start-5 md:col-span-8",
+  /** Image étroite / basse définition : centrée, jamais agrandie. */
+  narrow: "col-span-12 mx-auto w-full max-w-[430px]",
 };
 
 function Figure({ project, media, priority }: { project: Project; media: Media; priority?: boolean }) {

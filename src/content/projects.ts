@@ -36,7 +36,7 @@ export type Media = {
   width: number;
   height: number;
   /** Mise en page dans la galerie : pleine largeur, large, moitié, ou décalée. */
-  layout?: "full" | "wide" | "half" | "offset";
+  layout?: "full" | "wide" | "half" | "offset" | "narrow";
   caption?: string;
 };
 
@@ -88,6 +88,7 @@ const pa = "/images/projets/patagonia";
 const cl = "/images/projets/clean-up-day";
 const va = "/images/projets/va-museum";
 const ro = "/images/projets/la-chambre-de-roomy";
+const mp = "/images/projets/mairie-de-paris";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -636,11 +637,46 @@ export const projects: Project[] = [
     title: "Mairie de Paris",
     client: "Ville de Paris",
     year: "2024",
-    categories: ["campagne", "packaging"],
-    tagline: "Le Bon Coup, Tête de gland ?, S'envoyer en l'air… Jouir avec un grand Oui. ⚠︎ Accroche à relire",
+    role: "Créa team — avec Clémentine Dupeyrat",
+    categories: ["campagne", "packaging", "image"],
+    tagline: "JOuir avec un grand Oui. Les préservatifs de la Ville de Paris aux couleurs des Jeux Olympiques.",
     color: "#f0a43a",
     ink: "#3a1606",
-    draft: true,
+    // ⚠︎ Images extraites d'un board en basse définition : remplace-les par tes fichiers HD.
+    cover: {
+      src: `${mp}/packshots.jpg`,
+      alt: "Quatre préservatifs illustrés de la Ville de Paris : « Okay? » (hockey), « Le bon coup? » (boxe), « S'envoyer en l'air? » (trampoline), « Tête de gland? » (natation)",
+      width: 1290,
+      height: 540,
+    },
+    context: [
+      "« Concevez le nouveau visuel des préservatifs de la Ville de Paris ! »",
+      "Pour rappeler l'événement sportif que la France connaîtra pendant l'été 2024, il est primordial de sensibiliser au consentement dans le sport. Les événements sportifs rassemblent souvent des foules importantes, augmentant le risque d'abus et de comportements inappropriés.",
+    ],
+    problem: [
+      "Sensibiliser sans faire culpabiliser. Alors quoi de mieux que de mettre un point d'honneur sur l'humour, afin de faire passer un message pertinent, simple et rempli de sous-entendus.",
+      "Dans une performance sportive comme sexuelle, une communication ouverte, le respect et la confiance en soi et envers ses partenaires sont des éléments qui favorisent des performances satisfaisantes dans les deux cas.",
+    ],
+    concept: [
+      "Baseline : « JOuir avec un grand Oui. » La phrase détourne l'acronyme des Jeux Olympiques pour lui inventer une tout autre définition. Elle sous-entend qu'il est primordial d'avoir accès à cette jouissance, mais surtout qu'elle ne peut être atteinte qu'avec le consentement des deux personnes.",
+      "Les accroches prennent une forme interrogative — « Tête de gland ? », « S'envoyer en l'air ? », « Okay ? », « Le bon coup ? » — pour rappeler qu'il est primordial de poser la question, et que sans réponse, le passage à l'acte n'est pas possible. La signature n'est que la réponse à ces questions.",
+    ],
+    identity: [
+      "Des illustrations simples, chacune liée à une discipline des JO : la boxe (les gants dessinent un cœur), la natation (le bonnet de bain fait allusion au préservatif), le trampoline (la position évoque certaines positions sexuelles) et le hockey (le manche de crosse remplacé par un pénis, le palet par l'attribut féminin).",
+      "La palette reprend les couleurs des anneaux olympiques — rouge, bleu, vert et jaune — avec une typographie manuscrite au ton léger. Des messages fins et humoristiques dans lesquels chacun peut se reconnaître.",
+    ],
+    inline: {
+      identity: [
+        {
+          src: `${mp}/board-complet.webp`,
+          alt: "Board complet du projet : brief, baseline « JOuir avec un grand Oui », accroches, couleurs, typographies, les quatre illustrations sportives et les packshots",
+          width: 430,
+          height: 2000,
+          layout: "narrow",
+          caption: "Board de présentation",
+        },
+      ],
+    },
   },
   {
     slug: "lov-magazine",
