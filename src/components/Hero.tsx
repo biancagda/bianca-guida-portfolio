@@ -70,7 +70,7 @@ export function Hero() {
           {/* pli du carton */}
           <div className="pointer-events-none absolute inset-x-0 bottom-[7%] h-px bg-paper/10" />
 
-          <div className="relative text-center md:pr-[17%]">
+          <div className="relative z-10 text-center md:pr-[17%]">
             <p className="serif-i relative z-10 text-[19vw] leading-[0.8] text-signal md:text-[clamp(90px,10vw,170px)]">Creative</p>
             <p className="display -mt-[0.12em] text-[22vw] leading-[0.85] text-paper md:text-[clamp(120px,15.5vw,250px)]">Portfolio</p>
             <p className="label mt-5 text-[11px] tracking-[0.3em] text-ink md:mt-7 md:text-[13px]">
