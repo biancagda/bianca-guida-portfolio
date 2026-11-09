@@ -97,7 +97,6 @@ export const site = {
   education: [
     { title: "Master Direction artistique & Design graphique", school: "Sup de Pub Paris", period: "2021 – 2026" },
     { title: "DNMADE Design d'objet", school: "Institut Sainte-Geneviève", period: "2020 – 2021" },
-    { title: "Baccalauréat L — option & spécialité Arts", school: "Lycée Charles Péguy", period: "2020" },
   ],
 
   /** Domaines de compétences (d'après ton CV) — affichés sur l'accueil et la page À propos. */
