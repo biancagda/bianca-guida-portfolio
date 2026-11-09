@@ -21,9 +21,8 @@ export function Hero() {
   const d = useStartDelay();
   const reduce = useReducedMotion();
   const { scrollY } = useScroll();
-  // Le nom glisse doucement en sens opposés au scroll : la composition « respire ».
+  // Le nom glisse doucement vers la gauche au scroll : la composition « respire ».
   const left = useTransform(scrollY, [0, 800], [0, reduce ? 0 : -120]);
-  const right = useTransform(scrollY, [0, 800], [0, reduce ? 0 : 120]);
   const fade = (delay: number) => ({
     initial: reduce ? false : { opacity: 0, y: 12 },
     animate: { opacity: 1, y: 0 },
@@ -75,14 +74,14 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Ligne 2 : rôle + nom */}
+        {/* Ligne 2 : nom sous le prénom, rôle à droite */}
         <div className="-mt-[1vw] flex items-end justify-between gap-6">
-          <motion.p {...fade(0.5)} className="label mb-[2.6vw] hidden max-w-[30ch] leading-relaxed md:block">
+          <motion.div style={{ x: left }}>
+            <LineReveal as="p" delay={d + 0.08} className="display text-[30vw] md:text-[21vw]" lines={[last]} />
+          </motion.div>
+          <motion.p {...fade(0.5)} className="label mb-[2.6vw] hidden max-w-[30ch] text-right leading-relaxed md:block">
             {site.role}
           </motion.p>
-          <motion.div style={{ x: right }} className="ml-auto">
-            <LineReveal as="p" delay={d + 0.08} className="display text-right text-[30vw] md:text-[21vw]" lines={[last]} />
-          </motion.div>
         </div>
       </div>
 
