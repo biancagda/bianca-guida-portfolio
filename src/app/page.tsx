@@ -75,18 +75,16 @@ export default function Home() {
           <Reveal className="col-span-12 md:col-span-4 md:col-start-9" delay={0.1}>
             <p className="label border-t border-line pt-4 text-mute">Passée par</p>
             <ul className="mt-2">
-              {site.experiences
-                .filter((e) => e.logo)
-                .map((e) => (
-                  <li key={e.name} className="flex min-h-[86px] items-center justify-between gap-6 border-b border-line py-5">
-                    <BrandLogo logo={e.logo!} name={e.name} size="clamp(26px,2.4vw,38px)" />
-                    <span className="label shrink-0 text-right text-mute">{e.period}</span>
-                  </li>
-                ))}
-              <li className="flex min-h-[86px] items-center justify-between gap-6 border-b border-line py-5">
-                <BrandLogo logo={site.education[0].logo!} name={site.education[0].school} size="clamp(26px,2.4vw,38px)" />
-                <span className="label shrink-0 text-right text-mute">{site.education[0].period}</span>
-              </li>
+              {[
+                ...site.experiences.filter((e) => e.logo).map((e) => ({ name: e.name, logo: e.logo!, sub: e.role, period: e.period })),
+                { name: site.education[0].school, logo: site.education[0].logo!, sub: site.education[0].title, period: site.education[0].period },
+              ].map((row) => (
+                <li key={row.name} className="border-b border-line py-5">
+                  <BrandLogo logo={row.logo} name={row.name} size="clamp(26px,2.4vw,38px)" />
+                  <span className="label mt-3 block text-paper/80">{row.sub}</span>
+                  <span className="label mt-1 block text-mute">{row.period}</span>
+                </li>
+              ))}
             </ul>
           </Reveal>
         </div>
