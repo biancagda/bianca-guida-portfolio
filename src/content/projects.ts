@@ -340,7 +340,7 @@ export const projects: Project[] = [
     tagline: "Moderniser l'image d'une institution sans trahir son histoire.",
     color: "#1f4a33",
     ink: "#e7d9b0",
-    draft: true, // ⚠︎ dernière slide à venir + textes « problématique » et « concept » — passe à false ensuite
+    // ⚠︎ Tu peux ajouter tes textes `problem` et `concept` : ils apparaîtront automatiquement.
     cover: {
       src: `${va}/10-mise-en-situation.webp`,
       alt: "Affiche V&A 26/27 collée sur un mur, un passant flou au premier plan : le monogramme V&A découpe des portraits de Marie-Antoinette, une sculpture et une mannequin",
@@ -361,7 +361,7 @@ export const projects: Project[] = [
     ],
     applications: [
       "Chaque exposition réinvente le monogramme dans sa propre matière : moulures et ruban rose pour Marie Antoinette Style, pâte à modeler pour Inside Aardman, néon pour le David Bowie Centre.",
-      "Le système se déploie partout : affichage, site web et réseaux sociaux, scénographie de la façade et de la cour du musée, billets d'entrée et brochure de saison.",
+      "Le système se déploie partout : affichage, site web et réseaux sociaux, scénographie de la façade et de la cour du musée, billets d'entrée, brochure de saison et livret d'exposition.",
     ],
     inline: {
       research: [
@@ -440,6 +440,14 @@ export const projects: Project[] = [
           height: 1121,
           layout: "half",
           caption: "Brochure",
+        },
+        {
+          src: `${va}/16-livret.webp`,
+          alt: "Livre d'exposition « Wallace & Gromit and Friends » à la couverture verte et au monogramme V&A en pâte à modeler, posé sur un fauteuil en velours vert",
+          width: 2000,
+          height: 1122,
+          layout: "full",
+          caption: "Livret d'exposition",
         },
       ],
     },
