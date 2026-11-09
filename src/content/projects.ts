@@ -83,6 +83,7 @@ export type Project = {
 };
 
 const fb = "/images/projets/flying-blue";
+const op = "/images/projets/opal";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -156,20 +157,49 @@ export const projects: Project[] = [
   {
     slug: "opal",
     title: "Opal",
-    client: "Opal",
+    client: "Opal — application de gestion du temps d'écran",
     year: "2025",
     role: "Projet d'équipe",
     frame: "Compétition Campagne 360 — Sup de Pub · Équipe lauréate",
     categories: ["campagne", "da", "digital"],
-    tagline: "Rendre visible l'impact d'une application sur notre temps et notre attention.",
+    tagline: "20 ans d'écran plus tard… Et si ce temps vous revenait ?",
     color: "#2b1660",
     ink: "#e9ddff",
     featured: true,
-    draft: true,
+    cover: {
+      src: `${op}/affichage-metro.jpg`,
+      alt: "Trois affiches Opal dans le métro : « 20 ans, c'est le temps qu'a pris Steve Jobs pour créer l'iPhone », « …J.R.R. Tolkien pour créer Le Seigneur des Anneaux », « …Marie Curie pour gagner 2 prix Nobel »",
+      width: 1920,
+      height: 1387,
+    },
+    // Textes de ton ancien site et de ton board (coquilles corrigées).
     context: [
       "Opal est une application qui vous aide à mieux gérer votre temps et votre attention. Aujourd'hui, elle souhaite sensibiliser, engager et montrer concrètement l'impact qu'elle peut avoir dans la vie d'un futur utilisateur.",
       "Réalisation d'un case study avec mon équipe dans le cadre de notre compétition Campagne 360 de Sup de Pub — vainqueurs.",
     ],
+    problem: [
+      "Insight : 20 ans. C'est le temps que vous passez, au cours d'une vie, absorbé par votre téléphone.",
+    ],
+    concept: [
+      "Opal met en lumière trois figures inspirantes qui ont accompli de grandes choses en 20 ans. Leur parcours montre tout ce qu'il est possible de bâtir lorsque l'on reprend le contrôle de son temps. Et si vous aussi, vous aviez le temps de vous réaliser ?",
+      "« 20 ans, c'est le temps qu'a pris Steve Jobs pour créer l'iPhone. » « … J.R.R. Tolkien pour créer Le Seigneur des Anneaux. » « … Marie Curie pour gagner 2 prix Nobel. » Chaque affiche déroule la frise de ces 20 années.",
+    ],
+    applications: [
+      "Activation — Opal × Ghostbusters. Nous sommes en 2045. Opal hacke le monde du numérique : la société est projetée 20 ans en avant, un bond dans le futur pour faire prendre conscience du temps que l'on perd, chaque jour, sur nos écrans.",
+      "Les médias et les réseaux s'emballent : « OPAL vient de pirater le présent », « L'info en 2045 ? OPAL l'a déjà piratée. » En moyenne, on passe 20 ans de sa vie sur son téléphone. Avec Opal, ce temps vous revient.",
+    ],
+    inline: {
+      applications: [
+        {
+          src: `${op}/board-20-ans-ecran.webp`,
+          alt: "Board « 20 ans d'écran plus tard… » : insight, contexte, big idea, notifications de médias piratés en 2045 et les trois affiches Opal",
+          width: 1920,
+          height: 1080,
+          layout: "full",
+          caption: "Board de campagne — 20 ans d'écran plus tard…",
+        },
+      ],
+    },
   },
   {
     slug: "macareoni",
