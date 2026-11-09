@@ -88,7 +88,7 @@ export const site = {
     },
     {
       name: "Freelance",
-      role: "Graphisme pour la restauration",
+      role: "Graphisme en restauration",
       period: "2020 – 2026",
       detail: "Gemma Cucina, Gemma, La Madonnina. Création d'une supérette solidaire au sein de Sup de Pub.",
     },
