@@ -570,12 +570,24 @@ export const projects: Project[] = [
     research: [
       "Moodboard : une baguette, un héritage, un fil, une surpiqûre, un sac baguette, une écriture douce et des couleurs chaudes — sable, terre brûlée, vert opaque et bleu profond.",
     ],
+    identity: [
+      "Un logo à la typographie haute et condensée, presque Art déco. Une palette resserrée : Twilight Indigo, Dust Grey et Jasmine. La Roboto décline toute la hiérarchie, du Black des titres au Thin des paragraphes.",
+      "Louis, la mascotte : un Parisien moustachu, sac à baguette sur l'épaule, dessiné au trait et déclinable en pied, en buste ou en simple portrait.",
+    ],
+    applications: [
+      "Devanture : un store bleu marine festonné où Louis veille sur la rue, le logo jaune posé sur la vitrine.",
+    ],
     slides: [
       { src: `${cz}/01.webp`, alt: "Couverture : « Brandbook Chez Louis » en grandes capitales blanches sur fond bleu marine", width: 2000, height: 1125 },
       { src: `${cz}/02.webp`, alt: "Introduction : « Avec une carte volontairement réduite, Chez Louis réinvente la restauration rapide en proposant un modèle alternatif aux fast-foods traditionnels. »", width: 2000, height: 1125 },
       { src: `${cz}/03.webp`, alt: "Trois valeurs en images : savoir-faire français (tablier noué), qualité irréprochable (pâte farinée), expérience soignée (sacs à baguettes)", width: 2000, height: 1125 },
       { src: `${cz}/04.webp`, alt: "Une femme en trench sur un passage piéton brandit une pancarte « Le fast food à la française c'est Chez Louis ! »", width: 2000, height: 1125 },
       { src: `${cz}/05.webp`, alt: "Moodboard : une baguette, un héritage, un fil, une surpiqûre, un sac baguette, « douce », des couleurs chaudes", width: 2000, height: 1125 },
+      { src: `${cz}/06.webp`, alt: "Logo Chez Louis, typographie haute et condensée, en jaune jasmin sur bleu indigo et en indigo sur jaune", width: 2000, height: 1125 },
+      { src: `${cz}/07.webp`, alt: "Typographies : Roboto Black pour les titres, Medium pour les sous-titres, Thin pour les paragraphes", width: 2000, height: 1125 },
+      { src: `${cz}/08.webp`, alt: "Nuanciers identitaires : Twilight Indigo #1D3461, Dust Grey #D6D5C9, Jasmine #F4D58D", width: 2000, height: 1125 },
+      { src: `${cz}/09.webp`, alt: "Principes graphiques : la mascotte Louis, homme moustachu portant un sac à baguette, en pied, en buste et en portrait", width: 2000, height: 1125 },
+      { src: `${cz}/10.webp`, alt: "Devanture Chez Louis : store bleu marine festonné avec la mascotte Louis, logo jaune sur la vitrine", width: 2000, height: 1125 },
     ],
   },
   {

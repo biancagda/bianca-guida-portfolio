@@ -1,10 +1,11 @@
 """Normalise une slide en 2000x1125 et efface le numéro de page en haut à droite.
-Usage : python3 clean_slide.py source destination.webp"""
+Usage : python3 clean_slide.py source destination.webp [--keep]  (--keep : page sans numéro)"""
 import sys
 from PIL import Image, ImageChops, ImageStat, ImageFilter
 
 W, H = 2000, 1125
 src, dst = sys.argv[1], sys.argv[2]
+keep = '--keep' in sys.argv
 im = Image.open(src).convert("RGB")
 s = im.width / 2000
 # Zone du numéro (sur une slide de 2000 px de large)
@@ -24,13 +25,14 @@ for dx, dy in [(-w - 10, 0), (-2 * w - 20, 0), (0, h + 4), (-w // 2, h + 4), (-w
     bx, by = x0 + dx, y0 + dy
     if bx >= 0 and by + h <= im.height:
         cands.append(im.crop((bx, by, bx + w, by + h)))
-best = min(cands, key=ring_diff)
+best = min(cands, key=ring_diff) if not keep else None
 # Collage à bords adoucis pour que le raccord ne se voie pas
 mask = Image.new("L", (w, h), 0); mask.paste(255, (6, 6, w - 6, h - 6))
 mask = mask.filter(ImageFilter.GaussianBlur(4))
 core = Image.new("L", (w, h), 0); core.paste(255, (14, 12, w - 14, h - 12))
 mask = ImageChops.lighter(mask, core)
-im.paste(best, (x0, y0), mask)
+if best is not None:
+    im.paste(best, (x0, y0), mask)
 
 # Même format pour toutes les pages : 16:9, recadrage centré si besoin.
 ratio = W / H
