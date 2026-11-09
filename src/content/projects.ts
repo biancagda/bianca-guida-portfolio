@@ -657,10 +657,10 @@ export const projects: Project[] = [
       height: 1116,
     },
     cover: {
-      src: `${lb}/02-in-fusion.webp`,
-      alt: "Une main empile trois flacons Prada Infusion rose, orange et vert qui s'emboîtent : « one cap for three fragrances », « mix and match », « interlocking packaging », « mini size and smart size »",
-      width: 1358,
-      height: 752,
+      src: `${lb}/01-insight-gen-z.webp`,
+          alt: "Slide : « Gen Z consumes in a circular way, frequently changes, and accumulates without lasting attachment. » avec trois chiffres clés",
+          width: 2000,
+          height: 1124,
     },
     context: ["L'Oréal Brandstorm 2026 : fidéliser une Gen Z qui change sans cesse."],
     concept: ["Les In-Fusions de Prada : trois parfums qui s'emboîtent et se superposent."],
@@ -673,10 +673,10 @@ export const projects: Project[] = [
     inline: {
       problem: [
         {
-          src: `${lb}/01-insight-gen-z.webp`,
-          alt: "Slide : « Gen Z consumes in a circular way, frequently changes, and accumulates without lasting attachment. » avec trois chiffres clés",
-          width: 2000,
-          height: 1124,
+          src: `${lb}/02-in-fusion.webp`,
+      alt: "Une main empile trois flacons Prada Infusion rose, orange et vert qui s'emboîtent : « one cap for three fragrances », « mix and match », « interlocking packaging », « mini size and smart size »",
+      width: 1358,
+      height: 752,
           layout: "wide",
         },
       ],
