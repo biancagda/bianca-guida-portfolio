@@ -110,7 +110,7 @@ export default async function ProjectPage({ params }: Params) {
 
       {/* ─── Visuel principal (masqué pour une présentation sans `cover` : elle commence par sa propre page de titre) ─── */}
       {(project.cover || !project.slides?.length) && (
-      <div className="px-site mt-10 md:mt-16">
+      <div className="px-site mt-10 md:mt-14">
         <Reveal>
           {/* Visuel principal : `cover`, sinon la vignette, sinon un emplacement « à venir » */}
           <ProjectMedia project={project} media={project.cover ?? project.thumbnail} ratio={project.cover ?? project.thumbnail ? undefined : "aspect-[16/9]"} sizes="100vw" priority />
@@ -119,7 +119,7 @@ export default async function ProjectPage({ params }: Params) {
       )}
 
       {/* ─── Étude de cas ─── */}
-      <div className="px-site mt-16 space-y-16 md:mt-36 md:space-y-36">
+      <div className="px-site mt-16 space-y-14 md:mt-24 md:space-y-24">
         {steps.map((step) => {
           const text = project[step.key];
           const media = project.inline?.[step.key];
@@ -128,13 +128,13 @@ export default async function ProjectPage({ params }: Params) {
           return (
             <section key={step.key} aria-labelledby={`etape-${step.key}`}>
               <Reveal className="grid-12 gap-y-4 border-t border-line pt-5 md:gap-y-6">
-                <div className="col-span-12 md:col-span-4">
+                <div className="col-span-12 md:col-span-3">
                   <p className="label text-signal">{pad(stepNumber)}</p>
                   <h2 id={`etape-${step.key}`} className="display mt-2 text-[32px] md:text-[clamp(36px,3.6vw,60px)]">
                     {step.title}
                   </h2>
                 </div>
-                <div className="col-span-12 md:col-span-7 md:col-start-6">
+                <div className="col-span-12 md:col-span-8 md:col-start-5">
                   {text ? (
                     <StepText paragraphs={text} />
                   ) : (
@@ -145,7 +145,7 @@ export default async function ProjectPage({ params }: Params) {
                 </div>
               </Reveal>
               {media && (
-                <div className="grid-12 mt-8 gap-y-3 md:mt-20 md:gap-y-6">
+                <div className="grid-12 mt-8 gap-y-3 md:mt-12 md:gap-y-6">
                   {media.map((m) => (
                     <Figure key={m.src} project={project} media={m} />
                   ))}
@@ -218,7 +218,7 @@ export default async function ProjectPage({ params }: Params) {
       </div>
 
       {/* ─── Projet suivant ─── */}
-      <nav aria-label="Projet suivant" className="px-site mt-24 md:mt-48">
+      <nav aria-label="Projet suivant" className="px-site mt-20 md:mt-32">
         <Link href={`/projets/${next.slug}`} className="group grid-12 items-end gap-y-6 border-t border-line pt-5">
           <div className="col-span-12 md:col-span-8">
             <p className="label text-mute">(Projet suivant)</p>

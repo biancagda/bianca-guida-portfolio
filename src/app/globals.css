@@ -58,8 +58,9 @@
     grid-template-columns: repeat(12, minmax(0, 1fr));
     column-gap: clamp(12px, 1.6vw, 24px);
   }
+  /* Marges latérales : le contenu reste centré et ne dépasse jamais 1600 px sur grand écran */
   .px-site {
-    padding-inline: clamp(16px, 3vw, 40px);
+    padding-inline: max(clamp(16px, 3vw, 40px), calc((100% - 1600px) / 2));
   }
 
   /* Petites capitales d'étiquetage */

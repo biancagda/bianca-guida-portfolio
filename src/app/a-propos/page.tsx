@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 function Block({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <Reveal className="grid-12 gap-y-6 border-t border-line pt-5">
-      <h2 className="label col-span-12 text-mute md:col-span-4">({label})</h2>
-      <div className="col-span-12 md:col-span-8">{children}</div>
+      <h2 className="display col-span-12 text-[clamp(32px,3vw,48px)] md:col-span-3">{label}</h2>
+      <div className="col-span-12 md:col-span-8 md:col-start-5">{children}</div>
     </Reveal>
   );
 }
@@ -71,7 +71,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <div className="mt-20 space-y-16 md:mt-48 md:space-y-32">
+      <div className="mt-20 space-y-16 md:mt-32 md:space-y-24">
         <Block label="Parcours">
           <ul>
             {[...site.education.map((e) => ({ a: e.school, b: e.title, c: e.period })), ...site.experiences.map((e) => ({ a: e.name, b: e.role, c: "" }))].map(
@@ -80,8 +80,8 @@ export default function AboutPage() {
                   <span className="label col-span-2 text-signal">{pad(i + 1)}</span>
                   <span className="display col-span-10 text-[clamp(30px,3.6vw,56px)] md:col-span-5">{row.a}</span>
                   <span className="col-span-10 col-start-3 text-paper/70 md:col-span-5">
-                    {row.b}
-                    {row.c && <span className="label block text-mute">{row.c}</span>}
+                    {!row.b.startsWith("⚠︎") && row.b}
+                    {row.c && !row.c.startsWith("⚠︎") && <span className="label block text-mute">{row.c}</span>}
                   </span>
                 </li>
               ),

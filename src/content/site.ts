@@ -46,7 +46,7 @@ export const site = {
 
   contact: {
     /** ⚠︎ À COMPLÉTER — ton adresse e-mail professionnelle. */
-    email: "contact@exemple.fr",
+    email: "Biancaguida3@gmail.com",
     /** ⚠︎ À COMPLÉTER — liens vers tes profils. */
     instagram: { handle: "@a.completer", url: "https://www.instagram.com/" },
     linkedin: { handle: "Bianca Guida", url: "https://www.linkedin.com/" },
