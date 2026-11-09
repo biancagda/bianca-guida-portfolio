@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
-import type { Project } from "@/content/projects";
+import { thumbnailOf, type Project } from "@/content/projects";
 import { categoryList } from "./ProjectMeta";
 
 /**
@@ -80,8 +80,8 @@ export function ProjectIndex({ projects }: { projects: Project[] }) {
               className="aspect-[4/5] overflow-hidden"
               style={{ backgroundColor: active.color }}
             >
-              {active.cover ? (
-                <Image src={active.cover.src} alt="" width={active.cover.width} height={active.cover.height} sizes="400px" className="h-full w-full object-cover" />
+              {thumbnailOf(active) ? (
+                <Image src={thumbnailOf(active)!.src} alt="" width={thumbnailOf(active)!.width} height={thumbnailOf(active)!.height} sizes="400px" className="h-full w-full object-cover" />
               ) : (
                 <div className="display flex h-full items-end p-5 text-[64px]" style={{ color: active.ink }}>
                   {active.title}

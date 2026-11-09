@@ -56,7 +56,13 @@ export type Project = {
   color: string;
   /** Couleur du texte posé sur `color`. */
   ink?: string;
+  /** Grand visuel en tête de la page projet. */
   cover?: Media;
+  /**
+   * Vignette cliquable dans la liste des projets (accueil, page Projets, « projet suivant »).
+   * Si absente, c'est `cover` qui sert de vignette.
+   */
+  thumbnail?: Media;
   featured?: boolean;
   draft?: boolean;
 
@@ -463,8 +469,8 @@ export const projects: Project[] = [
     color: "#e23b2e",
     ink: "#fff3e0",
     draft: true, // ⚠︎ passe à false quand les autres visuels du magazine sont ajoutés
-    cover: {
-      src: "/images/projets/lov-magazine/couverture-lov.webp",
+    thumbnail: {
+      src: "/images/projets/lov-magazine/vignette-lov.webp",
       alt: "Double page du magazine LOV : une jeune femme en écharpe tartan dans une épicerie, sac Louis Vuitton à la main, titre LOV en lettres rouges gonflées, banane en gros plan",
       width: 2000,
       height: 1123,
@@ -501,6 +507,11 @@ export const projects: Project[] = [
     context: ["Création d'un livre pour enfant autour du concept « chambre noire »."],
   },
 ];
+
+/** L'image qui représente le projet dans les listes : la vignette, sinon le visuel principal. */
+export function thumbnailOf(p: Project) {
+  return p.thumbnail ?? p.cover;
+}
 
 export function getProject(slug: string) {
   return projects.find((p) => p.slug === slug);

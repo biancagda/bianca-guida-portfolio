@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { Project } from "@/content/projects";
+import { thumbnailOf, type Project } from "@/content/projects";
 import { ProjectMedia } from "./ProjectMedia";
 import { ProjectMetaLine } from "./ProjectMeta";
 import { Reveal } from "./Reveal";
@@ -26,7 +26,7 @@ export function ProjectGrid({ projects, startIndex = 0 }: { projects: Project[];
         return (
           <Reveal key={p.slug} className={`col-span-12 ${r.place}`}>
             <Link href={`/projets/${p.slug}`} className="group block">
-              <ProjectMedia project={p} media={p.cover} ratio={r.ratio} sizes={r.sizes} hoverZoom />
+              <ProjectMedia project={p} media={thumbnailOf(p)} ratio={r.ratio} sizes={r.sizes} hoverZoom />
               <div className="mt-4">
                 <ProjectMetaLine project={p} index={startIndex + i} />
                 <h3 className="display mt-2 text-[clamp(38px,4.4vw,76px)] transition-colors duration-500 group-hover:text-signal">{p.title}</h3>

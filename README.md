@@ -25,6 +25,8 @@ Tout ce qui est marqué **⚠︎ À COMPLÉTER** ou **⚠︎ À RELIRE** est pro
 ### Ajouter un projet
 1. Crée le dossier `public/images/projets/mon-projet/` et dépose tes visuels (JPG/WebP, ~2000 px de large max).
 2. Dans `src/content/projects.ts`, copie un bloc existant, change `slug`, `title`, les textes, et renseigne `cover` / `gallery` avec `src`, `alt`, `width`, `height`.
+   - `thumbnail` = la **vignette** cliquable dans la liste des projets (facultatif : sinon c'est `cover` qui est utilisée).
+   - `cover` = le grand visuel en haut de la page du projet.
 3. Passe `draft: false` quand l'étude de cas est complète.
 
 Le projet `flying-blue-lime` est l'exemple complet à imiter.

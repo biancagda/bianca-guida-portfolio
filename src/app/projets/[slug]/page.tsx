@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getNextProject, getProject, projects, type Media, type Project } from "@/content/projects";
+import { getNextProject, getProject, projects, thumbnailOf, type Media, type Project } from "@/content/projects";
 import { ProjectMedia } from "@/components/ProjectMedia";
 import { categoryList } from "@/components/ProjectMeta";
 import { LineReveal, Reveal } from "@/components/Reveal";
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     title: p.title,
     description: `${p.title}${p.client ? ` — ${p.client}` : ""}. ${p.tagline}`,
     alternates: { canonical: `/projets/${p.slug}` },
-    openGraph: p.cover ? { images: [{ url: p.cover.src, width: p.cover.width, height: p.cover.height, alt: p.cover.alt }] } : undefined,
+    openGraph: thumbnailOf(p) ? { images: [{ url: thumbnailOf(p)!.src, width: thumbnailOf(p)!.width, height: thumbnailOf(p)!.height, alt: thumbnailOf(p)!.alt }] } : undefined,
   };
 }
 
@@ -106,7 +106,8 @@ export default async function ProjectPage({ params }: Params) {
       {/* ─── Visuel principal ─── */}
       <div className="px-site mt-10 md:mt-16">
         <Reveal>
-          <ProjectMedia project={project} media={project.cover} ratio={project.cover ? undefined : "aspect-[16/9]"} sizes="100vw" priority />
+          {/* Visuel principal : `cover`, sinon la vignette, sinon un emplacement « à venir » */}
+          <ProjectMedia project={project} media={project.cover ?? project.thumbnail} ratio={project.cover ?? project.thumbnail ? undefined : "aspect-[16/9]"} sizes="100vw" priority />
         </Reveal>
       </div>
 
@@ -199,7 +200,7 @@ export default async function ProjectPage({ params }: Params) {
             </p>
           </div>
           <div className="col-span-12 md:col-span-4">
-            <ProjectMedia project={next} media={next.cover} ratio="aspect-[4/3]" sizes="33vw" hoverZoom />
+            <ProjectMedia project={next} media={thumbnailOf(next)} ratio="aspect-[4/3]" sizes="33vw" hoverZoom />
           </div>
         </Link>
       </nav>
