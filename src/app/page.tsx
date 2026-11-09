@@ -22,7 +22,7 @@ export default function Home() {
         <SectionHead
           id="selection"
           label="Sélection"
-          title={["Work"]}
+          title={["Work", <span key="s" className="serif-i block whitespace-nowrap pt-[0.08em] text-[0.3em] normal-case leading-none text-signal">projets phares</span>]}
           aside={
             <Link href="/projets" className="label">
               <span className="u-link">Tous les projets <Icon name="arrow-right" /></span>
