@@ -84,6 +84,7 @@ export type Project = {
 
 const fb = "/images/projets/flying-blue";
 const op = "/images/projets/opal";
+const pa = "/images/projets/patagonia";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -281,14 +282,52 @@ export const projects: Project[] = [
   {
     slug: "patagonia",
     title: "Patagonia",
-    client: "Patagonia",
+    client: "Patagonia — Worn Wear",
     year: "2025",
     categories: ["campagne", "da", "image"],
     tagline: "Quand on aime, on n'abandonne pas. On répare !",
     color: "#2f3a33",
     ink: "#f2efe6",
-    draft: true,
+    thumbnail: {
+      src: `${pa}/affiche-pigeons.jpg`,
+      alt: "Affiche Patagonia : une vieille dame souriante en veste Patagonia, des pigeons sur l'épaule, « Quand on aime, on abandonne pas, on repare ! »",
+      width: 1200,
+      height: 1698,
+    },
+    cover: {
+      src: `${pa}/affichage-trois-affiches.jpg`,
+      alt: "Trois affiches Patagonia sur un mur : un vieil homme avec son chat, une vieille dame avec des pigeons, un berger avec son chien, chacun dans sa veste Patagonia réparée depuis des décennies",
+      width: 1920,
+      height: 889,
+    },
+    // Contexte : texte de ton ancien site. ⚠︎ Le concept et l'identité ont été rédigés
+    // à partir des affiches : relis-les et réécris-les avec tes mots.
     context: ["Proposition d'une campagne print pour promouvoir le service de réparation Patagonia."],
+    concept: [
+      "Un vêtement Patagonia s'use, se raccommode et traverse les années, comme une relation de longue date. La campagne met en scène des personnes âgées avec leur animal de compagnie et la veste qu'ils portent depuis des décennies.",
+      "« Quand on aime, on abandonne pas, on repare ! » Chaque affiche date la pièce : M's Synchilla® Jacket réparée depuis 1998, W's Tres 3-in-1 Parka® réparée depuis 1987, M's Stormstride Jacket® réparée depuis 1981.",
+    ],
+    identity: [
+      "Des photographies chaleureuses au grain argentique, presque des photos de famille, loin de l'image outdoor habituelle de la marque. Le titre en jaune pâle répond aux couleurs chaudes des images, la dernière ligne passe en blanc pour appuyer l'action : réparer.",
+    ],
+    inline: {
+      concept: [
+        {
+          src: `${pa}/affiche-chat.jpg`,
+          alt: "Affiche Patagonia : un vieil homme assis dans un fauteuil, un chat endormi sur les genoux, « M's Synchilla® Jacket réparé depuis 1998 »",
+          width: 1200,
+          height: 1698,
+          layout: "half",
+        },
+        {
+          src: `${pa}/affiche-pigeons.jpg`,
+          alt: "Affiche Patagonia : une vieille dame avec des pigeons, « W's Tres 3-in-1 Parka® réparée depuis 1987 »",
+          width: 1200,
+          height: 1698,
+          layout: "half",
+        },
+      ],
+    },
   },
   {
     slug: "va-museum",
