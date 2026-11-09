@@ -404,16 +404,14 @@ export const projects: Project[] = [
           layout: "full",
           caption: "Concept board de l'activation — Monoprix",
         },
-        // ⚠︎ Dépose le concept board Perchoir dans public/images/projets/horee/
-        // sous ce nom, puis retire les « // » des lignes ci-dessous.
-        // {
-        //   src: `${ho}/concept-board-evenement-perchoir.jpg`,
-        //   alt: "Concept board de l'événement « Peau de bienvenue » avec Perchoir Group : rooftop, plateau jus d'orange et questionnaire mobile",
-        //   width: 1920,
-        //   height: 1081,
-        //   layout: "full",
-        //   caption: "Concept board de l'événement — Le Perchoir",
-        // },
+        {
+          src: `${ho}/concept-board-evenement-perchoir.jpg`,
+          alt: "Concept board de l'événement « Peau de bienvenue » avec Perchoir Group : rooftop du BHV Marais, plateau avec jus d'orange et QR code, questionnaire mobile Horée",
+          width: 1920,
+          height: 1081,
+          layout: "full",
+          caption: "Concept board de l'événement — Le Perchoir",
+        },
       ],
     },
     // ⚠︎ Chiffres repris du board : précise les libellés si besoin.
