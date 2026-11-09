@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/content/site";
 import { categories, featuredProjects, projects } from "@/content/projects";
@@ -7,6 +6,7 @@ import { Marquee } from "@/components/Marquee";
 import { ProjectGrid } from "@/components/ProjectGrid";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead } from "@/components/SectionHead";
+import { IdCard } from "@/components/IdCard";
 import { Rich } from "@/lib/text";
 import { Icon } from "@/components/Icon";
 
@@ -35,20 +35,12 @@ export default function Home() {
       {/* ─── À propos ─── */}
       <section className="px-site pt-24 md:pt-36" aria-labelledby="apropos">
         <SectionHead id="apropos" label="À propos" title={["Bianca", <span key="g" className="serif-i normal-case">en quelques mots</span>]} />
-        <div className="grid-12 items-center gap-y-8">
-          <Reveal className="col-span-12 md:col-span-4">
-            <div className="group relative aspect-[4/5] overflow-hidden">
-              <Image
-                src="/images/portrait/bianca.jpg"
-                alt={`Portrait de ${site.name}`}
-                fill
-                sizes="(min-width: 768px) 33vw, 100vw"
-                className="object-cover object-[50%_20%] grayscale transition-[filter] duration-700 group-hover:grayscale-0"
-              />
-            </div>
+        <div className="grid-12 items-center gap-y-16">
+          <Reveal className="col-span-12 md:col-span-7">
+            <IdCard />
           </Reveal>
-          <Reveal className="col-span-12 md:col-span-7 md:col-start-6" delay={0.1}>
-            <p className="text-[24px] leading-[1.15] tracking-[-0.015em] md:text-[clamp(28px,3vw,48px)] md:leading-[1.1]">
+          <Reveal className="col-span-12 md:col-span-4 md:col-start-9" delay={0.1}>
+            <p className="text-[22px] leading-[1.2] tracking-[-0.015em] md:text-[clamp(22px,1.9vw,30px)] md:leading-[1.2]">
               <Rich text={site.aboutIntro} />
             </p>
             <div className="mt-8 flex flex-wrap gap-3 md:mt-10">
