@@ -85,6 +85,7 @@ export type Project = {
 const fb = "/images/projets/flying-blue";
 const op = "/images/projets/opal";
 const pa = "/images/projets/patagonia";
+const cl = "/images/projets/clean-up-day";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -598,17 +599,42 @@ export const projects: Project[] = [
   {
     slug: "clean-up-day",
     title: "Clean Up Day",
-    client: "Mairie de Paris",
+    client: "World Clean Up Day — journée mondiale du nettoyage",
     year: "2024",
-    categories: ["campagne", "branding"],
-    tagline: "Votre baignade en mer en 2050 ? Une campagne d'affichage pour agir dès maintenant.",
-    color: "#1e56c8",
+    categories: ["campagne", "branding", "image"],
+    tagline: "Votre baignade en mer en 2038 ? Une campagne d'affichage pour agir dès maintenant.",
+    color: "#1e4fa0",
     ink: "#f4ea3c",
-    draft: true,
+    cover: {
+      src: `${cl}/affiche-baignade-2038.jpg`,
+      alt: "Affiche Clean Up Day : une nageuse en maillot vert, prête à plonger depuis une poubelle verte, « Votre baignade en mer en 2038 — samedi 16 septembre »",
+      width: 1920,
+      height: 1440,
+    },
+    // Contexte : texte de ton ancien site. ⚠︎ Le concept et l'identité ont été rédigés
+    // à partir des visuels : relis-les et réécris-les avec tes mots.
     context: [
       "Création d'une campagne d'affichage pour le « Clean Up Day ».",
       "Journée dédiée à la promotion de la propreté et de la durabilité environnementale à travers des actions concrètes de nettoyage et de sensibilisation.",
     ],
+    concept: [
+      "Projeter le public dans un futur proche : si l'on ne ramasse pas nos déchets, la mer de demain ressemblera à une poubelle. L'affiche met en scène une nageuse prête à plonger… dans un bac à ordures. « Votre baignade en mer en 2038 » — rendez-vous le samedi 16 septembre pour la Journée mondiale du nettoyage de notre planète.",
+    ],
+    identity: [
+      "Un bleu profond et un jaune vif, une trame de points façon pop art qui dessine la mer, une vague blanche en guise de rupture et une typographie condensée très affirmée. Le système se décline sur le mobilier de la journée, jusqu'aux bacs de collecte.",
+    ],
+    inline: {
+      identity: [
+        {
+          src: `${cl}/poubelle-clean-up-day.jpg`,
+          alt: "Bac de collecte habillé aux couleurs du Clean Up Day : bleu, trame de points jaunes, vague blanche, « Journée mondiale du nettoyage de notre planète ! »",
+          width: 1920,
+          height: 1440,
+          layout: "wide",
+          caption: "Déclinaison — bacs de collecte",
+        },
+      ],
+    },
   },
   {
     slug: "la-chambre-de-roomy",
