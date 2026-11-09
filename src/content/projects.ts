@@ -650,6 +650,12 @@ export const projects: Project[] = [
     tagline: "Les In-Fusions de Prada : l'art du layering.",
     color: "#b9dcc4",
     ink: "#21402c",
+    thumbnail: {
+      src: "/images/projets/loreal-brandstorm/vignette.jpg",
+      alt: "Coffret vert d'eau « Les Infusions de Prada » ouvert : trois flacons rose, orange et vert",
+      width: 2000,
+      height: 1116,
+    },
     cover: {
       src: `${lb}/02-in-fusion.webp`,
       alt: "Une main empile trois flacons Prada Infusion rose, orange et vert qui s'emboîtent : « one cap for three fragrances », « mix and match », « interlocking packaging », « mini size and smart size »",
