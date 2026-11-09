@@ -98,6 +98,7 @@ const mp = "/images/projets/mairie-de-paris";
 const lb = "/images/projets/loreal-brandstorm";
 const om = "/images/projets/oh-my-cream";
 const tt = "/images/projets/torta-di-spaghetti";
+const cz = "/images/projets/chez-louis";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -549,11 +550,33 @@ export const projects: Project[] = [
     slug: "chez-louis",
     title: "Chez Louis",
     year: "2026",
-    categories: ["branding", "packaging"],
-    tagline: "⚠︎ Accroche à compléter — brandbook & identité de marque",
+    categories: ["branding", "edition", "da"],
+    tagline: "Le fast-food à la française. Brandbook d'une restauration rapide qui mise sur le savoir-faire.",
     color: "#1c2a6b",
     ink: "#e9d9a6",
-    draft: true,
+    draft: true, // ⚠︎ suite du brandbook à venir — passe à false quand toutes les pages sont ajoutées
+    thumbnail: {
+      src: `${cz}/04.webp`,
+      alt: "Une femme en trench sur un passage piéton brandit une pancarte « Le fast food à la française c'est Chez Louis ! »",
+      width: 2000,
+      height: 1125,
+    },
+    // Textes repris de ton brandbook. Les pages sont normalisées en 2000×1125 et sans numéro
+    // (script : scripts/clean_slide.py).
+    context: [
+      "Création du brandbook de Chez Louis, une enseigne de restauration rapide.",
+      "Avec une carte volontairement réduite, Chez Louis réinvente la restauration rapide en proposant un modèle alternatif aux fast-foods traditionnels : savoir-faire français, qualité irréprochable, expérience soignée.",
+    ],
+    research: [
+      "Moodboard : une baguette, un héritage, un fil, une surpiqûre, un sac baguette, une écriture douce et des couleurs chaudes — sable, terre brûlée, vert opaque et bleu profond.",
+    ],
+    slides: [
+      { src: `${cz}/01.webp`, alt: "Couverture : « Brandbook Chez Louis » en grandes capitales blanches sur fond bleu marine", width: 2000, height: 1125 },
+      { src: `${cz}/02.webp`, alt: "Introduction : « Avec une carte volontairement réduite, Chez Louis réinvente la restauration rapide en proposant un modèle alternatif aux fast-foods traditionnels. »", width: 2000, height: 1125 },
+      { src: `${cz}/03.webp`, alt: "Trois valeurs en images : savoir-faire français (tablier noué), qualité irréprochable (pâte farinée), expérience soignée (sacs à baguettes)", width: 2000, height: 1125 },
+      { src: `${cz}/04.webp`, alt: "Une femme en trench sur un passage piéton brandit une pancarte « Le fast food à la française c'est Chez Louis ! »", width: 2000, height: 1125 },
+      { src: `${cz}/05.webp`, alt: "Moodboard : une baguette, un héritage, un fil, une surpiqûre, un sac baguette, « douce », des couleurs chaudes", width: 2000, height: 1125 },
+    ],
   },
   {
     slug: "vico",
