@@ -89,6 +89,7 @@ const cl = "/images/projets/clean-up-day";
 const va = "/images/projets/va-museum";
 const ro = "/images/projets/la-chambre-de-roomy";
 const mp = "/images/projets/mairie-de-paris";
+const lb = "/images/projets/loreal-brandstorm";
 const ho = "/images/projets/horee";
 const mc = "/images/projets/macareoni";
 const vi = "/images/projets/vico";
@@ -621,16 +622,59 @@ export const projects: Project[] = [
     title: "L'Oréal Brandstorm",
     client: "L'Oréal — Prada Beauty",
     year: "2026",
+    role: "Projet d'équipe — avec Mila Capron et Alexandre Couy",
     frame: "Concours L'Oréal Brandstorm 2026",
     categories: ["da", "packaging", "digital"],
-    tagline: "Les Infusions de Prada. La génération Z consomme de façon circulaire : comment la rendre fidèle ?",
+    tagline: "Les In-Fusions de Prada : l'art du layering, des parfums qui se superposent et se réinventent sans fin.",
     color: "#b9dcc4",
     ink: "#21402c",
-    draft: true,
+    cover: {
+      src: `${lb}/02-in-fusion.webp`,
+      alt: "Une main empile trois flacons Prada Infusion rose, orange et vert qui s'emboîtent : « one cap for three fragrances », « mix and match », « interlocking packaging », « mini size and smart size »",
+      width: 1358,
+      height: 752,
+    },
+    // Contexte : texte de ton ancien site. Le reste est traduit de tes slides (en anglais). ⚠︎ Relis la traduction.
     context: [
       "Ce projet a été conçu dans le cadre de l'édition 2026 de L'Oréal Brandstorm, le grand concours d'innovation étudiant organisé par le groupe.",
       "Le défi de cette année invitait les participants à imaginer de nouvelles stratégies pour répondre au besoin croissant de nouveauté de la génération Z, tout en réussissant à renforcer leur fidélité envers les marques.",
     ],
+    problem: [
+      "Comment des produits à superposer (layering) peuvent-ils satisfaire le besoin de nouveauté de la génération Z, tout en renforçant sa fidélité à la marque ?",
+      "Insight : la Gen Z consomme de façon circulaire, change souvent et accumule, sans attachement durable.",
+    ],
+    figures: [
+      { value: "32 %", label: "des Gen Z possèdent 4 parfums ou plus" },
+      { value: "71 %", label: "de recherches Google pour la mode « layered » fin 2024" },
+      { value: "79 %", label: "des Gen Z voient le changement d'emploi comme la clé d'un meilleur salaire" },
+    ],
+    concept: [
+      "Introducing IN-FUSION : l'art du layering, des parfums qui se superposent et se réinventent sans fin.",
+      "Des flacons Prada Infusion qui s'emboîtent les uns sur les autres : un seul bouchon pour trois fragrances, des formats mini et « smart size », et la liberté de mixer les parfums selon ses envies.",
+    ],
+    applications: [
+      "Réinventer un produit existant en lui apportant une valeur ajoutée. Le coffret de layering « Les In-Fusions » est vendu sur Sephora : chacun choisit sa composition parmi les fragrances de la gamme.",
+    ],
+    inline: {
+      problem: [
+        {
+          src: `${lb}/01-insight-gen-z.webp`,
+          alt: "Slide : « Gen Z consumes in a circular way, frequently changes, and accumulates without lasting attachment. » avec trois chiffres clés",
+          width: 2000,
+          height: 1124,
+          layout: "wide",
+        },
+      ],
+      applications: [
+        {
+          src: `${lb}/03-sephora.webp`,
+          alt: "Ordinateur portable affichant la fiche produit Sephora du coffret de layering Les In-Fusions de Prada, « Reinventing an existing product with added value »",
+          width: 1320,
+          height: 744,
+          layout: "wide",
+        },
+      ],
+    },
   },
   {
     slug: "mairie-de-paris",
