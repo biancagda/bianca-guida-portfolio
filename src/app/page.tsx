@@ -8,6 +8,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHead } from "@/components/SectionHead";
 import { IdCard } from "@/components/IdCard";
 import { BrandLogo } from "@/components/BrandLogo";
+import { SkillsCollage } from "@/components/SkillsCollage";
 import { Rich } from "@/lib/text";
 import { Icon } from "@/components/Icon";
 
@@ -60,17 +61,8 @@ export default function Home() {
       <section className="px-site pt-24 md:pt-36" aria-labelledby="competences">
         <SectionHead id="competences" label="Savoir-faire" title={["Compétences", <span key="p" className="serif-i normal-case">& parcours</span>]} />
         <div className="grid-12 gap-y-14">
-          <div className="col-span-12 grid grid-cols-2 gap-x-6 gap-y-10 md:col-span-7">
-            {site.skills.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.06} className="border-t border-line pt-4">
-                <h3 className="display text-[26px] leading-[0.95] md:text-[clamp(28px,2.4vw,40px)]">{s.title}</h3>
-                <ul className="mt-3 space-y-0.5 text-[14px] text-paper/70 md:space-y-1 md:text-[15px]">
-                  {s.items.map((it) => (
-                    <li key={it}>{it}</li>
-                  ))}
-                </ul>
-              </Reveal>
-            ))}
+          <div className="col-span-12 md:col-span-7">
+            <SkillsCollage />
           </div>
           <Reveal className="col-span-12 md:col-span-4 md:col-start-9" delay={0.1}>
             <p className="label border-t border-line pt-4 text-mute">Passée par</p>

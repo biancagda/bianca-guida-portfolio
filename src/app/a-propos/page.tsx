@@ -5,6 +5,7 @@ import { site } from "@/content/site";
 import { LineReveal, Reveal } from "@/components/Reveal";
 import { Rich } from "@/lib/text";
 import { BrandLogo } from "@/components/BrandLogo";
+import { SkillsCollage } from "@/components/SkillsCollage";
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -123,18 +124,7 @@ export default function AboutPage() {
         </Block>
 
         <Block label="Compétences">
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-4 md:gap-y-10">
-            {site.skills.map((s) => (
-              <div key={s.title}>
-                <h3 className="display text-[clamp(26px,2.2vw,34px)]">{s.title}</h3>
-                <ul className="mt-3 space-y-0.5 text-[14px] text-paper/70 md:space-y-1 md:text-[15px]">
-                  {s.items.map((it) => (
-                    <li key={it}>{it}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <SkillsCollage />
         </Block>
 
         {about.inspirations.length > 0 && (
