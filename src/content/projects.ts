@@ -48,6 +48,8 @@ export type Project = {
   /** Contexte : école, concours, agence… */
   frame?: string;
   categories: CategoryKey[];
+  /** Masque la ligne « Discipline » en haut de la page projet. */
+  hideDiscipline?: boolean;
   /** Une phrase courte affichée sous le titre. */
   tagline: string;
   /** Couleur dominante du projet (utilisée tant qu'il n'y a pas d'image). */
@@ -562,7 +564,7 @@ export const projects: Project[] = [
     title: "Horée",
     client: "Horée — marque de soin BIO",
     year: "2024",
-    frame: "Créa team",
+    hideDiscipline: true,
     categories: ["campagne", "da"],
     tagline: "Santé, à votre peau !",
     color: "#ece6dc",

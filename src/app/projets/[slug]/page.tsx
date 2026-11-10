@@ -67,7 +67,7 @@ export default async function ProjectPage({ params }: Params) {
     ["Année", project.year],
     ["Cadre", project.frame],
     ["Rôle", project.role],
-    ["Discipline", categoryList(project)],
+    ["Discipline", project.hideDiscipline ? undefined : categoryList(project)],
   ].filter(([, v]) => v) as [string, string][];
 
   return (
