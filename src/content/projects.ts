@@ -340,7 +340,6 @@ export const projects: Project[] = [
       height: 889,
     },
     context: ["Campagne print pour le service de réparation Patagonia."],
-    concept: ["« Quand on aime, on n'abandonne pas. On répare ! »"],
     inline: {
       concept: [
         {
