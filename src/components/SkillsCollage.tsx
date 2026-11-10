@@ -34,24 +34,24 @@ const sheets = {
 
 export function SkillsCollage() {
   return (
-    <div className="grid gap-x-6 gap-y-14 pt-6 sm:grid-cols-2 md:gap-y-12">
+    <div className="grid grid-cols-2 gap-x-3 gap-y-10 pt-6 md:gap-x-6 md:gap-y-12">
       {site.skills.map((s, i) => {
         const l = looks[i % looks.length];
         return (
           <Reveal key={s.title} delay={i * 0.08} className={l.rotate}>
             <article className="relative">
               {/* Feuille qui dépasse du dossier */}
-              <div className={`paper-tex absolute inset-x-[7%] -top-[14px] h-[60px] -rotate-[1.2deg] rounded-[2px] ${sheets[l.sheet]}`} />
+              <div className={`paper-tex absolute inset-x-[7%] -top-[10px] h-[44px] -rotate-[1.2deg] rounded-[2px] md:-top-[14px] md:h-[60px] ${sheets[l.sheet]}`} />
               {/* Onglet */}
-              <div className={`relative ml-[8%] flex h-[30px] w-[52%] items-center rounded-t-[9px] px-4 ${l.tab}`}>
-                <span className={`whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.14em] ${l.sub}`}>Savoir-faire</span>
+              <div className={`relative ml-[8%] flex h-[20px] w-[56%] items-center rounded-t-[7px] px-2 md:h-[30px] md:w-[52%] md:rounded-t-[9px] md:px-4 ${l.tab}`}>
+                <span className={`hidden whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.14em] md:inline ${l.sub}`}>Savoir-faire</span>
               </div>
               {/* Dossier */}
-              <div className={`relative rounded-[6px] rounded-tl-none px-6 pb-7 pt-6 shadow-[0_24px_50px_-24px_rgba(0,0,0,0.9)] md:px-7 ${l.body}`}>
-                <h3 className={`display relative z-10 text-[clamp(30px,2.6vw,42px)] leading-[0.95] ${l.ink}`}>{s.title}</h3>
-                <ul className="relative z-10 mt-4">
+              <div className={`relative rounded-[6px] rounded-tl-none px-3.5 pb-4 pt-3.5 shadow-[0_24px_50px_-24px_rgba(0,0,0,0.9)] md:px-7 md:pb-7 md:pt-6 ${l.body}`}>
+                <h3 className={`display relative z-10 text-[22px] leading-[0.95] md:text-[clamp(30px,2.6vw,42px)] ${l.ink}`}>{s.title}</h3>
+                <ul className="relative z-10 mt-2 md:mt-4">
                   {s.items.map((it) => (
-                    <li key={it} className={`serif-i border-b py-1.5 text-[clamp(17px,1.35vw,21px)] leading-snug ${l.rule} ${l.sub}`}>
+                    <li key={it} className={`serif-i border-b py-1 text-[14px] leading-tight md:py-1.5 md:text-[clamp(17px,1.35vw,21px)] md:leading-snug ${l.rule} ${l.sub}`}>
                       {it}
                     </li>
                   ))}
@@ -59,11 +59,11 @@ export function SkillsCollage() {
               </div>
 
               {/* Accessoire */}
-              {l.extra === "clip" && <PaperClip className="absolute -top-[30px] right-[12%] z-20 h-[78px] w-auto rotate-[10deg]" />}
-              {l.extra === "tape" && <Tape yellow className="absolute -top-[22px] right-[8%] z-20 rotate-[8deg]" />}
-              {l.extra === "binder" && <BinderClip className="absolute -top-[30px] right-[14%] z-20 h-[58px] w-auto rotate-[4deg]" />}
+              {l.extra === "clip" && <PaperClip className="absolute -top-[22px] right-[10%] z-20 h-[52px] w-auto rotate-[10deg] md:-top-[30px] md:h-[78px]" />}
+              {l.extra === "tape" && <Tape yellow className="absolute -top-[16px] right-[6%] z-20 h-[18px] w-[60px] rotate-[8deg] md:-top-[22px] md:h-[26px] md:w-[96px]" />}
+              {l.extra === "binder" && <BinderClip className="absolute -top-[22px] right-[12%] z-20 h-[40px] w-auto rotate-[4deg] md:-top-[30px] md:h-[58px]" />}
               {l.extra === "stamp" && (
-                <svg viewBox="0 0 200 200" aria-hidden className="absolute -bottom-[22px] right-[6%] z-20 w-[92px] -rotate-12 text-signal">
+                <svg viewBox="0 0 200 200" aria-hidden className="absolute -bottom-[22px] right-[6%] z-20 hidden w-[92px] -rotate-12 text-signal md:block md:-bottom-[22px] md:right-[6%] md:w-[92px]">
                   <defs>
                     <path id="skills-stamp" d="M100,100 m-72,0 a72,72 0 1,1 144,0 a72,72 0 1,1 -144,0" />
                   </defs>

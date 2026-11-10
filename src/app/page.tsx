@@ -57,14 +57,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Compétences & parcours ─── */}
+      {/* ─── Parcours & compétences ─── */}
       <section className="px-site pt-24 md:pt-36" aria-labelledby="competences">
-        <SectionHead id="competences" label="Savoir-faire" title={["Compétences", <span key="p" className="serif-i normal-case">& parcours</span>]} />
+        <SectionHead id="competences" label="Savoir-faire" title={["Parcours", <span key="p" className="serif-i normal-case">& compétences</span>]} />
         <div className="grid-12 gap-y-14">
-          <div className="col-span-12 md:col-span-7">
+          <div className="order-2 col-span-12 md:col-span-7 md:col-start-6">
             <SkillsCollage />
           </div>
-          <Reveal className="col-span-12 md:col-span-4 md:col-start-9" delay={0.1}>
+          <Reveal className="order-1 col-span-12 md:col-span-4 md:col-start-1 md:row-start-1">
             <p className="label border-t border-line pt-4 text-mute">Passée par</p>
             <ul className="mt-2">
               {[

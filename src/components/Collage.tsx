@@ -47,7 +47,7 @@ export function Tape({ className = "", yellow = false }: { className?: string; y
   return (
     <span
       aria-hidden
-      className={`pointer-events-none block h-[26px] w-[96px] shadow-[0_1px_2px_rgba(0,0,0,0.25)] [clip-path:polygon(3%_0,97%_4%,100%_30%,97%_55%,100%_100%,2%_96%,0_60%,3%_35%)] ${
+      className={`pointer-events-none block shadow-[0_1px_2px_rgba(0,0,0,0.25)] [clip-path:polygon(3%_0,97%_4%,100%_30%,97%_55%,100%_100%,2%_96%,0_60%,3%_35%)] ${
         yellow ? "bg-signal/80" : "bg-[#f3efe6]/55"
       } ${className}`}
     />
