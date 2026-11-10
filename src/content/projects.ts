@@ -583,7 +583,7 @@ export const projects: Project[] = [
       height: 1288,
     },
     context: ["Campagne de notoriété pour une marque de soin BIO, auprès des 20-25 ans."],
-    concept: ["Des soins qui se boivent des yeux : « Santé, à votre peau ! »"],
+    concept: ["Des soins qui se boivent : « Santé, à votre peau ! »"],
     applications: ["Affichage, frigo-diagnostic chez Monoprix et événement au Perchoir du Marais."],
     inline: {
       concept: [
