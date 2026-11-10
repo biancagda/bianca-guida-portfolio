@@ -113,6 +113,7 @@ export default async function ProjectPage({ params }: Params) {
 
       {/* ─── Étude de cas ─── */}
       <div className="px-site mt-10 space-y-12 md:mt-16 md:space-y-20">
+        {fiche.some(({ key }) => project[key]?.length) && (
         <Reveal>
           <dl className="grid gap-x-10 gap-y-6 border-t border-line pt-6 md:grid-cols-3">
             {fiche.map(({ key, title }) =>
@@ -125,6 +126,7 @@ export default async function ProjectPage({ params }: Params) {
             )}
           </dl>
         </Reveal>
+        )}
 
         {/* Visuels */}
         {inlineOrder.some((k) => project.inline?.[k]?.length) && (

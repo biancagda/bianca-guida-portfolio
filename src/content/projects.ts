@@ -772,9 +772,6 @@ export const projects: Project[] = [
       width: 1920,
       height: 1440,
     },
-    context: ["Affiche pour la journée mondiale du nettoyage."],
-    concept: ["« Votre baignade en mer en 2038 » : une nageuse plonge dans une poubelle."],
-    applications: ["Affichage et bacs de collecte."],
     inline: {
       identity: [
         {
